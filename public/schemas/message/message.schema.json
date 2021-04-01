@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/message.schema.json",
+  "title": "Message",
+  "description": "A generic message.",
+  "type": "object",
+  "properties": {
+    "messageType": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "messageType"
+  ]
+}

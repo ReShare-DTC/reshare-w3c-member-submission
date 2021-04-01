@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/error/unknown_message.schema.json",
+  "title": "UnknownMessage error message",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/message/error/error_message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "UnknownMessage"
+    }
+  }
+}

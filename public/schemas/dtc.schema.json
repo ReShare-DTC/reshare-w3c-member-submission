@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/dtc.schema.json",
+  "title": "Digital Transmission Contract (DTC)",
+  "description": "A Digital Transmission Contract (DTC), serialized as a JSON object.",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/partial_dtc.schema.json",
+  "properties": {
+    "sender": {
+      "required": [
+        "authID",
+        "cert",
+        "type",
+        "encoding"
+      ]
+    },
+    "receiver": {
+      "required": [
+        "authID",
+        "cert",
+        "type",
+        "encoding"
+      ]
+    },
+    "senderSig": {
+      "required": [
+        "sig",
+        "type",
+        "encoding"
+      ]
+    },
+    "receiverSig": {
+      "required": [
+        "sig",
+        "type",
+        "encoding"
+      ]
+    },
+    "facts": {
+      "items": {
+        "required": [
+          "factID",
+          "serialization"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "sha256"
+            ]
+          },
+          {
+            "required": [
+              "sha384"
+            ]
+          },
+          {
+            "required": [
+              "sha512"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "baseIRI",
+    "sender",
+    "receiver",
+    "senderSig",
+    "receiverSig",
+    "facts",
+    "timestamp"
+  ]
+}

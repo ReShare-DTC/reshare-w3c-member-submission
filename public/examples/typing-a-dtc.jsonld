@@ -1,0 +1,27 @@
+{
+  "@type": "fc:DTC",
+  "facts": [
+    {
+      "@type": "fc:Fact",
+      ...
+    },
+    ...
+  ],
+  "receiver": {
+    "@type": "fc:Receiver",
+    ...
+  },
+  "receiverSig": {
+    "@type": "fc:Signature",
+    ...
+  },
+  "sender": {
+    "@type": "fc:Sender",
+    ...
+  },
+  "senderSig": {
+    "@type": "fc:Signature",
+    ...
+  },
+  ...
+}

@@ -1,0 +1,27 @@
+name: Build and Deploy to GitHub pages
+on: [push]
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          echo "Installing Java..."
+          sudo apt-get update
+          sudo apt-get -y install default-jdk
+          echo "Installing python..."
+          sudo apt-get -y install python3
+          echo "Installing less npm library..."
+          sudo npm i -g less
+          echo "Creating Widoco documentation..."
+          make
+
+      - name: Deploy to Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: public # The folder the action should deploy.

@@ -1,0 +1,20 @@
+image: node:latest
+
+pages:
+  stage: deploy
+  script:
+    - echo "Installing Java..."
+    - apt-get update
+    - apt-get -y install default-jdk
+    - echo "Installing python..."
+    - apt-get -y install python3
+    - echo "Installing less npm library..."
+    - npm i -g less
+    - echo "Creating Widoco documentation..."
+    - make clean
+    - make
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/abbrev_contract.schema.json",
+  "title": "AbbrevContract message",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/message/message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "AbbrevContract"
+    },
+    "contract": {
+      "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/dtc.schema.json"
+    }
+  },
+  "required": [
+    "contract"
+  ]
+}

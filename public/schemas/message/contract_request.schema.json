@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/contract_request.schema.json",
+  "title": "ContractRequest message",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/message/message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "ContractRequest"
+    },
+    "contract": {
+      "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/partial_dtc.schema.json",
+      "required": [
+        "receiver",
+        "facts"
+      ],
+      "properties": {
+        "receiver": {
+          "required": [
+            "authID",
+            "cert",
+            "type",
+            "encoding"
+          ]
+        },
+        "facts": {
+          "items": {
+            "required": [
+              "factID"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "contract"
+  ]
+}
