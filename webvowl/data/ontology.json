@@ -411,7 +411,7 @@
     "id" : "23",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "25",
+    "id" : "24",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "27",
@@ -429,7 +429,7 @@
     "id" : "32",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "24",
+    "id" : "25",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "35",
@@ -625,35 +625,6 @@
     "attributes" : [ "datatype" ],
     "id" : "20"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization",
-    "equivalent" : [ "24" ],
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "13",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "serialization",
-      "undefined" : "fact serialization"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "The serialization method used to create a fact checksum. Should be normalized, so that checksum verification is deterministic."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "23"
-  }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha512Sum",
     "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
     "range" : "18",
@@ -680,7 +651,36 @@
       "undefined" : "A SHA-512 checksum of a fact."
     },
     "attributes" : [ "datatype" ],
-    "id" : "25"
+    "id" : "23"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization",
+    "equivalent" : [ "25" ],
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "range" : "13",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "unstable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "serialization",
+      "undefined" : "fact serialization"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "The serialization method used to create a fact checksum. Should be normalized, so that checksum verification is deterministic."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "24"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent",
     "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
@@ -789,7 +789,7 @@
     },
     "domain" : "12",
     "comment" : {
-      "undefined" : "The signature data."
+      "undefined" : "The signature data. Should be encoded as base64 using the xsd:base64Binary literal type for reducing encoding overhead."
     },
     "attributes" : [ "datatype" ],
     "id" : "31"
@@ -823,7 +823,7 @@
     "id" : "32"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#canonicalization",
-    "equivalent" : [ "23" ],
+    "equivalent" : [ "24" ],
     "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
     "range" : "34",
     "annotations" : {
@@ -849,7 +849,7 @@
       "undefined" : "Deprecated equivalent to the fact serialization. Kept for backwards compatibility."
     },
     "attributes" : [ "datatype" ],
-    "id" : "24"
+    "id" : "25"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver",
     "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
@@ -965,7 +965,7 @@
   }, {
     "range" : "3",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "40"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent",
@@ -998,7 +998,7 @@
   }, {
     "range" : "3",
     "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "42"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact",
