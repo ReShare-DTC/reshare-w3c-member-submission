@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "rs": "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "baseIRI": "@id",
+    "facts": {
+      "@id": "rs:fact",
+      "@context": {
+        "factID": {
+          "@id": "rs:factOrigin",
+          "@type": "@id"
+        },
+        "sha256": {
+          "@id": "rs:sha256Sum",
+          "@type": "xsd:hexBinary"
+        },
+        "sha384": {
+          "@id": "rs:sha384Sum",
+          "@type": "xsd:hexBinary"
+        },
+        "sha512": {
+          "@id": "rs:sha512Sum",
+          "@type": "xsd:hexBinary"
+        },
+        "serialization": "rs:serialization"
+      }
+    },
+    "sender": {
+      "@id": "rs:sender",
+      "@context": {
+        "authID": "rs:identifies",
+        "type": "rs:certEncoding",
+        "cert": {
+          "@id": "rs:x509Cert",
+          "@type": "xsd:base64Binary"
+        }
+      }
+    },
+    "receiver": {
+      "@id": "rs:receiver",
+      "@context": {
+        "authID": "rs:identifies",
+        "type": "rs:certEncoding",
+        "cert": {
+          "@id": "rs:x509Cert",
+          "@type": "xsd:base64Binary"
+        }
+      }
+    },
+    "senderSig": {
+      "@id": "rs:senderSig",
+      "@context": {
+        "type": "rs:sigType",
+        "sig": {
+          "@id": "rs:sigData",
+          "@type": "xsd:base64Binary"
+        }
+      }
+    },
+    "receiverSig": {
+      "@id": "rs:receiverSig",
+      "@context": {
+        "type": "rs:sigType",
+        "sig": {
+          "@id": "rs:sigData",
+          "@type": "xsd:base64Binary"
+        }
+      }
+    },
+    "senderCustomContent": {
+      "@id": "rs:senderCustomContent",
+      "@type": "@json"
+    },
+    "receiverCustomContent": {
+      "@id": "rs:receiverCustomContent",
+      "@type": "@json"
+    },
+    "timestamp": {
+      "@id": "rs:timestamp",
+      "@type": "xsd:dateTime"
+    }
+  }
+}

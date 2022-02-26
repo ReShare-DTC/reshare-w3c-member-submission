@@ -1,0 +1,37 @@
+{
+  "facts": [
+    {
+      "@id": "contract:fact-0",
+      ...
+    },
+    {
+      "@id": "contract:fact-1",
+      ...
+    },
+    {
+      "@id": "contract:fact-2",
+      ...
+    },
+    {
+      "@id": "contract:fact-3",
+      ...
+    }
+  ],
+  "receiver": {
+    "@id": "contract:receiver",
+    ...
+  },
+  "receiverSig": {
+    "@id": "contract:receiverSig",
+    ...
+  },
+  "sender": {
+    "@id": "contract:sender",
+    ...
+  },
+  "senderSig": {
+    "@id": "contract:senderSig",
+    ...
+  },
+  ...
+}

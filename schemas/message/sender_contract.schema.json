@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/sender_contract.schema.json",
+  "title": "SenderContract message",
+  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "SenderContract"
+    },
+    "contract": {
+      "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/partial_dtc.schema.json",
+      "required": [
+        "baseIRI",
+        "sender",
+        "receiver",
+        "senderSig",
+        "facts",
+        "timestamp"
+      ],
+      "properties": {
+        "sender": {
+          "required": [
+            "authID",
+            "cert",
+            "type",
+            "encoding"
+          ]
+        },
+        "receiver": {
+          "required": [
+            "authID",
+            "cert",
+            "type",
+            "encoding"
+          ]
+        },
+        "senderSig": {
+          "required": [
+            "sig",
+            "type",
+            "encoding"
+          ]
+        },
+        "facts": {
+          "items": {
+            "required": [
+              "factID",
+              "serialization"
+            ],
+            "oneOf": [
+              {
+                "required": [
+                  "sha256"
+                ]
+              },
+              {
+                "required": [
+                  "sha384"
+                ]
+              },
+              {
+                "required": [
+                  "sha512"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "contract"
+  ]
+}

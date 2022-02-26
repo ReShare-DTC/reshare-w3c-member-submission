@@ -1,0 +1,8 @@
+{
+  "@context": {
+    "contract": "http://example.com/contracts/1#",
+    ...
+  },
+  "baseIRI": "http://example.com/contracts/1#",
+  ...
+}

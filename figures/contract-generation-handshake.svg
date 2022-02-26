@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg18171"
+   version="1.1"
+   viewBox="0 0 147.47927 62.820744"
+   height="62.820744mm"
+   width="147.47928mm"
+   sodipodi:docname="contract-generation-handshake.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview6091"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="1.8126761"
+     inkscape:cx="222.8749"
+     inkscape:cy="245.49339"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18171">
+    <sodipodi:guide
+       position="30.746366,3.4746975"
+       orientation="0,-1"
+       id="guide55973" />
+  </sodipodi:namedview>
+  <defs
+     id="defs18165">
+    <marker
+       style="overflow:visible"
+       id="marker22810"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path22808" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker22746"
+       style="overflow:visible">
+      <path
+         id="path22744"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker22250"
+       style="overflow:visible">
+      <path
+         id="path22248"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker22150"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path22148" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path4234" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata18168">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     id="path22242"
+     d="M 129.69303,9.8574072 H 33.274666"
+     style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22250)" />
+  <text
+     xml:space="preserve"
+     style="font-weight:bold;font-size:3.52777px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     x="60.979614"
+     y="-8.2793198"
+     id="text479"><tspan
+       id="tspan477"
+       x="60.979614"
+       y="-8.2793198"
+       style="stroke-width:0.264583" /></text>
+  <text
+     id="text22246"
+     y="8.2760887"
+     x="54.143974"
+     style="font-size:3.52777px;line-height:0.75;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     xml:space="preserve"><tspan
+       style="stroke-width:0.264583"
+       y="8.2760887"
+       x="54.143974"
+       id="tspan22244">R1: receiver, facts, (rCC*)</tspan></text>
+  <path
+     style="fill:none;stroke:#2536a3;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 89.553155,12.013732 c 0,0 0,-3.2151828 0,-3.2151828"
+     id="path489" />
+  <text
+     xml:space="preserve"
+     style="font-weight:bold;font-size:2.43893px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#2536a3;fill-opacity:1;stroke-width:0.18292"
+     x="99.954941"
+     y="14.554974"
+     id="text495"><tspan
+       sodipodi:role="line"
+       id="tspan6614"
+       x="86.907295"
+       y="14.554974"><tspan
+   x="86.907295"
+   y="14.554974"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;text-anchor:middle;fill:#2536a3;fill-opacity:1;stroke-width:0.18292"
+   id="tspan1499">List of FactIDs,</tspan></tspan><tspan
+       sodipodi:role="line"
+       x="86.907295"
+       y="16.993904"
+       id="tspan6620">no checksums</tspan></text>
+  <g
+     id="g1066"
+     transform="translate(-6.483259,-66.320478)">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.15282px;line-height:0.75;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.236461"
+       x="36.081955"
+       y="73.394798"
+       id="text18736"><tspan
+         id="tspan18734"
+         x="36.081955"
+         y="73.394798"
+         style="stroke-width:0.236461">S</tspan></text>
+    <path
+       d="m 37.225063,66.594068 a 1.8941029,1.8941029 0 0 0 -1.889489,1.894052 1.8941029,1.8941029 0 0 0 1.221587,1.77071 c -2.404839,0.169132 -2.39341,1.332148 -2.39341,3.720515 h 3.065872 3.065876 c 0,-2.388367 0.01142,-3.551383 -2.393406,-3.720515 a 1.8941029,1.8941029 0 0 0 1.221583,-1.77071 1.8941029,1.8941029 0 0 0 -1.894053,-1.894052 1.8941029,1.8941029 0 0 0 -0.0046,0 z"
+       style="fill:none;stroke:#000000;stroke-width:0.547177;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4070" />
+  </g>
+  <path
+     id="path21978"
+     d="M 30.746367,7.4855552 V 59.346046"
+     style="fill:none;stroke:#000000;stroke-width:1.33771;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g1071"
+     transform="translate(1.4542413,-66.320478)">
+    <text
+       id="text21958"
+       y="73.394798"
+       x="126.66318"
+       style="font-weight:bold;font-size:3.15282px;line-height:0.75;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.236461"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.236461"
+         y="73.394798"
+         x="126.66318"
+         id="tspan21956">R</tspan></text>
+    <path
+       id="path21960"
+       style="fill:none;stroke:#000000;stroke-width:0.547177;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 128.05491,66.594068 a 1.8941029,1.8941029 0 0 0 -1.88949,1.894052 1.8941029,1.8941029 0 0 0 1.22159,1.77071 c -2.40484,0.169132 -2.39341,1.332147 -2.39341,3.720514 h 3.06587 3.06587 c 0,-2.388367 0.0114,-3.551382 -2.3934,-3.720514 a 1.8941029,1.8941029 0 0 0 1.22158,-1.77071 1.8941029,1.8941029 0 0 0 -1.89405,-1.894052 1.8941029,1.8941029 0 0 0 -0.005,0 z" />
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.33771;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 129.51377,7.4855552 V 59.346046"
+     id="path21980"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text22046"
+     y="26.773464"
+     x="59.432796"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;line-height:0.75;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';stroke-width:0.264583"
+       y="26.773464"
+       x="59.432796"
+       id="tspan22044" /></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22746)"
+     d="M 30.913137,26.183433 H 126.75244"
+     id="path22736" />
+  <text
+     xml:space="preserve"
+     style="font-size:3.52777px;line-height:0.75;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     x="49.173794"
+     y="24.602116"
+     id="text22740"><tspan
+       id="tspan22738"
+       x="49.173794"
+       y="24.602116"
+       style="stroke-width:0.264583">S1: sender, senderSig, facts,</tspan></text>
+  <path
+     id="path22800"
+     d="M 129.09028,47.447522 H 32.671921"
+     style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker22810)" />
+  <text
+     xml:space="preserve"
+     style="font-weight:bold;font-size:2.43893px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';letter-spacing:0px;word-spacing:0px;fill:#2536a3;fill-opacity:1;stroke-width:0.18292"
+     x="110.0406"
+     y="15.157383"
+     id="text1619"><tspan
+       x="110.0406"
+       y="15.157383"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;text-anchor:middle;fill:#2536a3;fill-opacity:1;stroke-width:0.18292"
+       id="tspan1615">List of FactIDs,</tspan><tspan
+       x="110.0406"
+       y="17.59631"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;text-anchor:middle;fill:#2536a3;fill-opacity:1;stroke-width:0.18292"
+       id="tspan1617">with checksums</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:3.03788px;line-height:0;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.227841"
+     x="-1.638919"
+     y="17.542736"
+     id="text22916"><tspan
+       sodipodi:role="line"
+       x="-1.638919"
+       y="17.542736"
+       id="tspan37808" /></text>
+  <g
+     id="g55703"
+     transform="translate(-23.55509,-3.1749978)">
+    <rect
+       y="31.538851"
+       x="135.26936"
+       height="17.63813"
+       width="35.598999"
+       id="rect23050"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.332;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text23062"
+       y="35.380596"
+       x="137.75597"
+       style="font-size:3.03788px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.227841"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         x="137.75597"
+         y="35.380596"
+         id="tspan55521">Verify sender's</tspan><tspan
+         sodipodi:role="line"
+         x="137.75597"
+         y="38.418476"
+         id="tspan55525"> signature</tspan><tspan
+         sodipodi:role="line"
+         x="137.75597"
+         y="41.456356"
+         id="tspan55527">Verify checksums</tspan><tspan
+         sodipodi:role="line"
+         x="137.75597"
+         y="44.494236"
+         id="tspan55529"> (optional)</tspan><tspan
+         sodipodi:role="line"
+         x="137.75597"
+         y="47.532116"
+         id="tspan55531">Create receiverSig</tspan></text>
+    <path
+       d="m 137.25464,34.272452 -1.00344,0.57934 v -1.15867 z"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389234;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1738" />
+    <path
+       d="m 137.25464,40.25177 -1.00344,0.57934 v -1.15867 z"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389234;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1758" />
+    <path
+       d="m 137.25464,46.444372 -1.00344,0.57933 v -1.15867 z"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389234;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1760" />
+  </g>
+  <path
+     id="path1603-7"
+     d="M 104.05741,21.138524 V 18.239182"
+     style="fill:none;stroke:#2536a3;stroke-width:0.332816;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     sodipodi:nodetypes="cc" />
+  <text
+     id="text22804"
+     y="45.866196"
+     x="64.11216"
+     style="font-size:3.52777px;line-height:0.75;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     xml:space="preserve"><tspan
+       style="stroke-width:0.264583"
+       y="45.866196"
+       x="64.11216"
+       id="tspan22802">R2: receiverSig</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:3.175px;line-height:1.3;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+     x="-0.28575"
+     y="62.788994"
+     id="text1894"><tspan
+       id="tspan1892"
+       x="-0.28575"
+       y="62.788994"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';stroke-width:0.264583">* receiverCustomContent/senderCustomContent</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:3.52777px;line-height:0.75;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';letter-spacing:-0.280458px;word-spacing:0px;stroke-width:0.264583"
+     x="58.169636"
+     y="29.893787"
+     id="text21608"><tspan
+       id="tspan21606"
+       x="58.169636"
+       y="29.893787"
+       style="stroke-width:0.264583">timestamp, baseIRI, (sCC*)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.9389px;line-height:1.3;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';text-align:center;letter-spacing:-0.079375px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+     x="-2.0861497"
+     y="16.399395"
+     id="text39756"><tspan
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';stroke-width:0.264583"
+       x="-2.0861497"
+       y="16.399395"
+       id="tspan39758" /></text>
+  <g
+     id="g55045"
+     transform="translate(9.8729593,-2.1166648)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.331999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect22928"
+       width="24.538961"
+       height="11.220864"
+       x="8.6039276"
+       y="14.380236" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;letter-spacing:-0.079375px;word-spacing:0px;text-anchor:start;stroke-width:0.264583"
+       x="10.075155"
+       y="17.786797"
+       id="text44714"><tspan
+         sodipodi:role="line"
+         id="tspan44712"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="10.075155"
+         y="17.786797">Compile DTC</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="10.075155"
+         y="20.824686"
+         id="tspan51166"> (without</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="10.075155"
+         y="23.862576"
+         id="tspan51168"> receiverSig)</tspan></text>
+  </g>
+  <g
+     id="g55715"
+     transform="translate(6.1010173,35.454185)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.331999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect55705"
+       width="32.082844"
+       height="8.3323965"
+       x="8.6039276"
+       y="14.380236" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;line-height:1;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;letter-spacing:-0.079375px;word-spacing:0px;text-anchor:start;stroke-width:0.264583"
+       x="10.075155"
+       y="17.786797"
+       id="text55713"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="10.075155"
+         y="17.786797"
+         id="tspan55711">Verify receiver's</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.03789px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="10.075155"
+         y="20.824686"
+         id="tspan55834"> signature</tspan></text>
+  </g>
+</svg>

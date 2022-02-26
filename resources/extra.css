@@ -1,0 +1,101 @@
+.widoco body {
+  text-align: justify;
+}
+.widoco h1 {
+  line-height: 110%;
+}
+.widoco .hlist {
+  border: 1px solid navy;
+  padding: 5px;
+  background-color: #F4FFFF;
+}
+.widoco .hlist li {
+  display: inline;
+  display: inline-table;
+  list-style-type: none;
+  padding-right: 20px;
+}
+.widoco .entity {
+  border: 1px solid navy;
+  margin: 5px 0px 5px 0px;
+  padding: 5px;
+}
+.widoco .type-c {
+  cursor: help;
+  color: orange;
+}
+.widoco .type-op {
+  cursor: help;
+  color: navy;
+}
+.widoco .type-dp {
+  cursor: help;
+  color: green;
+}
+.widoco .type-ap {
+  cursor: help;
+  color: maroon;
+}
+.widoco .type-ni {
+  cursor: help;
+  color: brown;
+}
+.widoco .logic {
+  color: purple;
+  font-weight: bold;
+}
+.widoco h3 {
+  margin-top: 3px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid navy;
+}
+.widoco h2 {
+  margin-top: 40px;
+}
+.widoco .dotted {
+  border-bottom: 1px dotted gray;
+}
+.widoco dt {
+  margin-top: 5px;
+}
+.widoco .description {
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+  background-color: #f2f3f4;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.widoco .description dl {
+  background-color: #f2f3f4;
+}
+.widoco .description ul {
+  padding-left: 12px;
+  margin-top: 0px;
+}
+.widoco .backlink {
+  font-size: 10pt;
+  text-align: right;
+  float: right;
+  color: black;
+  padding: 2px;
+  border: 1px dotted navy;
+  background-color: #F4FFFF;
+}
+.widoco .imageblock {
+  text-align: center;
+}
+.widoco .imageblock img {
+  border: 1px solid gray;
+}
+.widoco .endnote {
+  margin-top: 40px;
+  border-top: 1px solid gray;
+  padding-top: 10px;
+  text-align: center;
+  color: gray;
+  font-size: 70%;
+}
+.widoco .literal {
+  color: green;
+  font-style: italic;
+}

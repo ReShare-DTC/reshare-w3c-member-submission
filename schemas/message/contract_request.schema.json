@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/contract_request.schema.json",
+  "title": "ContractRequest message",
+  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "ContractRequest"
+    },
+    "contract": {
+      "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/partial_dtc.schema.json",
+      "required": [
+        "receiver",
+        "facts"
+      ],
+      "properties": {
+        "receiver": {
+          "required": [
+            "authID",
+            "cert",
+            "type",
+            "encoding"
+          ]
+        },
+        "facts": {
+          "items": {
+            "required": [
+              "factID"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "contract"
+  ]
+}

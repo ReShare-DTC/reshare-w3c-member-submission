@@ -1,0 +1,56 @@
+{
+  "baseIRI": "https://example.com/contracts/2021-09-24/134",
+  "sender": {
+    "type": "X509",
+    "encoding": "base64",
+    "cert": "MIIEkTCCAnmgAwIBAgIUTpTAugWv4ZYQX9nk2zETfVcMi38wDQYJKoZIhvcNAQELBQAwTDELMAkGA1UEBhMCREUxEzARBgNVBAgMClNvbWUtU3RhdGUxEzARBgNVBAoMCkV4YW1wbGUgQ0ExEzARBgNVBAMMCkV4YW1wbGUgQ0EwHhcNMjEwNDE1MjExMTExWhcNMjIwNDE1MjExMTExWjAzMR0wGwYDVQQKDBRFeGFtcGxlIGNoYWluIGNlcnQgMTESMBAGA1UEAwwJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvw8C6sqLUVSOwFPbZsqS/1cL/+7aaaxVPwXs7TjPVombwNLyJW8yPyyQLbsTN5evVCpNdzciYc9Nhh77AYrqCiOsZBb7hu/PMqNqDvU2FAHeTH9KZ1PSpsOdgzG4i9widL6FBKGrxvlyj0G5ztQoGtymJFdmQ8K/ZN2W5Bi27H24UgITO+mX5MGmzFfyib7bDnvNqZUMJEgpSGt+jUf/7pMtuQqusrE1bfg5vvCbHIPHx2KXqzQEjNiioDafzKjIY2NSakis1AZe+J46o/Za0L8TUMXPvO1nSX4VMm9w5Qqf8auKdlUnT7fVqGKxQvPgX/JM/ksduZqZdTE1giWDgQIDAQABo4GDMIGAMB0GA1UdDgQWBBQtTnbTodwlQnP0QXA2VRv6DBWgzzAfBgNVHSMEGDAWgBR+/85DLJ8v0EP1y6kv/I9XPsHQ5TAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggIBAG47hxcjEY6kXojCadK15iW5t6P2p2NCfXpymeRuVaHiI7hhMwQEPymGqXZe0MKUKaRxb9BssG9UvndJw7PWdLx55Y498dgEVXWp7UWUg+VmLxE0wrS+7odJ6ZwsSTPhlgQVF3y9SOP18UX1Iy+ipkdPVbeiQB2QJOYLdxj3h26a/BevyWJU7jTbZO9fNX3FlopyQbB64QPJKJyQiYrT1td7lOcreyBJUS2e5p+hifW/ukxHQ9QtfN+mE/MlnUSHar6LgXPX3AoiVKc14L5E7jRHLDCvFWO1PfVCsS6RWIKdoWsEUytDnMYLHb2TmMJWQf8S69BLyqgEhKXNS9hZceGr32jM9O6TepYKZNH5A1QLjZcuHHKUAzXMjM9loNLra/VGcqrMTdZYautGl8EdEURqE063qDd+Hsp3Vqw0iALQHcbEb6R1b2o5dIrczo+PINTSvnFv+4GyqznXEYjcueLrR/R6kE9GNOiPUxpont+0s1JCAKPaaZk97Z09ldtD47rPQLQgWopDadVOm3Gu9+ef7uqqpJw9+q384mqgw4P1Yws6aVkXLdvh8MCXcMEYi2AeQVCCZv2CjAh8CZQC+0P2JtkhWlCxPoSDk4jbm6koCxcpL3CRcc5LtTTrev5+Mi0oDMiLzx09GNls3SQzdKdP9PM+Y7E7y4Xi2LW3FtoG",
+    "authID": "http://example.com/sender"
+  },
+  "receiver": {
+    "type": "X509",
+    "encoding": "base64",
+    "cert": "MIIEkTCCAnmgAwIBAgIUTpTAugWv4ZYQX9nk2zETfVcMi4AwDQYJKoZIhvcNAQELBQAwTDELMAkGA1UEBhMCREUxEzARBgNVBAgMClNvbWUtU3RhdGUxEzARBgNVBAoMCkV4YW1wbGUgQ0ExEzARBgNVBAMMCkV4YW1wbGUgQ0EwHhcNMjEwNDE1MjExNDM1WhcNMjIwNDE1MjExNDM1WjAzMR0wGwYDVQQKDBRFeGFtcGxlIGNoYWluIGNlcnQgMTESMBAGA1UEAwwJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuKe4H5GwuaKS02s6oAnQF0e30TLyB3joT5GNzwa94WXuLjU8SWKqOjLQyIN2ZBtZW1jNI3By6nsPoU3t181SBStFI25JZ8PUvJ9/Skf/adRmrtXHX8MYRBqN4d1JIRdOoLxwq+bI0UIyMmMNMTjvhnWwTx4FkXwup5fna9FFBbtOGP+7vMVl98L2/bDMJwwLdnzUs0CKLyqDRx0XWAnp6R6CN9YDeMgpdDviMkBfeY74AJ084v6pWnx+K0PlUuQAkiuPvcRsDxgjHRO18rq4wA6Dxh6My7Xh/uHFzb5cmLT7C7kfr+WN26va8IRGCF8NWdOYQ0HSo/vbY/eIOB/G0wIDAQABo4GDMIGAMB0GA1UdDgQWBBSmlyw0Ht9gF3rnI42Us1dK9+jZ/DAfBgNVHSMEGDAWgBR+/85DLJ8v0EP1y6kv/I9XPsHQ5TAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggIBABMLMfSOAwk34LEK9L/A1qtHTJPQ2BF3XjnbswINNao0oOI3PSWKU0weWYlITH29hgyzrwO8A9ifaOFPtsRxe9/UNv6RNqwObLpxF+f2U3ulu2hTzd7l/ZXUGYaBUHLL3Cu1JlZWMRoTUBUHAvkwnQlUkQLJZ7A+N9y+FfV5apIMTwPA+C2lwiVtEd3Hje5Z9lUmjwiARRnsliRuCm2ZY0IHvneQN7NnOFCFFQQnu/7wMEywNWR3NMtj5AcMugs56OqcAglwq+HqYNCUkelt1/I7A/NwitaPEYu/1TDjQBckR6nbtJwHKFx2M9heB+E5iMI65r+ae01jBr+r7tes6UdEz7SCF3xHks3ubKfRQykZzTZ7ixeHYG5XjaUSSk8EDuBCdZOJ/AUAA+Rar/UPODUd1YQUZDUqs0MvB9zXQYBtEhwii75pCmkFBpZewo6xyktdP3964q7MZPZQZTZimh02CxcWdXZj6JkoL6ihuM36UciS9rXUgIGGdJcbhC5mP/PqRYsAzipOvQiRL7mGRB9L8H0Wt08yl3H0KFwGcgasML8tOOkf+4MsGIHJZaJ20cVfdWm1StOtLN1Bn+gAppq8nlvDgPiQ3NxSsvY+Qpb0WSVWknc1VyOPKexKaM20/alMv/fykVhVmmAcNVshIMAuKV5TnhqeZyg8L02pVAHL",
+    "authID": "http://example.com/receiver"
+  },
+  "senderSig": {
+    "type": "1.2.840.113549.1.1.10",
+    "encoding": "base64",
+    "sig": "S82Al/YgpfjywjagQ03tjr8WT2oiMSkuYGA5hoXL/LCZHJhR4UGuXyQe1lJ6+yDRiN8FbKcp6ZrClb645rKpIK9UP/Y50wOo/vXCdeUGRqWj4NduoJsBKAP9O4QfQQkT9POHwcbYDsbvEGm3M7fh7mrOn6PzQQgq8vNGayVP5VmFLofxhArc2cy7/TthDl5sBwngpIokHUGOIE+RXasifJ/KS+DALU2s51EZzP2NuTbOvC2328UD5yhvHTopwqn3OrMWbKjF8UUDFjQHYx383hrK3VPjqfrMMNT3OHiJB6t9pJwZ3lmD3PV0Axp6k1XV+oxckBaYN7dCNneQn+zkcw=="
+  },
+  "receiverSig": {
+    "type": "1.2.840.113549.1.1.10",
+    "encoding": "base64",
+    "sig": "P70POEihM3V+pX+lPmvyoDzhERRuuat4P+jGIN/ME1n4hrl9vHb7l8yXy04iT2lNRXv2wkPfPC55nNCTCjWkPhF9Ca6KM6km0BHanPT9J7DZYuCes3RiPwEqO2UsVVZMxj/kMpwu0X23+SHjpAycGY7M/ZRG5iasQiu4N4f/O6pmNTOE6AqpgdhqACqUInbCN3afbdIUnFdbQSRn16VKmrmgUtus5XrVMsCEEZ3xlw8Pl+1toHgWllK4bnm3+DO4wdNb9wvM5TMrqCGHGZOkkxdlZ2pK3uSHuWtvifA49Ks113giNz6ZNjbWvmq9AJRY8/qVQUCBwZaBeSBqZRUMMw=="
+  },
+  "facts": [
+    {
+      "factID": "http://example.com/facts/fact1",
+      "sha256": "5fc62b0e99a143ff2b99b56a6953f07e96f52023aa3739bba3fec1194292f48e",
+      "serialization": "string"
+    },
+    {
+      "factID": "http://example.com/facts/fact2",
+      "sha256": "828bbc97b5b866992dc8bc532265e3094bc9e17cce05e16d90844d2160ad99cf",
+      "serialization": "string"
+    },
+    {
+      "factID": "http://example.com/facts/fact3",
+      "sha256": "c646cfa0feda9af766e6eca97f8578f3eb2b126d2349ea7ce1fd2d3b3fe2d456",
+      "serialization": "string"
+    },
+    {
+      "factID": "http://example.com/facts/fact4",
+      "sha256": "5845f61bccd9c5631dee29f9e87830b11eb5b531081a8888db42e80e2f153fc0",
+      "serialization": "string"
+    }
+  ],
+  "timestamp": "2021-04-15T21:50:29.940Z",
+  "senderCustomContent": {
+    "authorizationMethod": "PublicKey",
+    "authorizationSuccessful": true,
+    "authUserId": "user123456"
+  },
+  "receiverCustomContent": {
+    "dbStorageId": "StorageCluster5"
+  }
+}

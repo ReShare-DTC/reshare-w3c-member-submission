@@ -1,0 +1,180 @@
+.widoco {
+  /* Style for a "Recommendation" */
+  /*
+       Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+       The following software licensing rules apply:
+       http://www.w3.org/Consortium/Legal/copyright-software */
+  /* $Id: base.css,v 1.25 2006/04/18 08:42:53 bbos Exp $ */
+  /* no border on img links */
+  /* trick to hide the border in Netscape 4 */
+  /* background should be transparent, but WebTV has a bug */
+  /*
+    p {
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+    }
+    */
+  /* opera 3.50 */
+  /* navigator 4 requires this */
+}
+.widoco body {
+  padding: 2em 1em 2em 70px;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  counter-reset: section;
+}
+.widoco :link {
+  color: #00C;
+  background: transparent;
+}
+.widoco :visited {
+  color: #609;
+  background: transparent;
+}
+.widoco a:active {
+  color: #C00;
+  background: transparent;
+}
+.widoco a:link img,
+.widoco a:visited img {
+  border-style: none;
+}
+.widoco a img {
+  color: white;
+}
+@media all {
+  .widoco {
+    /* hide the next rule from Netscape 4 */
+    /* undo the color change above */
+  }
+  .widoco a img {
+    color: inherit;
+  }
+}
+.widoco th,
+.widoco td {
+  /* ns 4 */
+  font-family: sans-serif;
+}
+.widoco h1,
+.widoco h2,
+.widoco h3,
+.widoco h4,
+.widoco h5,
+.widoco h6 {
+  text-align: left;
+}
+.widoco h2.list {
+  counter-reset: subsection;
+}
+.widoco h2.list:before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+.widoco h3.list:before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) ". ";
+}
+.widoco h3.list {
+  margin-top: 20px;
+  border-bottom: 0px;
+}
+.widoco h1,
+.widoco h2,
+.widoco h3 {
+  color: #005A9C;
+  background: white;
+}
+.widoco h1 {
+  font: 170% sans-serif;
+}
+.widoco h2 {
+  font: 140% sans-serif;
+}
+.widoco h3 {
+  font: 120% sans-serif;
+}
+.widoco h4 {
+  font: bold 100% sans-serif;
+}
+.widoco h5 {
+  font: italic 100% sans-serif;
+}
+.widoco h6 {
+  font: small-caps 100% sans-serif;
+}
+.widoco .hide {
+  display: none;
+}
+.widoco div.head {
+  margin-bottom: 1em;
+}
+.widoco div.head h1 {
+  margin-top: 2em;
+  clear: both;
+}
+.widoco div.head table {
+  margin-left: 2em;
+  margin-top: 2em;
+}
+.widoco p.copyright {
+  font-size: small;
+}
+.widoco p.copyright small {
+  font-size: small;
+}
+@media screen {
+  .widoco {
+    /* hide from IE3 */
+  }
+  .widoco a[href]:hover {
+    background: #ffa;
+  }
+}
+.widoco pre {
+  margin-left: 2em;
+}
+.widoco dt,
+.widoco dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.widoco dt {
+  font-weight: bold;
+}
+.widoco pre,
+.widoco code {
+  font-family: monospace;
+}
+.widoco ul.toc,
+.widoco ol.toc {
+  list-style: disc;
+  /* Mac NS has problem with 'none' */
+  list-style: none;
+}
+@media aural {
+  .widoco h1,
+  .widoco h2,
+  .widoco h3 {
+    stress: 20;
+    richness: 90;
+  }
+  .widoco .hide {
+    speak: none;
+  }
+  .widoco p.copyright {
+    volume: x-soft;
+    speech-rate: x-fast;
+  }
+  .widoco dt {
+    pause-before: 20%;
+  }
+  .widoco pre {
+    speak-punctuation: code;
+  }
+}

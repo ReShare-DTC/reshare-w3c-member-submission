@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/partial_dtc.schema.json",
+  "title": "Partial Digital Transmission Contract (DTC)",
+  "description": "A partial Digital Transmission Contract (DTC), serialized as a JSON object.",
+  "type": "object",
+  "properties": {
+    "baseIRI": {
+      "type": "string"
+    },
+    "sender": {
+      "type": "object",
+      "properties": {
+        "authID": {
+          "type": "string"
+        },
+        "cert": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "encoding": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "receiver": {
+      "type": "object",
+      "properties": {
+        "authID": {
+          "type": "string"
+        },
+        "cert": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "encoding": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "senderSig": {
+      "type": "object",
+      "properties": {
+        "sig": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "encoding": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "receiverSig": {
+      "type": "object",
+      "properties": {
+        "sig": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "encoding": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "factID": {
+            "type": "string"
+          },
+          "requestedID": {
+            "type": "string"
+          },
+          "serialization": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "sha384": {
+            "type": "string"
+          },
+          "sha512": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "senderCustomContent": {
+      "type": "object"
+    },
+    "receiverCustomContent": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

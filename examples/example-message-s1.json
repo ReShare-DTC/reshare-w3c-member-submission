@@ -1,0 +1,43 @@
+{
+  "messageType": "SenderContract",
+  "contract": {
+    "baseIRI": "http://example.com/sender/contracts/273bc9b031c80a58cbb47670556c11c9#",
+    "facts": [
+      {
+        "factID": "http://example.com/facts/fact1",
+        "sha256": "5fc62b0e99a143ff2b99b56a6953f07e96f52023aa3739bba3fec1194292f48e",
+        "serialization": "string"
+      },
+      {
+        "factID": "http://example.com/facts/fact2",
+        "sha256": "828bbc97b5b866992dc8bc532265e3094bc9e17cce05e16d90844d2160ad99cf",
+        "serialization": "string"
+      },
+      {
+        "factID": "http://example.com/facts/fact3",
+        "sha256": "c646cfa0feda9af766e6eca97f8578f3eb2b126d2349ea7ce1fd2d3b3fe2d456",
+        "serialization": "string"
+      },
+      {
+        "factID": "http://example.com/facts/fact4",
+        "sha256": "5845f61bccd9c5631dee29f9e87830b11eb5b531081a8888db42e80e2f153fc0",
+        "serialization": "string"
+      }
+    ],
+    "sender": {
+      "type": "X509",
+      "format": "base64",
+      "cert": "MIIEkTCCAnmgAwIBAgIUTpTAugWv4ZYQX9nk2zETfVcMi38wDQYJKoZIhvcNAQELBQAwTDELMAkGA1UEBhMCREUxEzARBgNVBAgMClNvbWUtU3RhdGUxEzARBgNVBAoMCkV4YW1wbGUgQ0ExEzARBgNVBAMMCkV4YW1wbGUgQ0EwHhcNMjEwNDE1MjExMTExWhcNMjIwNDE1MjExMTExWjAzMR0wGwYDVQQKDBRFeGFtcGxlIGNoYWluIGNlcnQgMTESMBAGA1UEAwwJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvw8C6sqLUVSOwFPbZsqS/1cL/+7aaaxVPwXs7TjPVombwNLyJW8yPyyQLbsTN5evVCpNdzciYc9Nhh77AYrqCiOsZBb7hu/PMqNqDvU2FAHeTH9KZ1PSpsOdgzG4i9widL6FBKGrxvlyj0G5ztQoGtymJFdmQ8K/ZN2W5Bi27H24UgITO+mX5MGmzFfyib7bDnvNqZUMJEgpSGt+jUf/7pMtuQqusrE1bfg5vvCbHIPHx2KXqzQEjNiioDafzKjIY2NSakis1AZe+J46o/Za0L8TUMXPvO1nSX4VMm9w5Qqf8auKdlUnT7fVqGKxQvPgX/JM/ksduZqZdTE1giWDgQIDAQABo4GDMIGAMB0GA1UdDgQWBBQtTnbTodwlQnP0QXA2VRv6DBWgzzAfBgNVHSMEGDAWgBR+/85DLJ8v0EP1y6kv/I9XPsHQ5TAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggIBAG47hxcjEY6kXojCadK15iW5t6P2p2NCfXpymeRuVaHiI7hhMwQEPymGqXZe0MKUKaRxb9BssG9UvndJw7PWdLx55Y498dgEVXWp7UWUg+VmLxE0wrS+7odJ6ZwsSTPhlgQVF3y9SOP18UX1Iy+ipkdPVbeiQB2QJOYLdxj3h26a/BevyWJU7jTbZO9fNX3FlopyQbB64QPJKJyQiYrT1td7lOcreyBJUS2e5p+hifW/ukxHQ9QtfN+mE/MlnUSHar6LgXPX3AoiVKc14L5E7jRHLDCvFWO1PfVCsS6RWIKdoWsEUytDnMYLHb2TmMJWQf8S69BLyqgEhKXNS9hZceGr32jM9O6TepYKZNH5A1QLjZcuHHKUAzXMjM9loNLra/VGcqrMTdZYautGl8EdEURqE063qDd+Hsp3Vqw0iALQHcbEb6R1b2o5dIrczo+PINTSvnFv+4GyqznXEYjcueLrR/R6kE9GNOiPUxpont+0s1JCAKPaaZk97Z09ldtD47rPQLQgWopDadVOm3Gu9+ef7uqqpJw9+q384mqgw4P1Yws6aVkXLdvh8MCXcMEYi2AeQVCCZv2CjAh8CZQC+0P2JtkhWlCxPoSDk4jbm6koCxcpL3CRcc5LtTTrev5+Mi0oDMiLzx09GNls3SQzdKdP9PM+Y7E7y4Xi2LW3FtoG",
+      "authID": "http://example.com/sender"
+    },
+    "senderCustomContent": {
+      "exampleModule": "basic"
+    },
+    "timestamp": "2021-04-15T21:50:29.940Z",
+    "senderSig": {
+      "type": "1.2.840.113549.1.1.10",
+      "format": "base64",
+      "sig": "S82Al/YgpfjywjagQ03tjr8WT2oiMSkuYGA5hoXL/LCZHJhR4UGuXyQe1lJ6+yDRiN8FbKcp6ZrClb645rKpIK9UP/Y50wOo/vXCdeUGRqWj4NduoJsBKAP9O4QfQQkT9POHwcbYDsbvEGm3M7fh7mrOn6PzQQgq8vNGayVP5VmFLofxhArc2cy7/TthDl5sBwngpIokHUGOIE+RXasifJ/KS+DALU2s51EZzP2NuTbOvC2328UD5yhvHTopwqn3OrMWbKjF8UUDFjQHYx383hrK3VPjqfrMMNT3OHiJB6t9pJwZ3lmD3PV0Axp6k1XV+oxckBaYN7dCNneQn+zkcw=="
+    }
+  }
+}

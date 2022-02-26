@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/error/unknown_message.schema.json",
+  "title": "UnknownMessage error message",
+  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/error/error_message.schema.json",
+  "properties": {
+    "messageType": {
+      "const": "UnknownMessage"
+    }
+  }
+}

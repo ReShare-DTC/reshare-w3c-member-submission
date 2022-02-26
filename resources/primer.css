@@ -1,0 +1,101 @@
+.widoco {
+  /* define a class "noprint" for sections which don't get printed */
+  /* our syntax menu for switching */
+  /* use tab-like headers for syntax examples */
+  /* Also copy MediaWiki style here, so it will not look different when exported */
+  /* Expansion to add the status*/
+  /* The actual status box */
+  /* And text inside, don't confuse fonts as it breaks em above */
+}
+.widoco .noprint {
+  display: none;
+}
+.widoco div.syntaxmenu {
+  border: 1px dotted black;
+  padding: 0.5em;
+  margin: 1em;
+}
+.widoco .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media print {
+  .widoco div.syntaxmenu {
+    display: none;
+  }
+}
+.widoco div.exampleheader {
+  font-size: 90%;
+  float: left;
+  background: #F9F9F9;
+  color: #2F6FAB;
+  border: 1px dashed #2F6FAB;
+  border-bottom: 0px;
+  padding-top: 2px;
+}
+.widoco div.exampleheader span.exampleheader {
+  background: #F9F9F9;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 0px;
+}
+.widoco div.fssyntax pre,
+.widoco div.rdfxml pre,
+.widoco div.owlxml pre,
+.widoco div.turtle pre,
+.widoco div.manchester pre {
+  background-color: #F9F9F9;
+  border: 1px dashed #2F6FAB;
+  color: black;
+  line-height: 1.1em;
+  padding: 1em;
+  clear: both;
+  margin-left: 0em;
+}
+.widoco .status {
+  position: fixed;
+  left: 0em;
+  top: 0em;
+  text-align: right;
+  vertical-align: middle;
+  /* Square version of the inside span. Slightly larger */
+  width: 26em;
+  height: 26em;
+  z-index: -1;
+  opacity: 0.8;
+  /** From http://stackoverflow.com/questions/1080792/how-to-draw-vertical-text-with-css-cross-browser */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  /* also accepts left, right, top, bottom coordinates; not
+        * required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.widoco .status div {
+  display: block;
+  background: #005a9c;
+  color: white;
+  width: 24em;
+  padding-top: 0.3em;
+  padding-left: 0em;
+  padding-right: 5em;
+  padding-bottom: 0.3em;
+  /* Enable for debugging 
+        border: red thin solid;
+         */
+}
+.widoco .status div span {
+  font-family: "Tauri";
+  font-size: larger;
+}

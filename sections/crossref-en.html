@@ -1,0 +1,1107 @@
+<h2 id="crossreference" class="list">Cross reference for ReShare Vocabulary v0.2 classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by ReShare Vocabulary v0.2.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#DTC"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+      </li>
+      <li>
+         <a href="#Fact"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+      </li>
+      <li>
+         <a href="#Identity"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+      </li>
+      <li>
+         <a href="#Receiver"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Receiver">Receiver</a>
+      </li>
+      <li>
+         <a href="#Sender"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Sender">Sender</a>
+      </li>
+      <li>
+         <a href="#Signature"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature">Signature</a>
+      </li>
+   </ul>
+   <div class="entity" id="DTC">
+      <h3>Digital Transmission Contract<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC</p>
+      <div class="comment">
+         <span class="markdown">A Digital Transmisson Contract (DTC), used to create data immutability through bilateral signatures.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#customContent"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent">custom content</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#fact"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact">has fact</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#receiver"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver">receiver</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#receiverCustomContent"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverCustomContent">receiver custom content</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#receiverSig"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverSig">receiver signature</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#sender"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender">sender</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#senderCustomContent"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent">sender custom content</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#senderSig"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig">sender signature</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#timestamp"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#timestamp">timestamp</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Fact">
+      <h3>Fact<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact</p>
+      <div class="comment">
+         <span class="markdown">A resource checksum which is included in a DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#sha256Sum"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha256Sum">fact checksum (sha256)</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#sha384Sum"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha384Sum">fact checksum (sha384)</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#sha512Sum"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha512Sum">fact checksum (sha512)</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#factOrigin"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#factOrigin">fact origin</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#serialization"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization">fact serialization</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#fact"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact">has fact</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Identity">
+      <h3>Identity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity</p>
+      <div class="comment">
+         <span class="markdown">An identity of a transmission party.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Receiver"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Receiver">Receiver</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sender"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Sender">Sender</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#x509Cert"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#x509Cert">X509 certificate</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#certEncoding"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#certEncoding">X509 certificate encoding</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#identifies"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#identifies">identifies</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Receiver">
+      <h3>Receiver<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Receiver</p>
+      <div class="comment">
+         <span class="markdown">The receiver of a transmission.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Identity"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#receiver"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver">receiver</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Sender">
+      <h3>Sender<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Sender</p>
+      <div class="comment">
+         <span class="markdown">The data source (sender) of a transmission.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Identity"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#sender"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender">sender</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Signature">
+      <h3>Signature<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature</p>
+      <div class="comment">
+         <span class="markdown">A contract signature created by one of the transmission parties.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#sigData"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigData">signature data</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#sigType"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigType">signature type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#receiverSig"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverSig">receiver signature</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#senderSig"
+               title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig">sender signature</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#factOrigin"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#factOrigin">fact origin</a>
+      </li>
+      <li>
+         <a href="#fact"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact">has fact</a>
+      </li>
+      <li>
+         <a href="#identifies"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#identifies">identifies</a>
+      </li>
+      <li>
+         <a href="#receiver"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver">receiver</a>
+      </li>
+      <li>
+         <a href="#receiverSig"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverSig">receiver signature</a>
+      </li>
+      <li>
+         <a href="#sender"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender">sender</a>
+      </li>
+      <li>
+         <a href="#senderSig"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig">sender signature</a>
+      </li>
+      <li>
+         <a href="#sigType"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigType">signature type</a>
+      </li>
+   </ul>
+   <div class="entity" id="factOrigin">
+      <h3>fact origin<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#factOrigin</p>
+      <div class="comment">
+         <span class="markdown">The resource which is referenced by the fact.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="fact">
+      <h3>has fact<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact</p>
+      <div class="comment">
+         <span class="markdown">A fact included in a DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="identifies">
+      <h3>identifies<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#identifies</p>
+      <div class="comment">
+         <span class="markdown">Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Identity"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="receiver">
+      <h3>receiver<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver</p>
+      <div class="comment">
+         <span class="markdown">The data receiver of the underlying transmission of a DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Receiver"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Receiver">Receiver</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="receiverSig">
+      <h3>receiver signature<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverSig</p>
+      <div class="comment">
+         <span class="markdown">The contract signature created by the receiver of the DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Signature"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature">Signature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sender">
+      <h3>sender<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender</p>
+      <div class="comment">
+         <span class="markdown">The data source (sender) of the underlying transmission of a DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Sender"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Sender">Sender</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="senderSig">
+      <h3>sender signature<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig</p>
+      <div class="comment">
+         <span class="markdown">The contract signature created by the sender of the DTC.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Signature"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature">Signature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sigType">
+      <h3>signature type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigType</p>
+      <div class="comment">
+         <span class="markdown">The type of a contract signature.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Signature"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature">Signature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#customContent"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent">custom content</a>
+      </li>
+      <li>
+         <a href="#canonicalization"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#canonicalization">fact canonicalization</a>
+      </li>
+      <li>
+         <a href="#sha256Sum"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha256Sum">fact checksum (sha256)</a>
+      </li>
+      <li>
+         <a href="#sha384Sum"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha384Sum">fact checksum (sha384)</a>
+      </li>
+      <li>
+         <a href="#sha512Sum"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha512Sum">fact checksum (sha512)</a>
+      </li>
+      <li>
+         <a href="#serialization"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization">fact serialization</a>
+      </li>
+      <li>
+         <a href="#receiverCustomContent"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverCustomContent">receiver custom content</a>
+      </li>
+      <li>
+         <a href="#senderCustomContent"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent">sender custom content</a>
+      </li>
+      <li>
+         <a href="#sigData"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigData">signature data</a>
+      </li>
+      <li>
+         <a href="#timestamp"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#timestamp">timestamp</a>
+      </li>
+      <li>
+         <a href="#x509Cert"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#x509Cert">X509 certificate</a>
+      </li>
+      <li>
+         <a href="#certEncoding"
+            title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#certEncoding">X509 certificate encoding</a>
+      </li>
+   </ul>
+   <div class="entity" id="customContent">
+      <h3>custom content<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent</p>
+      <div class="comment">
+         <span class="markdown">The property linking a DTC to the custom content included by one of the parties. The object should be a literal with the JSON type (http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON). Abstract property, use the sub-properties instead.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#receiverCustomContent"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverCustomContent">receiver custom content</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#senderCustomContent"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent">sender custom content</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="canonicalization">
+      <h3>fact canonicalization<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#canonicalization</p>
+      <div class="comment">
+         <span class="markdown">Deprecated equivalent to the fact serialization. Kept for backwards compatibility.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#serialization"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization">fact serialization</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sha256Sum">
+      <h3>fact checksum (sha256)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha256Sum</p>
+      <div class="comment">
+         <span class="markdown">A SHA-256 checksum of a fact.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sha384Sum">
+      <h3>fact checksum (sha384)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha384Sum</p>
+      <div class="comment">
+         <span class="markdown">A SHA-384 checksum of a fact.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sha512Sum">
+      <h3>fact checksum (sha512)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha512Sum</p>
+      <div class="comment">
+         <span class="markdown">A SHA-512 checksum of a fact.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="serialization">
+      <h3>fact serialization<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization</p>
+      <div class="comment">
+         <span class="markdown">The serialization method used to create a fact checksum. Should be normalized, so that checksum verification is deterministic.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#canonicalization"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#canonicalization">fact canonicalization</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Fact"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact">Fact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="receiverCustomContent">
+      <h3>receiver custom content<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverCustomContent</p>
+      <div class="comment">
+         <span class="markdown">The receiver's custom content.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#customContent"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent">custom content</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="senderCustomContent">
+      <h3>sender custom content<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent</p>
+      <div class="comment">
+         <span class="markdown">The sender's custom content.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#customContent"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent">custom content</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sigData">
+      <h3>signature data<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigData</p>
+      <div class="comment">
+         <span class="markdown">The signature data.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Signature"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature">Signature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="timestamp">
+      <h3>timestamp<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#timestamp</p>
+      <div class="comment">
+         <span class="markdown">The timestamp of a DTC. Should be an ISO 8601 timestamp in UTC with the xsd:dateTime type.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DTC"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC">Digital Transmission Contract</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="x509Cert">
+      <h3>X509 certificate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#x509Cert</p>
+      <div class="comment">
+         <span class="markdown">The X.509 certificate of a transmission party. Should be the full certificate chain,     excluding the root certificate, encoded as base64 using the xsd:base64Binary literal type. Further encoding is specified in the certEncoding property.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Identity"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="certEncoding">
+      <h3>X509 certificate encoding<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#certEncoding</p>
+      <div class="comment">
+         <span class="markdown">Further specification of the X509 certificate encoding. Currently specified are 'X509'/'X509-single' for single certificates in ASN.1 DER notation, and 'PKCS7'/'X509-PKCS7-chain' for a certificate chain encoded as a PKCS#7 message.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/">http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Identity"
+                  title="http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity">Identity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
