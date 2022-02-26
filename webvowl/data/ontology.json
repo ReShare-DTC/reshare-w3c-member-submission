@@ -2,12 +2,12 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "undefined" ],
-    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/" ],
     "title" : {
-      "undefined" : "ReShare Vocabulary v0.2"
+      "undefined" : "ReShare Vocabulary v0.3"
     },
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "version" : "0.2",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "version" : "0.3",
     "description" : {
       "undefined" : "The ReShare (Reliable Data Sharing Through Digital Transmission contracts) vocabulary, described using W3C RDF Schema and the Web Ontology Language."
     },
@@ -15,7 +15,7 @@
       "priorVersion" : [ {
         "identifier" : "priorVersion",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.1/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
         "type" : "label"
       } ],
       "language" : [ {
@@ -27,13 +27,13 @@
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
-        "value" : "0.2",
+        "value" : "0.3",
         "type" : "label"
       } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
-        "value" : "ReShare Vocabulary v0.2",
+        "value" : "ReShare Vocabulary v0.3",
         "type" : "label"
       } ]
     }
@@ -49,26 +49,26 @@
     "id" : "11",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "12",
-    "type" : "owl:Class"
-  }, {
-    "id" : "13",
+    "id" : "14",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "16",
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "17",
     "type" : "rdfs:Literal"
   }, {
     "id" : "2",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "18",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "19",
-    "type" : "rdfs:Literal"
-  }, {
     "id" : "1",
     "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Literal"
   }, {
     "id" : "22",
     "type" : "rdfs:Literal"
@@ -76,51 +76,51 @@
     "id" : "4",
     "type" : "owl:Class"
   }, {
+    "id" : "7",
+    "type" : "rdfs:Literal"
+  }, {
     "id" : "26",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "28",
     "type" : "rdfs:Literal"
   }, {
     "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "38",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "13",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "9",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "31",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "33",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "15",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "34",
+    "id" : "20",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "21",
+    "id" : "41",
     "type" : "rdfs:Literal"
-  }, {
-    "id" : "7",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "37",
-    "type" : "owl:Thing"
   } ],
   "classAttribute" : [ {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Identity",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#Identity",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -150,20 +150,28 @@
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Signature",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#Signature",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -174,11 +182,11 @@
     "comment" : {
       "undefined" : "A contract signature created by one of the transmission parties."
     },
-    "id" : "12"
+    "id" : "15"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "13",
+    "id" : "18",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -186,7 +194,7 @@
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "16",
+    "id" : "17",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -200,36 +208,20 @@
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "18",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "19",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Fact",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#Fact",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -244,53 +236,69 @@
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
     "id" : "22",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Sender",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#Receiver",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "Sender",
-      "undefined" : "Sender"
+      "IRI-based" : "Receiver",
+      "undefined" : "Receiver"
     },
     "comment" : {
-      "undefined" : "The data source (sender) of a transmission."
+      "undefined" : "The receiver of a transmission."
     },
     "id" : "4",
     "superClasses" : [ "3" ]
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#DTC",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#DTC",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -305,88 +313,82 @@
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "9",
+    "id" : "28",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#Receiver",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#Sender",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "instances" : 0,
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "Receiver",
-      "undefined" : "Receiver"
+      "IRI-based" : "Sender",
+      "undefined" : "Sender"
     },
     "comment" : {
-      "undefined" : "The receiver of a transmission."
+      "undefined" : "The data source (sender) of a transmission."
     },
     "id" : "5",
     "superClasses" : [ "3" ]
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "30",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "33",
+    "id" : "38",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "15",
+    "id" : "13",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "34",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "9",
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
+      "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "21",
+    "id" : "31",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "7",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "20",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "37",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "41",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   } ],
   "property" : [ {
@@ -394,18 +396,18 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "6",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "8",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "14",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "17",
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "23",
@@ -414,22 +416,25 @@
     "id" : "24",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "27",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "28",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "29",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "31",
+    "id" : "30",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "32",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "25",
+    "id" : "33",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "35",
@@ -438,39 +443,42 @@
     "id" : "36",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "38",
+    "id" : "37",
     "type" : "owl:objectProperty"
   }, {
     "id" : "39",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "40",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "41",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "42",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "45",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha384Sum",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sha384Sum",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "range" : "2",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -480,25 +488,53 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "A SHA-384 checksum of a fact."
+      "undefined" : "A SHA-384 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
     "id" : "0"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#identifies",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#certEncoding",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "certEncoding",
+      "undefined" : "certificate encoding"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#identifies",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -511,50 +547,22 @@
       "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
     },
     "attributes" : [ "object" ],
-    "id" : "6"
-  }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#certEncoding",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "9",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "certEncoding",
-      "undefined" : "X509 certificate encoding"
-    },
-    "domain" : "3",
-    "comment" : {
-      "undefined" : "Further specification of the X509 certificate encoding. Currently specified are 'X509'/'X509-single' for single certificates in ASN.1 DER notation, and 'PKCS7'/'X509-PKCS7-chain' for a certificate chain encoded as a PKCS#7 message."
-    },
-    "attributes" : [ "datatype" ],
     "id" : "8"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#factOrigin",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "15",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#factOrigin",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "13",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -567,22 +575,22 @@
       "undefined" : "The resource which is referenced by the fact."
     },
     "attributes" : [ "object" ],
-    "id" : "14"
+    "id" : "12"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha256Sum",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "16",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sha256Sum",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "17",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -592,82 +600,53 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "A SHA-256 checksum of a fact."
+      "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
-    "id" : "17"
+    "id" : "16"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#x509Cert",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "21",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#x509Cert",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "20",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "x509Cert",
-      "undefined" : "X509 certificate"
+      "undefined" : "X.509 certificate"
     },
     "domain" : "3",
     "comment" : {
-      "undefined" : "The X.509 certificate of a transmission party. Should be the full certificate chain,     excluding the root certificate, encoded as base64 using the xsd:base64Binary literal type. Further encoding is specified in the certEncoding property."
+      "undefined" : "The public key certificate of a transmission party. Should be the full certificate chain,     excluding the root certificate, encoded as a character sequence. Further information about the certificate can be included in the certType and certEncoding properties. If Base64 is used for the character encoding, the xsd:base64Binary literal type should be used."
     },
     "attributes" : [ "datatype" ],
-    "id" : "20"
+    "id" : "19"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sha512Sum",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#serialization",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "range" : "18",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "sha512Sum",
-      "undefined" : "fact checksum (sha512)"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "A SHA-512 checksum of a fact."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "23"
-  }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#serialization",
-    "equivalent" : [ "25" ],
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "13",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -677,25 +656,81 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "The serialization method used to create a fact checksum. Should be normalized, so that checksum verification is deterministic."
+      "undefined" : "The serialization method used to create a verifiable fact checksum. Some string identifiers are defined in the specification of ReShare (see TODO: ref to ReShare)"
     },
     "attributes" : [ "datatype" ],
-    "id" : "24"
+    "id" : "23"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "11",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sha512Sum",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "21",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "sha512Sum",
+      "undefined" : "fact checksum (sha512)"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "A SHA-512 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#senderSig",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "15",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "senderSig",
+      "undefined" : "sender signature"
+    },
+    "domain" : "26",
+    "comment" : {
+      "undefined" : "The contract signature created by the sender of the DTC."
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#senderCustomContent",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "14",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -710,48 +745,20 @@
     "attributes" : [ "datatype" ],
     "id" : "27"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "12",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sender",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "5",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "senderSig",
-      "undefined" : "sender signature"
-    },
-    "domain" : "26",
-    "comment" : {
-      "undefined" : "The contract signature created by the sender of the DTC."
-    },
-    "attributes" : [ "object" ],
-    "id" : "28"
-  }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "4",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -766,20 +773,48 @@
     "attributes" : [ "object" ],
     "id" : "29"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigData",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "19",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sigEncoding",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "31",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "sigEncoding",
+      "undefined" : "signature encoding"
+    },
+    "domain" : "15",
+    "comment" : {
+      "undefined" : "The signature encoding. 'base64' is considered the default value, expressing that the (binary) signature data which is object to the sigData property is encoded using Base64."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sigData",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "22",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -787,27 +822,55 @@
       "IRI-based" : "sigData",
       "undefined" : "signature data"
     },
-    "domain" : "12",
+    "domain" : "15",
     "comment" : {
-      "undefined" : "The signature data. Should be encoded as base64 using the xsd:base64Binary literal type for reducing encoding overhead."
+      "undefined" : "The signature data, encoded as a character sequence. More information about the type and encoding can be provided with the sigType and sigEncoding properties. If Base64 is used for the character encoding, the literal type should be xsd:base64Binary."
     },
     "attributes" : [ "datatype" ],
-    "id" : "31"
+    "id" : "32"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverCustomContent",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "10",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#certType",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "28",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "certType",
+      "undefined" : "certificate type"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "The type of the certificate provided by the Identity. 'X509'/'X509-single' identify single X.509 certificates in ASN.1 DER notation, and 'PKCS7'/'X509-PKCS7-chain' identify an X.509 certificate chain encoded as a PKCS#7 message."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#receiverCustomContent",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "11",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -820,51 +883,22 @@
       "undefined" : "The receiver's custom content."
     },
     "attributes" : [ "datatype" ],
-    "id" : "32"
+    "id" : "34"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#canonicalization",
-    "equivalent" : [ "24" ],
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "34",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#receiver",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "4",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "canonicalization",
-      "undefined" : "fact canonicalization"
-    },
-    "domain" : "33",
-    "comment" : {
-      "undefined" : "Deprecated equivalent to the fact serialization. Kept for backwards compatibility."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "25"
-  }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiver",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "5",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -879,20 +913,48 @@
     "attributes" : [ "object" ],
     "id" : "35"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sigType",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "37",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#requestedFactOrigin",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "13",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "requestedFactOrigin",
+      "undefined" : "requested fact origin"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "The resource which was referenced by the receiver when initially requesting a contract. This property is used when the resource reference is updated by the sender during the contract generation handshake."
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#sigType",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "38",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -900,27 +962,27 @@
       "IRI-based" : "sigType",
       "undefined" : "signature type"
     },
-    "domain" : "12",
+    "domain" : "15",
     "comment" : {
-      "undefined" : "The type of a contract signature."
+      "undefined" : "The type of a contract signature. The object should be an OID URN to a cryptographic signature scheme. As of now, 'urn:oid:1.2.840.113549.1.1.10' is considered the default value, identifying the RSASSA-PSS signature scheme as specified in PKCS #1 v2.2."
     },
     "attributes" : [ "object" ],
-    "id" : "36"
+    "id" : "37"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#receiverSig",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "12",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#receiverSig",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "15",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -933,22 +995,22 @@
       "undefined" : "The contract signature created by the receiver of the DTC."
     },
     "attributes" : [ "object" ],
-    "id" : "38"
+    "id" : "39"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#timestamp",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "22",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#timestamp",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "41",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -958,30 +1020,30 @@
     },
     "domain" : "26",
     "comment" : {
-      "undefined" : "The timestamp of a DTC. Should be an ISO 8601 timestamp in UTC with the xsd:dateTime type."
+      "undefined" : "The timestamp of a DTC. Should be in the RFC3339 profile of ISO 8601, and should have the xsd:dateTimeStamp literal type."
     },
     "attributes" : [ "datatype" ],
-    "id" : "39"
+    "id" : "40"
   }, {
     "range" : "3",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "40"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "30",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#customContent",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
+    "range" : "10",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -994,27 +1056,27 @@
       "undefined" : "The property linking a DTC to the custom content included by one of the parties. The object should be a literal with the JSON type (http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON). Abstract property, use the sub-properties instead."
     },
     "attributes" : [ "datatype" ],
-    "id" : "41"
+    "id" : "43"
   }, {
     "range" : "3",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "42"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/#fact",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
     "range" : "1",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.3/",
         "type" : "iri"
       } ],
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
         "type" : "label"
       } ]
     },
@@ -1027,6 +1089,6 @@
       "undefined" : "A fact included in a DTC."
     },
     "attributes" : [ "object" ],
-    "id" : "43"
+    "id" : "45"
   } ]
 }
