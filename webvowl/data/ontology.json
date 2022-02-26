@@ -415,10 +415,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "27",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "28",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "29",
     "type" : "owl:objectProperty"
@@ -682,34 +682,6 @@
     "attributes" : [ "datatype" ],
     "id" : "25"
   }, {
-    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig",
-    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-    "range" : "12",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "senderSig",
-      "undefined" : "sender signature"
-    },
-    "domain" : "26",
-    "comment" : {
-      "undefined" : "The contract signature created by the sender of the DTC."
-    },
-    "attributes" : [ "object" ],
-    "id" : "27"
-  }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderCustomContent",
     "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
     "range" : "11",
@@ -736,6 +708,34 @@
       "undefined" : "The sender's custom content."
     },
     "attributes" : [ "datatype" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#senderSig",
+    "baseIri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+    "range" : "12",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "unstable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "senderSig",
+      "undefined" : "sender signature"
+    },
+    "domain" : "26",
+    "comment" : {
+      "undefined" : "The contract signature created by the sender of the DTC."
+    },
+    "attributes" : [ "object" ],
     "id" : "28"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#sender",
@@ -965,7 +965,7 @@
   }, {
     "range" : "3",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#customContent",
@@ -998,7 +998,7 @@
   }, {
     "range" : "3",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "42"
   }, {
     "iri" : "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#fact",
