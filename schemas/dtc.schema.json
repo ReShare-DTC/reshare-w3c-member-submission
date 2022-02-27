@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/dtc.schema.json",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/dtc.schema.json",
   "title": "Digital Transmission Contract (DTC)",
   "description": "A Digital Transmission Contract (DTC), serialized as a JSON object.",
-  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/partial_dtc.schema.json",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/partial_dtc.schema.json",
   "properties": {
     "sender": {
       "required": [

@@ -1,6 +1,6 @@
 {
   "@context": {
-    "fc": "http://i5.pages.rwth-aachen.de/factdag/reshare-ontology/0.2/#",
+    "fc": "https://w3id.org/reshare/ontology/0.2/#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "facts": {
       "@id": "fc:fact",
