@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/error/error_message.schema.json",
-  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/message.schema.json",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/error/error_message.schema.json",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/message/message.schema.json",
   "title": "Error message",
   "description": "A generic error message.",
   "properties": {

@@ -251,9 +251,6 @@
     <section id="primer-background">
       <h3>Background</h3>
       <div class="tlcontent">
-        <p class="issue">
-          TODO: improve highlightings/references in this section
-        </p>
         <p>
           <!-- Introduce the challenge -->
           <a>Data sharing</a> is a central concept of the Web.
@@ -270,12 +267,11 @@
           Solving the challenges of data <a>trustworthiness</a> and <a>reliability</a> has shown to enable a variety of novel business models based on data-driven decision making [[?OEZER-TRUST]], where the data sharing process is made transparent to the data users through the ability to reliably trace the provenance of data.
           Further, data sharing in inter-organizational collaborations has shown to provide the basis for benefits such as cost reductions, increased profit margins, and general improvements in product quality and safety [[?TowardsIoP]].
         </p>
-        <p class="issue">Headings in the following should be changed?</p>
         <section class="notoc">
           <h3>The Challenge of Data Trustworthiness</h3>
           <p>
-            Wherever the risk of damages induced by faulty data is significant <span class="ednote">is that understandable?</span>, the user should carefully assess the trustworthiness of the data.
-            That is, users require some rationale for trusting the authenticity and correctness of data.
+            Wherever corrupted or forged data imposes a relevant risk, the user should carefully assess the trustworthiness of its data.
+            That is, users need some rationale for trusting the authenticity and correctness of data.
             This rationale may be a strong trust relationship with the data source, some form of digital proof of authenticity and integrity, or even the result of manual data curation.
           </p>
         </section>
@@ -290,11 +286,10 @@
           </p>
         </section>
         <section class="notoc">
-          <h3>Relevance for the Web</h3>
-          <p class="issue">Improve heading</p>
+          <h3>Relevance of the Web</h3>
           <p>
             <!-- We use open Web tech! This is good! -->
-            The Web is a prime candidate to reliably enable data sharing as it is commonly used to exchange information between different stakeholders.
+            The Web is a prime candidate to enable reliable data sharing as it is commonly used to exchange information between different stakeholders.
             As the importance of Open Data increases steadily, a system for trustworthy and reliable data sharing built using open Web standards and technology can both profit from the inherent data sharing capabilities of the Web, and facilitate integration into an Open Data paradigm.
           </p>
 
@@ -303,10 +298,7 @@
             Existing approaches to trustworthy and reliable data sharing, such as mutually trusted mediators and distributed ledgers, might be applicable to small-scale use cases with either pre-existing trust relations or low requirements to system scalability.
             However, Web-scaled systems have specific, more challenging needs.
             First, the possible limitation by a trust assumption in a system would severely limit its potential, as common trust in a central mediator can hardly be assumed in a global network such as the Web.
-            Second, existing non-trust solutions, such as manual data curation and even distributed ledger technology do not meet tomorrow's needs towards scalability for efficient usage on the whole Web.
-          </p>
-          <p class="issue">
-            ("raw" feedback, partially German) Kann man nicht auch einwerfen, dass das nicht mehr zwingend in einer (automatisierten) Art geht, die mit den Datenmengen und -raten klar kommt?
+            Second, existing no-trust solutions, such as manual data curation and even distributed ledger technology do not meet tomorrow's needs towards scalability for efficient usage on the whole Web.
           </p>
         </section>
       </div>
@@ -315,9 +307,8 @@
 
     <section id="primer-terminology" class="informative">
       <h3>Terminology</h3>
-      <div class="tlcontent">
-        <p class="issue">Some glue?</p>
-      </div>
+
+      <p>In the following, we introduce the necessary terminology used throughout the document.</p>
 
       <section id="primer-terminology-concepts" class="informative">
         <h3>Concepts</h3>
@@ -381,18 +372,14 @@
             The sending party in a data transmission.
             This term is always used in the context of a data transmission and refers to the direction of dataflow.
             Each sender has an associated globally unique identifier in the form of an <a>IRI</a>.
+            Means by which this <a>IRI</a> can unambiguously identify a party are further discussed in Section <a href="#considerations-iricertlink"></a>.
           </dd>
           <dt><dfn>receiver</dfn></dt>
           <dd>
             The receiving party in a data transmission.
             This term is always used in the context of a data transmission and refers to the direction of dataflow.
             Each sender has an associated globally unique identifier in the form of an <a>IRI</a>.
-            <p class="issue">
-              TODO: Why and according to which standard can sender and receiver IRIs be generated?
-              A reference for using IRIs as identities can definitely be found in the oauth or openid connect specifications, as these use the same paradigm.
-              Also, look for specifications/notes in the context of identifying authorities in LD, e.g. in the security vocabulary. <br />
-              This is a larger TODO!
-            </p>
+            Means by which this <a>IRI</a> can unambiguously identify a party are further discussed in Section <a href="#considerations-iricertlink"></a>.
           </dd>
           <dt><dfn>resource</dfn></dt>
           <dd>
@@ -414,16 +401,6 @@
     </section>
     <section id="primer-example-scenario" class="informative">
       <h3>Example Scenario</h3>
-
-      <p class="ednote">
-        Needs review
-      </p>
-
-      <p class="ednote">
-        <em>Storyline:</em><br />
-        Introduce a concrete example of a data transmission, and trustworthiness (among each other and possibly towards a third party) has to be established.
-        Show here without DTCs, then later with DTCs (including the two signatures).
-      </p>
 
       <div class="tlcontent">
         <p>
@@ -523,10 +500,6 @@
     <section id="dtc-signature-paradigm" class="informative">
       <h3>Mutual Commitment through Bilateral Signatures</h3>
       <div class="tlcontent">
-        <p class="issue">
-          Still a huge wall of text!
-        </p>
-        <p class="issue">Rewrite section: Focus more on on-demand signatures</p>
         <p>
           DTCs leverage digital signatures to create <a data-lt="immutability">strong data immutability</a> within a defined scope, which we further describe below.
           DTCs deviate from the common paradigm of document signatures by enforcing the signatures to be created during data transmission, thus allowing to involve a second party, the <a>receiver</a>, into to signature process.
@@ -550,9 +523,6 @@
         </dl>
         <p class="note">
           The terms of pre-created and on-demand signatures are not canonical, as a clear differentiation between these signature paradigms can be rarely found in literature.
-        </p>
-        <p class="ednote">
-          While this discussion technically covers terminology, it is not located in Section <a href="#primer-terminology"></a>, as it is only relevant for discussing the signature paradigm in this section and not used throughout the rest of the document.
         </p>
 
         <p>
@@ -673,7 +643,7 @@
               <dd>
                 The <a>IRI</a> of the <a>sender</a>.
                 SHOULD be related to the public key certificate contained in the <code>cert</code> field.
-                A discussion on linking the certificate to the authority <a>IRI</a> can be found in <span class="issue">(some ref to considerations)</span>.
+                A discussion on linking the certificate to the authority <a>IRI</a> can be found in Section <a href="#considerations-iricertlink"></a>.
               </dd>
               <dt><code>cert</code></dt>
               <dd>
@@ -801,7 +771,6 @@
               </dd>
               <dt><dfn data-lt="dtc-facts-serialization" data-lt-noDefault><code>serialization</code></dfn></dt>
               <dd>
-                <p class="ednote">Needs review</p>
                 A serialization identifier.
                 In this document, we specify a baseline set of serialization identifiers.
                 Every implementation MUST be able to interpret these serialization identifiers.
@@ -874,7 +843,8 @@
         </p>
 
         <p>
-          We define two schemas: The schema for a <a href="schemas/partial_dtc.schema.json" class="external" target="_blank">schema for a partial DTC</a>, and a <a href="schemas/dtc.schema.json" class="external" target="_blank">schema for a complete DTC</a>, which extends the partial schema by requiring the fields to be present.
+          We define three schemas: The schema for a <a href="schemas/partial_dtc.schema.json" class="external" target="_blank">partial DTC</a>, the schema for a <a href="schemas/dtc.schema.json" class="external" target="_blank">complete DTC</a>, and the schema for a <a href="schemas/dtc_only_signatures_missing.schema.json" class="external" target="_blank">partial DTC, where only the two signatures may be missing</a>.
+          The two latter schemas extend the <a href="schemas/partial_dtc.schema.json" class="external" target="_blank">partial DTC schema</a> by requiring the fields to be present.
         </p>
 
         <p>
@@ -1030,9 +1000,6 @@
           </ol>
         </section>
       </section>
-      <p class="issue">
-        Summarizing statement?
-      </p>
     </section>
     <section id="dtc-signatures">
       <h2>Signature Creation & Verification</h2>
@@ -1112,7 +1079,8 @@
           <ol>
             <li>
               <b>Serialize:</b>
-              The DTC MUST be serialized as JSON according to Section <a href="#dtc-representations"></a>. <span class="issue">Differentiate between complete and partial DTC (with and without signatures!)</span>
+              The (potentially incomplete) DTC MUST be serialized as JSON according to Section <a href="#dtc-representations"></a>.
+              This representation MUST match the schema of a <a href="schemas/dtc_only_signatures_missing.schema.json" class="external" target="_blank">partial DTC, where only the two signatures may be missing</a>, as defined in Section <a href="#dtc-representations"></a>.
             </li>
             <li>
               <b>Remove unsigned content:</b>
@@ -2212,14 +2180,12 @@
           Depending on the use case, it MAY be desirable to extend on these verification steps, by e.g. verifying that the owner of the certificates in the <a data-lt="dtc-receiver">receiver</a> and <a data-lt="dtc-sender">sender</a> fields are as expected.
           While such extensions are not part of this verification mechanism, we advise implementors to carefully review that no unverified assumptions are made about the contents of a DTC.
         </p>
-        <p class="issue">
-          Summarize abstract <br>
-          Something along the lines of: <br>
-          ReShare with its ontology and DTC allows to... <br>
-          One aspect not covered before by Web technology/standards, but essential in the context of data-driven or industrial data sharing settings...
-        </p>
       </div>
     </section>
+    <p>
+      ReShare with its specification of DTCs, the ontology, and the DTC creation and verification process, enables users to achieve data trustworthiness and reliability in a scalable manner.
+      In this context, the central aspect not covered before by Web technology, but essential in the context of data-driven or industrial data sharing settings is the accountable involvement of both parties into a data transmission process, which is implemented using bilateral signatures in ReShare.
+    </p>
   </section>
   <section id="considerations" class="informative appendix">
     <h2>Considerations</h2>

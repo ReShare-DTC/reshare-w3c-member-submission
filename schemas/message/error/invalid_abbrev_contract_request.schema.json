@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/error/invalid_abbrev_contract_request.schema.json",
+  "$id": "https://w3id.org/reshare/spec/authors-draft/schemas/message/error/invalid_abbrev_contract_request.schema.json",
   "title": "InvalidAbbrevContractRequest error message",
-  "$ref": "https://i5.pages.rwth-aachen.de/factdag/reshare-w3c-member-submission/schemas/message/error/error_message.schema.json",
+  "$ref": "https://w3id.org/reshare/spec/authors-draft/schemas/message/error/error_message.schema.json",
   "properties": {
     "messageType": {
       "const": "InvalidAbbrevContractRequest"
