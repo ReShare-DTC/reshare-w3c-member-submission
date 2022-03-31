@@ -1,83 +1,98 @@
 {
   "@context": {
-    "rs": "https://w3id.org/reshare/ontology/0.2/#",
+    "fc": "https://w3id.org/reshare/ontology/0.3/#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "baseIRI": "@id",
     "facts": {
-      "@id": "rs:fact",
+      "@id": "fc:fact",
       "@context": {
         "factID": {
-          "@id": "rs:factOrigin",
+          "@id": "fc:factOrigin",
           "@type": "@id"
         },
         "sha256": {
-          "@id": "rs:sha256Sum",
+          "@id": "fc:sha256Sum",
           "@type": "xsd:hexBinary"
         },
         "sha384": {
-          "@id": "rs:sha384Sum",
+          "@id": "fc:sha384Sum",
           "@type": "xsd:hexBinary"
         },
         "sha512": {
-          "@id": "rs:sha512Sum",
+          "@id": "fc:sha512Sum",
           "@type": "xsd:hexBinary"
         },
-        "serialization": "rs:serialization"
+        "serialization": "fc:serialization"
       }
     },
     "sender": {
-      "@id": "rs:sender",
+      "@id": "fc:sender",
       "@context": {
-        "authID": "rs:identifies",
-        "type": "rs:certEncoding",
+        "authID": {
+          "@id": "fc:identifies",
+          "@type": "@id"
+        },
+        "type": "fc:certType",
         "cert": {
-          "@id": "rs:x509Cert",
+          "@id": "fc:x509Cert",
           "@type": "xsd:base64Binary"
-        }
+        },
+        "encoding": "fc:certEncoding"
       }
     },
     "receiver": {
-      "@id": "rs:receiver",
+      "@id": "fc:receiver",
       "@context": {
-        "authID": "rs:identifies",
-        "type": "rs:certEncoding",
+        "authID": {
+          "@id": "fc:identifies",
+          "@type": "@id"
+        },
+        "type": "fc:certType",
         "cert": {
-          "@id": "rs:x509Cert",
+          "@id": "fc:x509Cert",
           "@type": "xsd:base64Binary"
-        }
+        },
+        "encoding": "fc:certEncoding"
       }
     },
     "senderSig": {
-      "@id": "rs:senderSig",
+      "@id": "fc:senderSig",
       "@context": {
-        "type": "rs:sigType",
+        "type": {
+          "@id": "fc:sigType",
+          "@type": "@id"
+        },
         "sig": {
-          "@id": "rs:sigData",
+          "@id": "fc:sigData",
           "@type": "xsd:base64Binary"
-        }
+        },
+        "encoding": "fc:sigEncoding"
       }
     },
     "receiverSig": {
-      "@id": "rs:receiverSig",
+      "@id": "fc:receiverSig",
       "@context": {
-        "type": "rs:sigType",
+        "type": {
+          "@id": "fc:sigType",
+          "@type": "@id"
+        },
         "sig": {
-          "@id": "rs:sigData",
+          "@id": "fc:sigData",
           "@type": "xsd:base64Binary"
-        }
+        },
+        "encoding": "fc:sigEncoding"
       }
     },
     "senderCustomContent": {
-      "@id": "rs:senderCustomContent",
+      "@id": "fc:senderCustomContent",
       "@type": "@json"
     },
     "receiverCustomContent": {
-      "@id": "rs:receiverCustomContent",
+      "@id": "fc:receiverCustomContent",
       "@type": "@json"
     },
     "timestamp": {
-      "@id": "rs:timestamp",
-      "@type": "xsd:dateTime"
+      "@id": "fc:timestamp",
+      "@type": "xsd:dateTimeStamp"
     }
   }
 }

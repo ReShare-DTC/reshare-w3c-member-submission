@@ -468,35 +468,6 @@
   <section id="digital-transmission-contracts">
     <h2>Digital Transmission Contracts (DTCs)</h2>
 
-    <div class="tlcontent">
-      <div class="issue">
-        Add an overview to the components of ReShare!
-        Either in this section, or put an "Overview"/... Section inbetween
-        <br><br>
-        Idea for an overview figure: "Layer"-like
-        <ul>
-          <li>Data Transmission layer</li>
-          <li>DTC Generation layer (not necessarily dependent of the transmission layer</li>
-          <li>DTC Storage layer (can be co-located with data storage)</li>
-          <li>DTC Verification layer</li>
-        </ul>
-        These are not really layers per-se, but rather components or processes/...?
-      </div>
-      <p>
-        DTCs are the central data structure of <em>ReShare</em>, and allow a <a>sender</a> and <a>receiver</a> to mutually commit to a data transmission of one or more <a>resources</a> through a bilaterally signed digital contract.
-      </p>
-      <p>
-        A mutually signed DTC can then be used to unambiguously prove the explicit commitment of both parties to the data transmission towards any third party.
-      </p>
-      <p>
-        A DTC is <em>minimally</em> bound to
-      <ul>
-        <li>the transmission parties, i.e., <a>sender</a> and <a>receiver</a></li>
-        <li>the state of the transmitted resources</li>
-        <li>a timestamp.</li>
-      </ul>
-    </div>
-
     <section id="dtc-signature-paradigm" class="informative">
       <h3>Mutual Commitment through Bilateral Signatures</h3>
       <div class="tlcontent">
@@ -685,9 +656,10 @@
               <dt><code>type</code></dt>
               <dd>
                 The signature type used.
-                MUST always be set to <code>"1.2.840.113549.1.1.10"</code>, which is the
+                MUST always be set to <code>"urn:oid:1.2.840.113549.1.1.10"</code>, which is the
                 <a href="https://datatracker.ietf.org/doc/html/rfc3061">Object Identifier (OID)</a> [[RFC3061]] of the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1"><code>RSASSA-PSS</code></a> signature scheme as defined in <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1">PKCS #1 v2.2</a>
                 [[RFC8017]].
+                We use the <a href="https://www.rfc-editor.org/rfc/rfc3001">URN Namespace of Object Identifiers</a> [[RFC3001]] to make the identifier interpretable as an IRI.
                 The purpose of this field is both for the data structure to be self-describing, and to allow for possible extensions of other signature schemes.
               </dd>
               <dt><code>encoding</code></dt>
@@ -775,7 +747,6 @@
                 In this document, we specify a baseline set of serialization identifiers.
                 Every implementation MUST be able to interpret these serialization identifiers.
                 Extensions to these identifiers MAY be specified in the future.
-                A discussion of conceivable approaches to extending the serialization identification scheme can be found in Section <a href="#considerations"></a> <span class="issue">concretize ref later</span>.
                 <ul>
                   <li><code>"binary"</code>: A (trivial) binary representation of the <a>fact</a></li>
                   <li><code>"string"</code>: A (trivial) string representation of the <a>fact</a></li>
@@ -883,7 +854,7 @@
           </p>
           <p class="note">In the following examples, the misuse of the triple-dot notation denotes that the rest of the JSON structure is not changed. As it is only used in informative examples, it does not violate the normative character of this section.</p>
           <ol>
-            <li>The following static <code>@context</code> object MUST be added to the root of the DTC object:
+            <li>The following static <code>@context</code> object (corresponding to version 0.3 of the ReShare ontology) MUST be added to the root of the DTC object:
               <pre class="example" data-include="examples/dtc-jsonld-context.jsonld" title="DTC JSON-LD context"></pre>
             </li>
             <li>
@@ -1302,6 +1273,7 @@
         <p>
           The benefits of the independence of DTC generation to the data transmission are expected to outweigh the effects of the increased overhead in most use cases.
           Thus, we consider the complete 3-way handshake the default handshake version.
+          A brief elaboration on this discussion can be found in Section <a href="#considerations-2or3wayhs"></a>.
         </p>
 
         <p>
@@ -2190,14 +2162,10 @@
   <section id="considerations" class="informative appendix">
     <h2>Considerations</h2>
 
-    <p class="issue">
-      TODO: Brief introduction
-    </p>
+    In the following section, we briefly elaborate on some of the design decisions and considerations w.r.t. ReShare.
 
     <section id="considerations-iricertlink" class="informative">
       <h2>Linking Authority IRIs to Public Key Certificates</h2>
-
-      <p class="issue"><code>notoc</code>?</p>
 
       <p>
         The information about the two signing parties of a DTC include a public key certificate and an <a>IRI</a> per party.
@@ -2224,76 +2192,24 @@
       </p>
     </section>
 
-
-    <section class="notoc informative">
-      <h2>Miscellaneous</h2>
-
-      <p class="ednote">
-        Below is an ad-hoc collection of too argumentative passages from the document above.
+    <section id="considerations-2or3wayhs" class="informative">
+      <h2>DTC Generation: Two Handshake Versions</h2>
+      <p>
+        We have introduced the shortened 2-way handshake as a way to reduce the communication overhead in an application scenario with high communication latencies.
+        However, this shortened version requires that the transmission of the data which is signed in a given DTC is completed before DTC generation.
+        With the complete 3-way handshake, the DTC generation is completely independent of the underlying data transmission, except that the <a>receiver</a> has to know which resources are transmitted.
+      </p>
+      <p>
+        The sequentiality arising from a dependency on the data transmission has practical disadvantages in many cases, such as in increased management and implementation overhead by more closely integrating the data transmission process into the DTC generation mechanism.
+        Given the context system, configuration or implementation changes in the data transmission backend might be necessary in order to implement the necessary pre-sharing to allow for a short handshake.
       </p>
 
-      <div>
-        <p>
-          Other recent work tackles the challenge of applying a cryptographic paradigm to Linked Data, such as [[[LD-PROOFS]]] [[LD-PROOFS]], [[[SECURITY-VOCABULARY]]] [[SECURITY-VOCABULARY]], and [[[URDNA2015]]] [[URDNA2015]].
-          <span class="issue">What is their goal? Rather outline the goals of recent work and delimitate them from those of ReShare?</span>
-          Combining such approaches with <em>ReShare</em> in a production-ready state constitutes a promising opportunity for establishing a unified application of cryptography to Linked Data.
-        </p>
-        <p class="issue">
-          Discuss more in-detail?
-          What should be the focus of such a detailed section?
-        </p>
-        <p class="ednote">
-          Do we want to mention <a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials</a> or <a href="https://www.w3.org/2017/05/vc-data-model/CGFR/2017-05-01/">Verifiable Claims</a> here?
-          IMO, these are not directly related, as these cover the specific use case where we have an issuer, a holder, and a verifier, and the specifications deal with the special challenges of this paradigm.
-        </p>
-      </div>
-
-      <div>
-        <p>
-          We argue that due to the novelty and specificity of the concept of DTCs, the semantic structure of a DTC can hardly be expressed through existing vocabularies and ontologies.
-          However, if other ontologies covering parts of a DTC's content, e.g., [[[SECURITY-VOCABULARY]]] [[SECURITY-VOCABULARY]], find a greater acceptance in the future, it would be desirable to integrate such ontologies in future revisions of the <em>ReShare ontology</em>.
-        </p>
-      </div>
-
-      <div>
-        <p class="ednote">
-          Possibly something about that we tried a stateful approach, ...
-        </p>
-      </div>
-
-      <div>
-        <p class="ednote">Stuff about 2-way vs 3-way handshake:</p>
-
-        <p>
-          One critical decision w.r.t. the design of the DTC generation handshake is its dependence of the underlying data transmission.
-          With the complete 3-way handshake, the DTC generation is completely independent of the underlying data transmission, except that the <a>receiver</a> has to know which resources are transmitted.
-        </p>
-        <p>
-          However, if we take the assumption that the data transmission itself has been completed before DTC generation, this allows for a shorter DTC generation handshake, as information can be pre-shared in the data transmission.
-        </p>
-        <p>
-          A dependency on the data transmission also has practical disadvantages, such as in increased management and implementation overhead by more closely integrating the data transmission process into the DTC generation mechanism.
-          Given the context system, configuration or implementation changes in the data transmission backend might be necessary in order to implement the necessary pre-sharing to allow for a short handshake.
-        </p>
-        <p class="issue">
-          Rather formulate as a warning.
-          There is a reason that the 3-way handshake is default.
-        </p>
-        <p>
-          We leave the evaluation of the tradeoff between the dependency on completed transmission processes and the additional overhead by the 3-way handshake to the implementation, as it is use-case specific.
-        </p>
-      </div>
-
-      <div class="ednote">
-        Future Work:
-        <ul>
-          <li>Look into handshakes/DTCs with multiple entities</li>
-          <li>Adding DTC confirmations (all parties confirmed the full DTC, aka DTC Confirmation)</li>
-          <li>...</li>
-        </ul>
-      </div>
-
+      <p>
+        We therefore consider the complete 3-way handshake the default handshake, but still specify the shortened 2-way handshake for special high-latency environments.
+        Without a strong argument against it, we advise to use the 3-way handshake.
+      </p>
     </section>
+
   </section>
 
   <!-- Only appendix from here -->

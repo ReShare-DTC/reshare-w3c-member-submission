@@ -13,12 +13,12 @@
     "authID": "http://example.com/receiver"
   },
   "senderSig": {
-    "type": "1.2.840.113549.1.1.10",
+    "type": "urn:oid:1.2.840.113549.1.1.10",
     "encoding": "base64",
     "sig": "S82Al/YgpfjywjagQ03tjr8WT2oiMSkuYGA5hoXL/LCZHJhR4UGuXyQe1lJ6+yDRiN8FbKcp6ZrClb645rKpIK9UP/Y50wOo/vXCdeUGRqWj4NduoJsBKAP9O4QfQQkT9POHwcbYDsbvEGm3M7fh7mrOn6PzQQgq8vNGayVP5VmFLofxhArc2cy7/TthDl5sBwngpIokHUGOIE+RXasifJ/KS+DALU2s51EZzP2NuTbOvC2328UD5yhvHTopwqn3OrMWbKjF8UUDFjQHYx383hrK3VPjqfrMMNT3OHiJB6t9pJwZ3lmD3PV0Axp6k1XV+oxckBaYN7dCNneQn+zkcw=="
   },
   "receiverSig": {
-    "type": "1.2.840.113549.1.1.10",
+    "type": "urn:oid:1.2.840.113549.1.1.10",
     "encoding": "base64",
     "sig": "P70POEihM3V+pX+lPmvyoDzhERRuuat4P+jGIN/ME1n4hrl9vHb7l8yXy04iT2lNRXv2wkPfPC55nNCTCjWkPhF9Ca6KM6km0BHanPT9J7DZYuCes3RiPwEqO2UsVVZMxj/kMpwu0X23+SHjpAycGY7M/ZRG5iasQiu4N4f/O6pmNTOE6AqpgdhqACqUInbCN3afbdIUnFdbQSRn16VKmrmgUtus5XrVMsCEEZ3xlw8Pl+1toHgWllK4bnm3+DO4wdNb9wvM5TMrqCGHGZOkkxdlZ2pK3uSHuWtvifA49Ks113giNz6ZNjbWvmq9AJRY8/qVQUCBwZaBeSBqZRUMMw=="
   },
@@ -46,8 +46,8 @@
   ],
   "timestamp": "2021-04-15T21:50:29.940Z",
   "senderCustomContent": {
-    "authorizationMethod": "PublicKey",
-    "authorizationSuccessful": true,
+    "authMethod": "PublicKey",
+    "authSuccessful": true,
     "authUserId": "user123456"
   },
   "receiverCustomContent": {
