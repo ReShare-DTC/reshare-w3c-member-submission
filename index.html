@@ -12,10 +12,11 @@
   <script class="remove">
     // All config options at https://respec.org/docs/
     var respecConfig = {
-      specStatus: "Member-SUBM",
+      specStatus: "unofficial",
+      latestVersion: null,
       shortName: "reshare",
       subtitle: "Scalable Reliability for Data Sharing on the Web",
-      submissionCommentNumber: "??", // necessary according to https://respec.org/docs/#w3c
+      //submissionCommentNumber: "??", // necessary according to https://respec.org/docs/#w3c
       authors: [
         {
           name: "Simon Mangel",
@@ -134,7 +135,7 @@
 
   <!-- JS & CSS for toggling Editor's Notes and issues 
   Can simply be removed or commented out to disable -->
-  <script>
+  <!--<script>
     var ednotes = true;
     $(function () {
       $('#respec-ui').append("<span><input type=\"image\" id=\"toggleEdnote\" src=\"https://img.shields.io/badge/Editor's_Notes-On-green.svg\" /></span>");
@@ -175,7 +176,7 @@
       min-width: 3.5em;
       height: 2.5em;
     }
-  </style>
+  </style>-->
 </head>
 
 <body>
@@ -187,8 +188,8 @@
   <!-- ABSTRACT -->
   <section id="abstract">
     The ReShare system constitutes a uniform approach to ensure accountable and trustworthy data sharing and collaboration in Open Data ecosystems based on Digital Transmission Contracts (DTCs).
-    DTCs are bilaterally signed digital records immutably certifying to the data and context of a data transmission without the typical overhead of distributed ledger technologies.
-    By leveraging open Web technologies, a simple and common cryptography architecture, and a bilateral signature paradigm, the system promises superior performance and scalability to common approaches such as manual records management or blockchain-based solutions, while providing immutability and fraud protection guarantees sufficient for a variety of use cases, such as data accountability and liability assurance in aircraft manufacturing.
+    DTCs are bilaterally signed digital records immutably certifying the data and context of a data transmission without the typical overhead of distributed ledger technologies.
+    By leveraging open Web technologies, a simple and common cryptography architecture, and a bilateral signature paradigm, the system promises superior performance and scalability to common approaches such as manual records management or blockchain-based solutions while providing immutability and fraud protection guarantees sufficient for a variety of use cases, such as data accountability and liability assurance in aircraft manufacturing.
     In this document, we specify (1) the structure and representations of DTCs, (2) the <i>ReShare ontology</i> used to embed DTCs into the Semantic Web, and (3) the protocol and necessary mechanisms to create and verify DTCs.
   </section>
   <!-- DOCUMENT STATUS -->
@@ -206,20 +207,18 @@
 
       <p>
         Especially in the context of data-driven business models, data <a>trustworthiness</a> and <a>reliability</a> are extremely important to minimize data quality-related risks in the business model.
-        Therefore, an approach able to both guarantee these guarantees in the context of <a>data sharing</a>, and scale up to the future needs w.r.t. data throughput, is needed.
-      </p>
-
-      <p>
-        The relevance of inter-organizational data sharing is stressed by the vision of an <i>Internet of Production</i> (IoP), where open data sharing approaches leverage cross-domain collaboration, resulting in a multitude of benefits for all participants [[?TowardsIoP]].
+        Therefore, an approach, which is able to guarantee both of these properties in the context of <a>data sharing</a>, and scale up to the future needs w.r.t. data throughput, is needed.
+        The relevance of inter-organizational data sharing is stressed by the vision of an <i>Internet of Production</i>
+        (IoP), where open data sharing approaches leverage cross-domain collaboration, resulting in a multitude of benefits for all participants [[?TowardsIoP]].
       </p>
 
       <p>
         In this document, we describe <em><b>ReShare</b> (Reliable Data Sharing through Digital Transmission Contracts)</em>.
         <em>ReShare</em> provides data integrity, authenticity, and immutability in data exchanges between two parties through digital contracting using on-demand bilateral signatures.
-        By establishing an irrefutable commitment by the two parties to the data transmission, data trustworthiness and reliability emerge.
+        By establishing an irrefutable commitment by the two parties to the data transmission, data trustworthiness, and reliability emerge.
       </p>
       <p>
-        <em>ReShare</em> is a unified solution for the Web, built from open Web technology, and adresses a severe research gap.
+        <em>ReShare</em> is a unified solution for the Web, built from open Web technology, and adresses an important research gap.
         That is, ReShare is both highly scalable, and does not rely on pre-existing trust relations, which both are essential requirements in the context of the Web.
       </p>
       <!-- Delimitation/relation to other current work -->
@@ -243,7 +242,7 @@
     <h2>A Primer to Data Sharing</h2>
     <div class="tlcontent">
       <p>
-        For a formal understanding of data sharing and its applications, Section <a href="#primer-background"></a> gives an introduction in to data sharing and Section <a href="#primer-terminology"></a> formalizes the used terminology.
+        For a formal understanding of data sharing and its applications, Section <a href="#primer-background"></a> gives an introduction to data sharing, and Section <a href="#primer-terminology"></a> formalizes the used terminology.
         In Section <a href="#primer-example-scenario"></a>, we introduce a use case scenario which we use throughout the remainder of the document for clarifications and examples.
       </p>
     </div>
@@ -264,8 +263,8 @@
 
         <p>
           <!-- State benefits of solving -->
-          Solving the challenges of data <a>trustworthiness</a> and <a>reliability</a> has shown to enable a variety of novel business models based on data-driven decision making [[?OEZER-TRUST]], where the data sharing process is made transparent to the data users through the ability to reliably trace the provenance of data.
-          Further, data sharing in inter-organizational collaborations has shown to provide the basis for benefits such as cost reductions, increased profit margins, and general improvements in product quality and safety [[?TowardsIoP]].
+          Solving the challenges of data <a>trustworthiness</a> and <a>reliability</a> has been shown to enable a variety of novel business models based on data-driven decision making [[?OEZER-TRUST]], where the data sharing process is made transparent to the data users through the ability to reliably trace the provenance of data.
+          Further, data sharing in inter-organizational collaborations has been shown to provide the basis for benefits such as cost reductions, increased profit margins, and general improvements in product quality and safety [[?TowardsIoP]].
         </p>
         <section class="notoc">
           <h3>The Challenge of Data Trustworthiness</h3>
@@ -278,11 +277,12 @@
         <section class="notoc">
           <h3>The Challenge of Data Reliability</h3>
           <p>
-            Especially in safety-critical environments, the data user might need confidence in the reliability of data, i.e., that the data itself is resilient beyond its initial use, i.e., it should keep its initial value to the user.
+            Especially in safety-critical environments, the data user might need confidence in the reliability of data,
+            i.e., that the data itself is valuable and usable beyond its initial use, i.e., it should keep its initial value to the user.
             One relevant aspect of data reliability is that the data source cannot easily repudiate the state of the shared data later, neither by forging contradicting data, nor by repudiating the earlier data transmission at all.
           </p>
           <p>
-            Similarly to data trustworthiness, some kind of rationale for this reliability is necessary, e.g., a strong pre-existing trust relationship with the data source, or some kind of mechanism to notice adversaries by the data source and solve the resulting conflicts.
+            Similar as for data trustworthiness, some kind of rationale for this reliability is necessary, e.g., a strong pre-existing trust relationship with the data source, or some kind of mechanism to notice adversaries by the data source and solve the resulting conflicts.
           </p>
         </section>
         <section class="notoc">
@@ -297,8 +297,8 @@
             <!-- Related work doesn't cut it, Web-scale is more challenging -->
             Existing approaches to trustworthy and reliable data sharing, such as mutually trusted mediators and distributed ledgers, might be applicable to small-scale use cases with either pre-existing trust relations or low requirements to system scalability.
             However, Web-scaled systems have specific, more challenging needs.
-            First, the possible limitation by a trust assumption in a system would severely limit its potential, as common trust in a central mediator can hardly be assumed in a global network such as the Web.
-            Second, existing no-trust solutions, such as manual data curation and even distributed ledger technology do not meet tomorrow's needs towards scalability for efficient usage on the whole Web.
+            First, the possible limitation of a trust assumption in a system would severely limit its potential, as common trust in a central mediator can hardly be assumed in a global network such as the Web.
+            Second, existing no-trust solutions, such as manual data curation and even distributed ledger technology, do not meet tomorrow's needs toward scalability for efficient usage on the whole Web.
           </p>
         </section>
       </div>
@@ -318,25 +318,25 @@
         <dl>
           <dt><dfn>data sharing</dfn></dt>
           <dd>
-            Data sharing denotes a process, in which one party, the <a>sender</a>, grants a second party (or group of parties), the
-            <a>receiver</a> (or <a>receivers</a>), access to a set of data.
+            Data sharing denotes a process in which one party, the <a>sender</a>, grants a second party (or group of parties), the <a>receiver</a> (or <a>receivers</a>), access to a set of data.
             The data is then transmitted from the <a>sender</a> to the <a>receiver</a> as a <em>data transmission</em>.
           </dd>
           <dt><dfn>trustworthiness</dfn></dt>
           <dd>
-            (Data) trustworthiness denotes the subjective judgement of the data correctness by the data user.
-            The term of <em>correctness</em> here includes integrity and authenticity, but is not limited to it.
-            Rather, it covers the complete data pipeline, and thus for example also considers errors in measurement, inaccuracies, or intentional forgery or manipulation by the (authentic) data source.
+            (Data) trustworthiness denotes the subjective judgment of the data correctness by the data user.
+            The term <em>correctness</em> here includes integrity and authenticity, but is not limited to it.
+            Rather, it covers the complete data pipeline, and thus, for example, also considers errors in measurement,
+            inaccuracies, or intentional forgery or manipulation by the (authentic) data source.
           </dd>
           <dt><dfn>reliability</dfn></dt>
           <dd>
-            Data reliability denotes the guarantees available to a data user to prove aspects of data correctness before, at and after initial use of the data.
+            Data reliability denotes the guarantees available to a data user to prove aspects of data correctness before, at, and after the initial use of the data.
           </dd>
           <dt><dfn>immutability</dfn></dt>
           <dd>
             <p>
               We define data to be immutable if it can be uniquely referenced, and that reference always refers to exactly the same data at any point in time.
-              This directly implicates that once published, data cannot be manipulated afterwards without assigning a different identifier.
+              This directly implicates that once published, data cannot be manipulated afterward without assigning a different identifier.
             </p>
             <p>
               We further differentiate between <em>weak</em> and <em>strong</em> data immutability:
@@ -369,14 +369,14 @@
           </dd>
           <dt><dfn>sender</dfn></dt>
           <dd>
-            The sending party in a data transmission.
+            Denotes the sending party in a data transmission.
             This term is always used in the context of a data transmission and refers to the direction of dataflow.
             Each sender has an associated globally unique identifier in the form of an <a>IRI</a>.
             Means by which this <a>IRI</a> can unambiguously identify a party are further discussed in Section <a href="#considerations-iricertlink"></a>.
           </dd>
           <dt><dfn>receiver</dfn></dt>
           <dd>
-            The receiving party in a data transmission.
+            Denotes the receiving party in a data transmission.
             This term is always used in the context of a data transmission and refers to the direction of dataflow.
             Each sender has an associated globally unique identifier in the form of an <a>IRI</a>.
             Means by which this <a>IRI</a> can unambiguously identify a party are further discussed in Section <a href="#considerations-iricertlink"></a>.
@@ -388,12 +388,13 @@
           <dt><dfn>fact</dfn></dt>
           <dd>
             <p>
-              An immutable revision of a <a>resource</a>, uniquely and persistently referenced through an <a>IRI</a> specific to the revision.
+              An immutable revision of a <a>resource</a>, uniquely and persistently referenced through an <a>IRI</a>
+              specific to the revision.
               This implies that given the <a>IRI</a>, the data identified by the <a>IRI</a> cannot be altered.
               In this context, the persistent <a>IRI</a> of a fact can also be referred to as a <dfn>FactID</dfn>.
             </p>
             <p class="note">
-              The term originated from <em>FactDAG</em>, a formalization model of data interoperability which was proposed in a research paper by Gleim et al. [[?FactDAG]], where it denotes a data point which was explicitly made immutable by the means of a revisioning system.
+              The term originated from <em>FactDAG</em>, a formalization model of data interoperability which was proposed in a research paper by Gleim et al. [[?FactDAG]], where it denotes a data point that was explicitly made immutable by means of a revisioning system.
             </p>
           </dd>
         </dl>
@@ -409,20 +410,20 @@
         <section class="notoc">
           <h3>Setup</h3>
           <p>
-            The example considers the supplier-manufacturer relation in the highly-regulated and safety-critical process of aircraft engineering.
+            This example considers the supplier-manufacturer relation in the highly-regulated and safety-critical process of aircraft engineering.
           </p>
 
           <p>
-            Three parties are involved in the scenario: Two part suppliers, <i>A-Corp</i> and <i>B-Tech</i>, as well as a manufacturer <i>C-Aviation</i>, which assembles the final product (aircraft).
+            Three parties are involved in the scenario: Two part suppliers, <i>A-Corp</i> and <i>B-Tech</i>, as well as a manufacturer <i>C-Aviation</i>, which assembles the final product (here: aircraft).
           </p>
 
           <p>
             In this simple scenario, both A-Corp and B-Tech supply parts (wings and propellers) to C-Aviation.
-            Additionally, besides a flow of physical products, a data flow exists in parallel.
+            Additionally, besides a flow of physical products, a dataflow exists in parallel.
             The data might include relevant production data, conformance certificates, etc.
           </p>
 
-          <p>In this data flow, A-Corp and B-Tech are the <a>senders</a>, and C-Aviation is the <a>receiver</a>.</p>
+          <p>In this dataflow, A-Corp and B-Tech are the <a>senders</a>, and C-Aviation is the <a>receiver</a>.</p>
 
           <p>
             Further, the precision of the placement of a certain rivet used in a wing by A-Corp might be a <a>resource</a> as part of the production data shared with C-Aviation.
@@ -440,7 +441,7 @@
             </p>
             <figcaption>
               The example scenario in aircraft manufacturing.
-              Besides a phyiscal data flow of the suppliers (A and B) to the manufacturer (C), production data is shared with C.
+              Besides a physical dataflow of the suppliers (A and B) to the manufacturer (C), production data is shared with C.
             </figcaption>
           </figure>
         </section>
@@ -451,17 +452,17 @@
           <p>
             Data shared between the parties is used in processes such as production and audits, which are critical for product safety.
             Thus, it is extremely important that C-Aviation assesses the trustworthiness and reliability of the data.
-            These properties can reduce the risk of data-caused damage, or shift liability for said damage to the suppliers.
+            These properties can reduce the risk of data-caused damage or shift liability for said damage to the suppliers.
           </p>
 
           <p>
             To establish a common ground of trustworthiness and reliability, C-Aviation agrees upon a conformance agreement in the form of a paper-based contract with its suppliers.
-            This naturally is a labor-intensive process, as such documents have to be created, sent inbetween the companies, and archived physically.
+            This practice naturally is a labor-intensive process, as such documents have to be created, sent between the companies, and archived physically.
             Here, the data storage layer comprises physical archives, where the paper-based contracts are stored.
           </p>
         </section>
 
-        <p>After describing the concept of DTCs in the following, we will discuss application to this scenario and their benefits afterwards in Section <a href="#dtc-example-application"></a></p>
+        <p>After describing the concept of DTCs in the following, we will discuss an application to this scenario together with corresponding benefits in Section <a href="#dtc-example-application"></a></p>
       </div>
     </section>
   </section>
@@ -473,7 +474,7 @@
       <div class="tlcontent">
         <p>
           DTCs leverage digital signatures to create <a data-lt="immutability">strong data immutability</a> within a defined scope, which we further describe below.
-          DTCs deviate from the common paradigm of document signatures by enforcing the signatures to be created during data transmission, thus allowing to involve a second party, the <a>receiver</a>, into to signature process.
+          DTCs deviate from the common paradigm of document signatures by enforcing the signatures to be created during data transmission, thus allowing to involve a second party, the <a>receiver</a>, in the signature process.
         </p>
         <p>
           For a clear differentiation, we can classify common uses of signatures into one of the following two paradigms:
@@ -481,19 +482,20 @@
         <dl>
           <dt><dfn class="lint-ignore">pre-created signatures</dfn></dt>
           <dd>
-            Also <dfn class="lint-ignore">document signatures</dfn>, are signatures which are created by the data source (or publisher) and are not bound to a specific transmission.
+            Also known as <dfn class="lint-ignore">document signatures</dfn>, are signatures that are created by the data source (or publisher) and are not bound to a specific transmission.
             Thus, such signatures can be efficiently created on publication and only need to be created once in the lifetime of the document.
             This type of signatures is usually used on data platforms, document stores, etc.
           </dd>
           <dt><dfn class="lint-ignore">on-demand signatures</dfn></dt>
           <dd>
-            Also <dfn class="lint-ignore">message signatures</dfn>, are signatures which are specific to a single data transmission or communication process.
-            On-demand signatures therefore cannot be pre-computed in most cases, as they are bound to that specific transmission or communication process.
-            On-demand signatures are commonly used to establish authenticity and non-repudiation in messaging and communication protocols, e.g., <a href="https://datatracker.ietf.org/doc/html/rfc4880">OpenPGP</a> [[RFC4880]].
+            Also known as <dfn class="lint-ignore">message signatures</dfn>, are signatures that are specific to a single data transmission or communication process.
+            Therefore, On-demand signatures cannot be pre-computed in most cases, as they are bound to that specific transmission or communication process.
+            On-demand signatures are commonly used to establish authenticity and non-repudiation in messaging and communication protocols, e.g., <a href="https://datatracker.ietf.org/doc/html/rfc4880">OpenPGP</a>
+            [[RFC4880]].
           </dd>
         </dl>
         <p class="note">
-          The terms of pre-created and on-demand signatures are not canonical, as a clear differentiation between these signature paradigms can be rarely found in literature.
+          The terms of pre-created and on-demand signatures are not canonical, as a clear differentiation between these signature paradigms can rarely be found in literature.
         </p>
 
         <p>
@@ -504,13 +506,13 @@
         <p>
           Because the <a>receiver</a> signs the state of the data, the <a>sender</a> alone cannot forge a valid DTC by itself.
           Therefore, as long as <a>sender</a> and <a>receiver</a> do not collude to forge rogue signature pairs, the valid DTC can unambiguously be determined by the pair of valid signatures by both parties.
-          Thus, this approach provides <a data-lt="immutability">strong data immutability</a> with the assumption of no inter-party collusion.
+          Thus, this approach provides <a data-lt="immutability">strong data immutability</a> under the assumption of no inter-party collusion.
         </p>
 
         <p>
-          While the assumption of no inter-party collusion may seem limiting at first, it does cover a substantial set of use cases, i.e., inter-party conflicts of <a>sender</a> and <a>receiver</a>.
-          Thus, it can be applied wherever <a>sender</a> and <a>receiver</a> do not trust each other and want to have mutual proof of the data sharing process.
-          In our example use case from Section <a href="#primer-example-scenario"></a>, this assumption covers a variety of possible scenarios including proving data authenticity in liability conflicts and creating secure and non-repudiable product conformance and quality certificates between C-Aviation and the two suppliers.
+          While the assumption of no inter-party collusion may seem limiting at first, it still covers a substantial set of use cases, i.e., inter-party conflicts of <a>sender</a> and <a>receiver</a>.
+          Thus, DTCs can be applied wherever <a>sender</a> and <a>receiver</a> do not trust each other and want to have mutual proof of the data sharing process.
+          In our example from Section <a href="#primer-example-scenario"></a>, this assumption covers a variety of possible scenarios, including proving data authenticity in liability conflicts and creating secure and non-repudiable product conformance and quality certificates between C-Aviation and the two suppliers.
         </p>
 
         <p>
@@ -518,7 +520,7 @@
           If a rogue <a>sender</a> would now sign different versions of the same <a>fact</a>, the correct version of the <a>fact</a> would become ambiguous, thus violating the <a data-lt="immutability">data immutability</a>.
         </p>
         <p>
-          For example, in the application example from Section <a href="#primer-example-scenario"></a>, the production data of a propeller supplied by B-Tech may hint at a production fault which leads to an incident with the respective airplane.
+          In the example from Section <a href="#primer-example-scenario"></a>, the production data of a propeller supplied by B-Tech may hint at a production fault that leads to an incident with the respective airplane.
           During the incident inspection and liability process, B-Tech might now supply corrected data together with valid certificates and thereby claim that the supplied parts were not faulty to the best of their knowledge.
           The data immutability is violated in this case, as one cannot unambiguously determine the original version of B-Tech's production data.
         </p>
@@ -529,14 +531,14 @@
 
       <div class="tlcontent">
         <p>
-          In Section <a href="#primer-example-scenario"></a>, an example scenario in aircraft manufacturing was introduced.
-          The original process relayed on costly and management-intensive paper-based contracting and archiving methods.
+          In Section <a href="#primer-example-scenario"></a>, we introduced an exemplary scenario from the aviation industry.
+          The original process relied on costly and management-intensive paper-based contracting and archiving methods.
         </p>
         <p>
           If the concept of DTCs is applied to the exemplary data sharing process, substantial parts of the system can be implemented digitally.
-          These parts comprise
+          These parts comprise of
         <ul>
-          <li>the contracts in which an agreement about the data transmission is made, including the signatures by both parties.</li>
+          <li>the contracts, in which an agreement about the data transmission is made, including the signatures by both parties, and</li>
           <li>the storage system for storing and archiving the transmission contracts.</li>
         </ul>
         <p>
@@ -545,10 +547,10 @@
         <figure id="fig-example-scenario-2" style="text-align: center;">
           <object data="figures/example-scenario-2.svg" style="width:100%;" type="image/svg+xml" aria-describedby="fig-example-scenario-2"></object>
           <p id="fig-example-scenario-2-alt">
-            Application of DTCs to the example scenario in aircraft manufacturing.
+            Application of DTCs to the example scenario in aviation.
           </p>
           <figcaption>
-            The application of DTCs to the example scenario in aircraft manufacturing.
+            The application of DTCs to the example scenario in the aviation industry.
             DTCs (1) are certified by sender and receiver, (2) secure the transmitted data, and (3) are stored (longtime) in digital secure storage systems.
           </figcaption>
         </figure>
@@ -557,7 +559,8 @@
         <ol>
           <li>
             <b>Physical layer:</b> <br />
-            The parties A-Corp and C-Aviation both certify (1) the DTC by adding a digital signature. Both parties are linked to their physical identities by a public key certificate (see Section <a href="#dtc-data-structure"></a> for details).
+            The parties A-Corp and C-Aviation both certify (1) the DTC by adding a digital signature.
+            Both parties are linked to their physical identities by a public key certificate (see Section <a href="#dtc-data-structure"></a> for details).
             Further, the production data produced by factories is secured in the DTC (2).
           </li>
           <li>
@@ -566,7 +569,7 @@
             In the example of aircraft manufacturing, the parties are even required legally to securely store the contracts for several years.
           </li>
           <li>
-            <b>Data Flow layer:</b> <br />
+            <b>dataflow layer:</b> <br />
             The DTC itself is constructed in parallel to the underlying production data transmission in a generation handshake (see Section <a href="#dtcgenver-generation"></a> for details).
           </li>
         </ol>
@@ -576,7 +579,8 @@
       <h3>DTC Data Structure</h3>
       <div class="tlcontent">
         <p>
-          DTCs have a defined object structure. Its components are defined as <dfn>contract fields</dfn>.
+          DTCs have a defined object structure.
+          Its components are defined as <dfn>contract fields</dfn>.
         </p>
 
         <p>
@@ -596,10 +600,11 @@
               The base <a>IRI</a> which can be used to uniquely identify the DTC.
             </p>
             <p>
-              The base <a>IRI</a> is selected by the <a>sender</a> or <a>receiver</a> during the DTC generation handshake (see Section <a href="#dtcgenver-generation"></a>) and is used as both the <a>IRI</a> for the DTC itself, as well as an <a>IRI</a> prefix for its subcompontents in the JSON-LD representation (see Section <a href="dtc-representations-jsonld"></a>)
+              The base <a>IRI</a> is selected by the <a>sender</a> or <a>receiver</a> during the DTC generation handshake (see Section <a href="#dtcgenver-generation"></a>) and is used as both the <a>IRI</a> for the DTC itself, as well as an <a>IRI</a> prefix for its subcomponents in the JSON-LD representation (see Section <a href="#dtc-representations-jsonld"></a>)
             </p>
             <p>
-              The base <a>IRI</a> SHOULD end with a <code>#</code> delimiter, i.e., the <code>"#" ifragment</code> part, where <code>ifragment</code> is empty, such that the sub-IRIs assigned in the <a href="#dtc-representations-jsonld">JSON-LD representation</a> (Section <a href="#dtc-representations-jsonld"></a>) use the <code>ifragment</code> part to identify the subcomponent.
+              The base <a>IRI</a> SHOULD end with a <code>#</code> delimiter, i.e., the <code>"#" ifragment</code> part,
+              where <code>ifragment</code> is empty, such that the sub-IRIs assigned in the <a href="#dtc-representations-jsonld">JSON-LD representation</a> (Section <a href="#dtc-representations-jsonld"></a>) use the <code>ifragment</code> part to identify the subcomponent.
             </p>
           </dd>
           <dt><dfn data-lt="dtc-sender" data-lt-noDefault><code>sender</code></dfn></dt>
@@ -622,14 +627,15 @@
                 The verification of the certificate (chain) requires a shared trust anchor (e.g., a commonly trusted root CA).
               </dd>
               <dt><code>type</code></dt>
-              <dd><code>"X509"</code>/<code>"X509-single"</code> for a single X.509 certificate, <code>"PKCS7"</code>/<code>"X509-PKCS7-chain"</code> for a certificate chain bundled into a <a href="https://datatracker.ietf.org/doc/html/rfc2315">PKCS #7</a> message [[RFC2315]].
+              <dd><code>"X509"</code>/<code>"X509-single"</code> for a single X.509 certificate,
+                <code>"PKCS7"</code>/<code>"X509-PKCS7-chain"</code> for a certificate chain bundled into a <a href="https://datatracker.ietf.org/doc/html/rfc2315">PKCS #7</a> message [[RFC2315]].
                 These two types MUST be implemented.
                 While we do not specify other types in this document, this field can be used to implement different certificate types in future extensions.
               </dd>
               <dt><code>encoding</code></dt>
               <dd>Encoding of the certificate.
                 Always set to <code>"base64"</code>, which refers to the certificate (chain) in DER notation encoded using <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]].
-                The purpose of this field is both for the data structure to be self-describing, and to allow for possible extensions of other encodings.
+                The purpose of this field is both for the data structure to be self-describing and to allow for possible extensions of other encodings.
               </dd>
             </dl>
           </dd>
@@ -637,8 +643,7 @@
           <dd>
             <p>
               Identity of the <a>receiver</a>, i.e., an <a>IRI</a> and a public key certificate.
-              The <a>IRI</a> uniquely links the DTC to the
-              <a>receiver</a>, and the public key certificate contains the public key needed to verify the <a>receiver</a>'s signature contained in <a data-lt="dtc-receiverSig"><code>receiverSig</code></a>.
+              The <a>IRI</a> uniquely links the DTC to the <a>receiver</a>, and the public key certificate contains the public key needed to verify the <a>receiver</a>'s signature contained in <a data-lt="dtc-receiverSig"><code>receiverSig</code></a>.
             </p>
             <p>The substructure is equivalent to the <a data-lt="dtc-sender"><code>sender</code></a> field.</p>
           </dd>
@@ -656,17 +661,18 @@
               <dt><code>type</code></dt>
               <dd>
                 The signature type used.
-                MUST always be set to <code>"urn:oid:1.2.840.113549.1.1.10"</code>, which is the
-                <a href="https://datatracker.ietf.org/doc/html/rfc3061">Object Identifier (OID)</a> [[RFC3061]] of the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1"><code>RSASSA-PSS</code></a> signature scheme as defined in <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1">PKCS #1 v2.2</a>
+                MUST always be set to <code>"urn:oid:1.2.840.113549.1.1.10"</code>, which is the <a href="https://datatracker.ietf.org/doc/html/rfc3061">Object Identifier (OID)</a> [[RFC3061]] of the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1"><code>RSASSA-PSS</code></a>
+                signature scheme as defined in <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1">PKCS #1 v2.2</a>
                 [[RFC8017]].
-                We use the <a href="https://www.rfc-editor.org/rfc/rfc3001">URN Namespace of Object Identifiers</a> [[RFC3001]] to make the identifier interpretable as an IRI.
-                The purpose of this field is both for the data structure to be self-describing, and to allow for possible extensions of other signature schemes.
+                We use the <a href="https://www.rfc-editor.org/rfc/rfc3001">URN Namespace of Object Identifiers</a>
+                [[RFC3001]] to make the identifier interpretable as an IRI.
+                The purpose of this field is both for the data structure to be self-describing and to allow for possible extensions of other signature schemes.
               </dd>
               <dt><code>encoding</code></dt>
               <dd>
                 Encoding of the signature data.
                 MUST always be set to <code>"base64"</code>, specifying that the signature value is encoded using <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]] according to Section <a href="#dtc-signatures-creation"></a>.
-                The purpose of this field is both for the data structure to be self-describing, and to allow for possible extensions of other encodings.
+                The purpose of this field is both for the data structure to be self-describing and to allow for possible extensions of other encodings.
               </dd>
             </dl>
           </dd>
@@ -697,8 +703,7 @@
               <dt><dfn data-lt="dtc-facts-requestedID" data-lt-noDefault><code>requestedID</code></dfn></dt>
               <dd>
                 <em>(Optional)</em>
-                During the DTC generation mechanism (cf. Section <a href="#dtcgenver-generation"></a>), the
-                <a>sender</a> MAY update the <a>IRI</a> in <a data-lt="dtc-facts-factID">factID</a> (e.g., in order to provide a persistent fact IRI for long-term referenceability).
+                During the DTC generation mechanism (cf. Section <a href="#dtcgenver-generation"></a>), the <a>sender</a> MAY update the <a>IRI</a> in <a data-lt="dtc-facts-factID">factID</a> (e.g., in order to provide a persistent fact IRI for long-term referenceability).
                 In this case, this field contains the <a>IRI</a> which was originally requested.
 
                 <div class="note">
@@ -708,12 +713,12 @@
                   </p>
                   <ul>
                     <li>
-                      The <a>receiver</a> does not know the revision ID which immutabilizes a <a>resource</a> to a <a>fact</a>, and thus only requests the latest revision of a <a>resource</a>.
+                      The <a>receiver</a> does not know the revision ID, which transforms a <a>resource</a> to a <a>fact</a> by means of an immutable revisioning scheme, and thus only requests the latest revision of a <a>resource</a>.
                       The <a>sender</a> adds the latest revision ID to the <a data-lt="dtc-facts-factID">factID</a> to identify an immutable <a>fact</a>.
                     </li>
                     <li>
                       The <a>receiver</a> uses a deprecated <a>fact</a> identification scheme.
-                      The <a>sender</a> can transform the deprecated <a data-lt="dtc-facts-factID">factID</a> to a new one.
+                      The <a>sender</a> can transform the deprecated <a data-lt="dtc-facts-factID">factID</a> into a new one.
                     </li>
                   </ul>
                 </div>
@@ -732,7 +737,7 @@
                   The encoding SHOULD use lowercase letters.
                 </p>
                 <p>
-                  The supported hash algorithms are cryptographic hash functions, so that an attacker cannot forge data which collides with the checksum.
+                  The supported hash algorithms are cryptographic hash functions, so that an attacker cannot forge data that collides with the checksum.
                   Such a vulnerability could lead to misuse of existing DTCs, or ambiguity w.r.t. the verifiability of the underlying data.
                 </p>
                 <p>
@@ -751,30 +756,33 @@
                   <li><code>"binary"</code>: A (trivial) binary representation of the <a>fact</a></li>
                   <li><code>"string"</code>: A (trivial) string representation of the <a>fact</a></li>
                   <li><code>"canonical_json"</code>: A representation of the <a>fact</a> as canonicalized JSON according to the <a href="https://datatracker.ietf.org/doc/html/rfc8785">JSON Canonicalization Scheme (JCS)</a> [[RFC8785]].</li>
-                  <li><code>"URDNA2015"</code>: The Linked Data associated with a <a>fact</a>, serialized as normalized N-Quads [[n-quads]] according to the <a href="https://json-ld.github.io/rdf-dataset-canonicalization/spec/index.html">URDNA2015</a>
+                  <li><code>"URDNA2015"</code>: The Linked Data associated with a <a>fact</a>, serialized as normalized N-Quads [[N-Quads]] according to the <a href="https://json-ld.github.io/rdf-dataset-canonicalization/spec/index.html">URDNA2015</a>
                     algorithm.
                     <p class="note">
-                      We recognise that Linked Data canonicalization is an open issue and the specification of the specified algorithm is at a draft status.
-                      As the algorithm is not a direct component of <em>ReShare</em>, and we argue for an extensible serialization identifier scheme, we find this tolerable.
+                      We recognize that Linked Data canonicalization is an open issue, and the specification of the specified algorithm is at a draft status.
+                      As the algorithm is not a direct component of <em>ReShare</em>, and we argue for an extensible serialization identifier scheme, we consider this remark to be tolerable.
                     </p>
                   </li>
                 </ul>
                 A <em>trivial</em> serialization of a given resource MUST be interpretable without the need to perform any transformations.
-                E.g., if the fact is a JPEG image, the binary serialization (identified by the <code>"binary"</code> identifier) can be considered trivial, as JPEG is a binary file format and does not need to be transformed.
-                A JSON document however cannot be trivially serialized as a binary object without transformations, as the choice of character set, the canonicalization scheme, etc. are ambiguous.
+                E.g., if the fact is a JPEG image, the binary serialization (identified by the <code>"binary"</code>
+                identifier) can be considered trivial, as JPEG is a binary file format and does not need to be transformed.
+                A JSON document, however, cannot be trivially serialized as a binary object without transformations, as the choice of the character set, the canonicalization scheme, etc. are ambiguous.
               </dd>
             </dl>
           </dd>
-          <dt><dfn data-lt="dtc-customContent"><code>senderCustomContent</code>/<code>receiverCustomContent</code></dfn></dt>
+          <dt><dfn data-lt="dtc-customContent"><code>senderCustomContent</code>/<code>receiverCustomContent</code></dfn>
+          </dt>
           <dd>
-            <p><em>(Optional)</em> Contract fields which MAY be used to add custom content or metadata to a DTC as a JSON object.</p>
+            <p><em>(Optional)</em> DTC fields that MAY be used to add custom content or metadata to a DTC as a JSON object.</p>
 
             <p>If one of these fields is present, it MUST contain exactly one JSON object (i.e., enclosed by curly brackets).</p>
           </dd>
           <dt><dfn data-lt="dtc-timestamp" data-lt-noDefault><code>timestamp</code></dfn></dt>
           <dd>
-            A timestamp which binds the DTC to the time of transmission (specifically, to the point in time during DTC generation, where one of the two involved parties adds the fact checksums to the DTC).
-            The timestamp is encoded as a string in the <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">Internet date/time format</a> [[RFC3339]], which is a profile of <a href="http://www.iso.org/iso/catalogue_detail?csnumber=40874">ISO 8601</a> [[ISO8601]].
+            A timestamp that binds the DTC to the time of transmission. Specifically, it binds to the point in time during DTC generation, where one of the two involved parties adds the fact checksums to the DTC.
+            The timestamp is encoded as a string in the <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6">Internet date/time format</a>
+            [[RFC3339]], which is a profile of <a href="http://www.iso.org/iso/catalogue_detail?csnumber=40874">ISO 8601</a> [[ISO8601]].
           </dd>
         </dl>
       </div>
@@ -787,11 +795,12 @@
         <p>
           By default, DTCs are represented as JSON [[RFC8259]].
           To make DTCs interpretable as Linked Data, we further define an associated JSON-LD [[JSON-LD11]] context.
-          We deem JSON the default representation, as it can be transformed to the JSON-LD representation without context by the procedure defined below, and thus reduces the overhead in storage and transmission of (partial) DTCs.
+          We deem JSON the default representation, as it can be transformed to the JSON-LD representation without context by the procedure defined below, and thus reduces the overhead in storage and transmission of (partial)
+          DTCs.
         </p>
 
         <p>
-          Any implementation MUST support creation, validation, and interpretation of the JSON DTC representation, which we describe in Section <a href="#dtc-representations-json"></a>.
+          Any implementation MUST support the creation, validation, and interpretation of the JSON DTC representation, which we describe in Section <a href="#dtc-representations-json"></a>.
         </p>
         <p>
           Implementations MAY support the transformations from and to JSON-LD.
@@ -808,8 +817,9 @@
         </p>
 
         <p>
-          To specify the structure of the JSON representation of a DTC, we build upon the specification of <a href="https://json-schema.org/draft/2020-12/json-schema-core.html">JSON Schema</a> [[JSON-SCHEMA]][[JSON-SCHEMA-VALIDATION]].
-          While we recognize that this specification is still at a draft state, we find this tolerable due to the nature of this document being a member submission.
+          To specify the structure of the JSON representation of a DTC, we build upon the specification of <a href="https://json-schema.org/draft/2020-12/json-schema-core.html">JSON Schema</a>
+          [[JSON-SCHEMA]][[JSON-SCHEMA-VALIDATION]].
+          While we recognize that this specification is still in a draft state, we find this tolerable due to the nature of this document being a member submission.
           We further specifically use the <code>2020-12</code> version of the draft of <a href="https://json-schema.org/draft/2020-12/json-schema-core.html">JSON Schema</a> to avoid ambiguities.
         </p>
 
@@ -826,14 +836,15 @@
           In the following, we give an example of a complete DTC as a JSON object, according to the descriptions above.
           The contract contains four <a>fact</a> checksums (in <a data-lt="dtc-facts">facts</a>), where the <a>fact</a>
           itself could trivially be serialized as a string.
-          The public key certificates (in <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-sender">receiver</a>) are single X.509 certificates directly signed by an imaginary root CA.
+          The public key certificates (in <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-sender">receiver</a>)
+          are single X.509 certificates directly signed by an imaginary root CA.
         </p>
         <pre class="example" data-include="examples/example-contract.json" title="Example DTC (JSON) (non-normative)"></pre>
       </section>
       <section id="dtc-representations-jsonld">
         <h3>JSON-LD</h3>
 
-        <p>We use the <a href="https://w3id.org/reshare/ontology/0.3/">ReShare ontology v0.3</a>, which we describe in Section <a href="#reshare-ontology"></a>, for defining semantics of the JSON structure in a JSON-LD [[JSON-LD11]] representation for DTCs.</p>
+        <p>We use the <a href="https://w3id.org/reshare/ontology/0.3/">ReShare ontology v0.3</a>, which we describe in Section <a href="#reshare-ontology"></a>, for defining the semantics of the JSON structure in a JSON-LD [[JSON-LD11]] representation for DTCs.</p>
 
         <p>
           Instead of defining a schema for the JSON-LD representation of DTCs, we specify a procedure to transform a JSON representation of a DTC into a JSON-LD representation, and a procedure to transform a JSON-LD representation to a JSON representation.
@@ -842,7 +853,8 @@
         <section class="notoc">
           <h2>JSON to JSON-LD</h2>
 
-          <p>To raise a valid JSON DTC serialization to JSON-LD, the following transformation steps MUST be conducted:</p>
+          <p>To raise a valid JSON DTC serialization to JSON-LD, the following transformation steps MUST be conducted:
+          </p>
           <ol>
             <li>Add the static <code>@context</code> object</li>
             <li>Add <code>@type</code> keywords to the non-literal (sub-)objects</li>
@@ -852,9 +864,11 @@
           <p>
             Details about the steps are presented in the following and MUST be followed when creating a JSON-LD representation of a DTC.
           </p>
-          <p class="note">In the following examples, the misuse of the triple-dot notation denotes that the rest of the JSON structure is not changed. As it is only used in informative examples, it does not violate the normative character of this section.</p>
+          <p class="note">In the following examples, the misuse of the triple-dot notation denotes that the rest of the JSON structure is not changed.
+            As it is only used in informative examples, it does not violate the normative character of this section.</p>
           <ol>
-            <li>The following static <code>@context</code> object (corresponding to version 0.3 of the ReShare ontology) MUST be added to the root of the DTC object:
+            <li>The following static <code>@context</code> object (corresponding to version 0.3 of the ReShare ontology)
+              MUST be added to the root of the DTC object:
               <pre class="example" data-include="examples/dtc-jsonld-context.jsonld" title="DTC JSON-LD context"></pre>
             </li>
             <li>
@@ -909,13 +923,14 @@
               </p>
               <p>
                 The step is illustrated with the following example.
-                Note that the <code>baseIRI</code> attribute existed beforehand, its value is simply copied to the IRI prefix definition.
+                Note that the <code>baseIRI</code> attribute existed beforehand. Its value is simply copied to the IRI prefix definition.
               </p>
               <pre class="example" id="adding-baseiri-prefix" title="Adding the base IRI of the DTC to its context as an IRI prefix (non-normative)" data-include="examples/adding-baseiri-prefix.jsonld"></pre>
             </li>
             <li>
               <p>
-                The following (sub-)objects of the DTC object MUST be made identifiable with the following <a>IRIs</a> (relative to the root DTC IRI) by adding a <code>@id</code> attribute to their root-level attributes:
+                The following (sub-)objects of the DTC object MUST be made identifiable with the following <a>IRIs</a>
+                (relative to the root DTC IRI) by adding a <code>@id</code> attribute to their root-level attributes:
               </p>
               <table id="tab-jsonld-ids" class="customtable">
                 <thead>
@@ -948,14 +963,15 @@
                 </tr>
               </table>
               <p class="note">
-                All other contract fields are not assigned an IRI, as they are represented as literals in JSON-LD, and thus do not have an own IRI.
+                All other contract fields are not assigned an IRI, as they are represented as literals in JSON-LD, and thus do not have their own IRIs.
                 Instead, they can be queried through the data properties of the DTC resource.
               </p>
               <p>The assignment of <code>@id</code> attributes is illustrated with the following example.</p>
               <pre class="example" id="adding-compact-iris" title="Explicitly adding IRIs to the DTC subcomponents using @id (non-normative)" data-include="examples/adding-compact-iris.jsonld"></pre>
             </li>
           </ol>
-          <p>In the following, we give the example of a DTC represented in JSON-LD, where the static part of the <code>@context</code> object is omitted for readability.</p>
+          <p>In the following, we give the example of a DTC represented in JSON-LD, where the static part of the <code>@context</code> object is omitted for readability.
+          </p>
           <pre id="example-contract-jsonld" class="example" data-include="examples/example-contract-short.jsonld" title="Example DTC (JSON-LD) (non-normative)"></pre>
         </section>
 
@@ -965,9 +981,13 @@
           <p>To transfer a JSON-LD representation of a DTC to a JSON representation, one MUST execute the following steps:</p>
 
           <ol>
-            <li>Build the <code>@context</code> object by adding a <code>contract</code> IRI prefix to the static <code>@context</code> object from the JSON-to-JSON-LD transformation by copying the IRI of the DTC, similarly to step 3 of the JSON-to-JSON-LD transformation.</li>
-            <li>Use the JSON-LD <a href="https://www.w3.org/TR/json-ld11-api/#compaction-algorithm">compaction algorithm</a> [[JSON-LD11-API]] to compact the JSON-LD document together with the context built in step 1.</li>
-            <li>Remove all <code>@type</code>, <code>@id</code>, and <code>@context</code> attributes. <span class="note">Note: The <code>baseIRI</code> of the DTC is unaffected by this, as it is aliased as <code>@id</code>, and thus is not removed!</span></li>
+            <li>Build the <code>@context</code> object by adding a <code>contract</code> IRI prefix to the static <code>@context</code> object from the JSON-to-JSON-LD transformation by copying the IRI of the DTC,
+              similarly to step 3 of the JSON-to-JSON-LD transformation.
+            </li>
+            <li>Use the JSON-LD <a href="https://www.w3.org/TR/json-ld11-api/#compaction-algorithm">compaction algorithm</a> [[JSON-LD11-API]] to compact the JSON-LD document together with the context built in Step 1.</li>
+            <li>Remove all <code>@type</code>, <code>@id</code>, and <code>@context</code> attributes.
+              <span class="note">Note: The <code>baseIRI</code> of the DTC is unaffected by this, as it is aliased as <code>@id</code>, and thus is not removed!</span>
+            </li>
           </ol>
         </section>
       </section>
@@ -977,7 +997,8 @@
       <div class="tlcontent">
         <p>
           A valid DTC MUST always contain two signatures, one by the <a>sender</a>, and one by the <a>receiver</a>.
-          These signatures constitute a central component of the trust chain of a DTC, connecting the information included in DTCs (e.g., the checksums in <a data-lt="dtc-facts">facts</a>) to the public keys of <a>sender</a> and <a>receiver</a>.
+          These signatures constitute a central component of the trust chain of a DTC, connecting the information included in DTCs (e.g., the checksums in <a data-lt="dtc-facts">facts</a>) to the public keys of <a>sender</a>
+          and <a>receiver</a>.
           The signatures are included in the DTC itself in the <a data-lt="dtc-senderSig">senderSig</a> and <a data-lt="dtc-receiverSig">receiverSig</a> fields (see <a href="#dtc-data-structure"></a>).
         </p>
         <p>
@@ -987,7 +1008,8 @@
         </p>
         <p>
           Each party (<a>sender</a> and <a>receiver</a>) MUST have an RSA public/private key pair which they use for creating DTC signatures.
-          The public key of the key pair used to create DTC signatures MUST be included in the <code>cert</code> property of the respective identity field of the DTC, i.e., <a data-lt="dtc-sender">sender</a> or <a data-lt="dtc-receiver">receiver</a> (see <a href="#dtc-data-structure"></a>).
+          The public key of the key pair used to create DTC signatures MUST be included in the <code>cert</code>
+          property of the respective identity field of the DTC, i.e., <a data-lt="dtc-sender">sender</a> or <a data-lt="dtc-receiver">receiver</a> (see <a href="#dtc-data-structure"></a>).
         </p>
       </div>
 
@@ -997,7 +1019,7 @@
         <div class="tlcontent">
           <p>
             The processes of signature creation and verification can be divided into three low-level processes:
-            A <a href="#dtc-signatures-preprocessing">preprocessing pipeline</a> for generating a normalized binary serialization of a DTC (further described in Section <a href="#dtc-signatures-preprocessing"></a>), and both a <a href="#dtc-signatures-creation">signature creation</a> and <a href="#dtc-signatures-verification">verification</a> process based on the pre-processed form of a DTC (further described in Sections <a href="#dtc-signatures-creation"></a> and <a href="#dtc-signatures-verification"></a> respectively).
+            A <a href="#dtc-signatures-preprocessing">pre-processing pipeline</a> for generating a normalized binary serialization of a DTC (further described in Section <a href="#dtc-signatures-preprocessing"></a>), and both a <a href="#dtc-signatures-creation">signature creation</a> and <a href="#dtc-signatures-verification">verification</a> process based on the pre-processed form of a DTC (further described in Sections <a href="#dtc-signatures-creation"></a> and <a href="#dtc-signatures-verification"></a> respectively).
           </p>
           <p>
             The integration of said low-level processes into the high-level processes of signature creation and verification is visualized in the two figures below.
@@ -1009,7 +1031,7 @@
             </p>
             <figcaption>
               The high-level process of creating a DTC signature.
-              The DTC is pre-processed first, before creating the DTC signature using the signer's private key.
+              The DTC is pre-processed first before creating the DTC signature using the signer's private key.
             </figcaption>
           </figure>
           <figure id="fig-dtc-sigproc-pipeline-verification" style="text-align: center;">
@@ -1019,7 +1041,7 @@
             </p>
             <figcaption>
               The high-level process of verifying a DTC signature.
-              The DTC is pre-processed first, before verifiying the given DTC signature using the signer's public key.
+              The DTC is pre-processed first before verifiying the given DTC signature using the signer's public key.
             </figcaption>
           </figure>
         </div>
@@ -1037,11 +1059,11 @@
           <figure id="fig-dtc-sigproc-preprocessing" style="text-align: center;">
             <object data="figures/signature-process-preprocessing.svg" style="width:80%;" type="image/svg+xml" aria-describedby="fig-dtc-sigproc-preprocessing"></object>
             <p id="fig-dtc-sigproc-preprocessing-alt">
-              The preprocessing steps for creating and verifying DTC signatures
-            </p>
+              The pre-processing steps for creating and verifying DTC signatures </p>
             <figcaption>
-              The preprocessing steps for creating and verifying DTC signatures.
-              The internal DTC is serialized as specified by the JSON DTC represenation, pruned by removing unsigned material, normalized, and encoded as a <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a> string [[RFC3629]].
+              The pre-processing steps for creating and verifying DTC signatures.
+              The internal DTC is serialized as specified by the JSON DTC represenation, pruned by removing unsigned material, normalized, and encoded as a <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a>
+              string [[RFC3629]].
             </figcaption>
           </figure>
           <p>
@@ -1056,12 +1078,15 @@
             <li>
               <b>Remove unsigned content:</b>
               To not impose a dependency on the ordering of signatures by the parties, pre-existing signature material MUST NOT be included in the signature.
-              Thus, both the <a data-lt="dtc-senderSig">senderSig</a> and <a data-lt="dtc-receiverSig">receiverSig</a> fields (if existing) MUST be removed in this step.
+              Thus, both the <a data-lt="dtc-senderSig">senderSig</a> and <a data-lt="dtc-receiverSig">receiverSig</a>
+              fields (if existing) MUST be removed in this step.
             </li>
             <li>
               <b>Normalize:</b>
-              First, in order to achieve a unique order of the included facts, the <a data-lt="dtc-facts">facts</a> array MUST be sorted by the ascending lexicographic order of the <a data-lt="dtc-facts-factID">factID</a> subproperty in <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a> encoding [[RFC3629]].
-              Afterwards, the JSON document MUST be canonicalized according to the <a href="https://datatracker.ietf.org/doc/html/rfc8785">JSON Canonicalization Scheme (JCS)</a> [[RFC8785]].
+              First, in order to achieve a unique order of the included facts, the <a data-lt="dtc-facts">facts</a>
+              array MUST be sorted by the ascending lexicographic order of the <a data-lt="dtc-facts-factID">factID</a>
+              subproperty in <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a> encoding [[RFC3629]].
+              Afterward, the JSON document MUST be canonicalized according to the <a href="https://datatracker.ietf.org/doc/html/rfc8785">JSON Canonicalization Scheme (JCS)</a> [[RFC8785]].
             </li>
             <li>
               <b>Encode:</b>
@@ -1079,18 +1104,21 @@
           <figure id="fig-dtc-sigproc-creation" style="text-align: center;">
             <object data="figures/signature-process-creation.svg" style="width: 70%;" type="image/svg+xml" aria-describedby="fig-dtc-sigproc-creation"></object>
             <p id="fig-dtc-sigproc-creation-alt">
-              The process of creating a DTC signature based on its preprocessed form.
+              The process of creating a DTC signature, based on its pre-processed form.
             </p>
             <figcaption>
-              The process of creating a DTC signature based on its preprocessed form.
-              Using said preprocessed DTC and its own private key, the signing party creates an RSA signature, which is encoded as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]].
+              The process of creating a DTC signature, based on its pre-processed form.
+              Using said pre-processed DTC and its own private key, the signing party creates an RSA signature, which is encoded as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]].
             </figcaption>
           </figure>
           <p>
-            The signature MUST be created using the pre-processed form of the DTC as described in Section <a href="#dtc-signatures-preprocessing"></a> as the input to the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.1"><code>RSASSA-PSS-SIGN</code></a> operation specified in <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1</a> [[RFC8017]].
+            The signature MUST be created using the pre-processed form of the DTC as described in Section <a href="#dtc-signatures-preprocessing"></a> as the input to the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.1"><code>RSASSA-PSS-SIGN</code></a>
+            operation specified in <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1</a> [[RFC8017]].
           </p>
           <p>
-            For the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.1"><code>EMSA-PSS-ENCODE</code></a> encoding operation used in the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.1"><code>RSASSA-PSS-SIGN</code></a> operation, the following parameters MUST be selected:
+            For the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.1"><code>EMSA-PSS-ENCODE</code></a>
+            encoding operation used in the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.1"><code>RSASSA-PSS-SIGN</code></a>
+            operation, the following parameters MUST be selected:
           </p>
           <ul>
             <li>
@@ -1119,20 +1147,25 @@
           <figure id="fig-dtc-sigproc-verification" style="text-align: center;">
             <object data="figures/signature-process-verification.svg" style="width: 70%;" type="image/svg+xml" aria-describedby="fig-dtc-sigproc-verification"></object>
             <p id="fig-dtc-sigproc-verification-alt">
-              The process of verifying a DTC signature based on its preprocessed form.
+              The process of verifying a DTC signature, based on its pre-processed form.
             </p>
             <figcaption>
-              The process of verifying a DTC signature based on its preprocessed form.
-              Requires said preprocessed DTC, the DTC signature encoded as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]], and the signing party's public key.
-              The signature is first decoded into a binary form, and then verified using the preprocessed DTC and the public key.
+              The process of verifying a DTC signature, based on its pre-processed form.
+              Requires said pre-processed DTC, the DTC signature encoded as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]], and the signing party's public key.
+              The signature is first decoded into a binary form, and then verified using the pre-processed DTC and the public key.
             </figcaption>
           </figure>
           <p>
             To verify a given signature, as included in the <a data-lt="dtc-senderSig">senderSig</a> or <a data-lt="dtc-receiverSig">receiverSig</a> DTC fields (see <a href="#dtc-data-structure"></a>), the encoded signature (here: <code>senderSig</code>) MUST be decoded as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">Base64</a> [[RFC4648]].
           </p>
-          <p>The DTC MUST be preprocessed according to <a href="#dtc-signatures-preprocessing"></a>.</p>
-          <p>Together with the preprocessed DTC, and the public key associated with the signature, the signature MUST then be verified according to the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.2"><code>RSASSA-PSS-VERIFY</code></a> operation as specified in <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1</a> [[RFC8017]].</p>
-          <p>For the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.2"><code>EMSA-PSS-VERIFY</code></a> operation, which is used in the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.2"><code>RSASSA-PSS-VERIFY</code></a> operation, the same parameters as for <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.1"><code>EMSA-PSS-ENCODE</code></a> (see <a href="#dtc-signatures-creation"></a>) MUST be used.</p>
+          <p>The DTC MUST be pre-processed according to <a href="#dtc-signatures-preprocessing"></a>.</p>
+          <p>Together with the pre-processed DTC, and the public key associated with the signature, the signature MUST then be verified according to the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.2"><code>RSASSA-PSS-VERIFY</code></a>
+            operation as specified in <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1</a> [[RFC8017]].
+          </p>
+          <p>For the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.2"><code>EMSA-PSS-VERIFY</code></a>
+            operation, which is used in the <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-8.1.2"><code>RSASSA-PSS-VERIFY</code></a>
+            operation, the same parameters as for <a href="https://datatracker.ietf.org/doc/html/rfc8017#section-9.1.1"><code>EMSA-PSS-ENCODE</code></a> (see <a href="#dtc-signatures-creation"></a>) MUST be used.
+          </p>
         </div>
       </section>
     </section>
@@ -1210,7 +1243,8 @@
         Two core mechanisms are defined as part of ReShare:
       </p>
       <ul>
-        <li>A <a href="#dtcgenver-generation"><em>generation mechanism</em></a> to generate valid DTCs between parties.</li>
+        <li>A <a href="#dtcgenver-generation"><em>generation mechanism</em></a> to generate valid DTCs between parties.
+        </li>
         <li>A <a href="#dtcgenver-verification"><em>verification mechanism</em></a> to reliably verify both the validity of the dtc and the contained resource checksums.</li>
       </ul>
 
@@ -1267,7 +1301,8 @@
 
         <p>
           We specify two versions of this generation handshake:
-          A complete 3-way version, which can be carried out completely in parallel to the underlying data transmission, and an abbreviated 2-way handshake, which can be used if the <a>receiver</a> has access to the complete underlying data of the DTC (i.e., the data transmission has to be completed already).
+          A complete 3-way version, which can be carried out completely in parallel to the underlying data transmission,
+          and an abbreviated 2-way handshake, which can be used if the <a>receiver</a> has access to the complete underlying data of the DTC (i.e., the data transmission has to be completed already).
         </p>
 
         <p>
@@ -1292,7 +1327,8 @@
         <ul>
           <li>
             <i>Client and server implementations:</i>
-            Define the behavior which implements the handshake itself, depending on the handshake version (i.e., complete or abbreviated).
+            Define the behavior which implements the handshake itself, depending on the handshake version (i.e.,
+            complete or abbreviated).
             The client and server implementations receive messages from the abstraction components for the lower-layer communication stack, build new messages, and send these messages to the abstraction components of the communication stack.
           </li>
           <li>
@@ -1324,7 +1360,7 @@
 
         <div class="tlcontent">
           <p>
-            The complete DTC generation hanshake consists of the following three steps, which are described in detail in the following:
+            The complete DTC generation handshake consists of the following three steps, which are described in detail in the following:
           </p>
           <ol>
             <li>
@@ -1336,7 +1372,7 @@
               The current version of the DTC is only missing the <a data-lt="dtc-receiverSig">receiverSig</a> field.
             </li>
             <li>
-              Upon receipt of the <a>sender</a>-signed (partial) DTC, the <a>receiver</a> verifies the current state of the DTC and signs it afterwards.
+              Upon receipt of the <a>sender</a>-signed (partial) DTC, the <a>receiver</a> verifies the current state of the DTC and signs it afterward.
               The DTC is now complete and valid, and is sent back to the <a>sender</a> for mutual storage.
             </li>
           </ol>
@@ -1350,12 +1386,10 @@
           <figure id="fig-dtc-generation-handshake" style="text-align:center">
             <object data="figures/contract-generation-handshake.svg" style="width:100%;" type="image/svg+xml" aria-describedby="fig-dtc-generation-handshake"></object>
             <p id="fig-contract-generation-handshake-alt">
-              The 3-way contract generation handshake
-            </p>
+              The 3-way contract generation handshake </p>
             <figcaption>
               A message diagram of the 3-way contract generation handshake, initiated by the <a>receiver</a> (<span class="fig-agent">R</span>).
-              Upon a request (<i>R1</i>=<code>ContractRequest</code>), the <a>sender</a> (<span class="fig-agent">S</span>) assembles the DTC, signs it and sends it to the
-              <a>receiver</a> (<i>S1</i>=<code>SenderContract</code>).
+              Upon a request (<i>R1</i>=<code>ContractRequest</code>), the <a>sender</a> (<span class="fig-agent">S</span>) assembles the DTC, signs it, and sends it to the <a>receiver</a> (<i>S1</i>=<code>SenderContract</code>).
               Finally, the <a>receiver</a> verifies and signs the DTC, and sends its own signature to the <a>sender</a>
               (<i>R2</i>=<code>ReceiverContract</code>).
             </figcaption>
@@ -1370,14 +1404,15 @@
 
             <p>
               The client is responsible for initiating the DTC generation handshake.
-              For this, an appropriate user interface (manual trigger) or interface to the data sharing system (automatic trigger) SHOULD be implemented.
+              For this, an appropriate user interface (manual trigger) or interface to the data-sharing system (automatic trigger) SHOULD be implemented.
             </p>
 
             <!-- Initiation -->
             <p>
               To initiate the DTC generation, the client MUST first compile a partial DTC only consisting of the <a data-lt="dtc-receiver">receiver</a>, the <a data-lt="dtc-facts">facts</a>, and the (optional) <a data-lt="dtc-customContent"><code>receiverCustomContent</code></a> fields.
               The content of the <a data-lt="dtc-receiver">receiver</a> and <a data-lt="dtc-customContent"><code>receiverCustomContent</code></a> fields MUST comply with the contents specified in Section <a href="#dtc-data-structure"></a>.
-              The content of <a data-lt="dtc-facts">facts</a> MUST comply with its definition in Section <a href="#dtc-data-structure"></a>, except that the <a data-lt="dtc-facts-requestedID">requestedID</a>, <a data-lt="dtc-facts-alg">&lt;alg&gt;</a>, and <a data-lt="dtc-facts-serialization">serialization</a> sub-fields MUST NOT be present for any entry.
+              The content of <a data-lt="dtc-facts">facts</a> MUST comply with its definition in Section <a href="#dtc-data-structure"></a>, except that the <a data-lt="dtc-facts-requestedID">requestedID</a>, <a data-lt="dtc-facts-alg">&lt;alg&gt;</a>, and <a data-lt="dtc-facts-serialization">serialization</a>
+              sub-fields MUST NOT be present for any entry.
             </p>
             <p>
               The client then MUST use the partial DTC to build the <code>ContractRequest</code> message by passing the partial DTC to the message builder defined in Section <a href="#dtcgenver-generation-msgbuilder"></a>, and use the <a>outgoing message interface</a> (see Section <a href="#dtcgenver-generation-protocol"></a>) to send it to the server.
@@ -1414,20 +1449,19 @@
               </li>
               <li>
                 <p>
-                  The client MUST extract and parse the partial DTC contained in the <code>content</code> attribute of the JSON message, and verify
-                </p>
+                  The client MUST extract and parse the partial DTC contained in the <code>content</code> attribute of the JSON message, and verify </p>
                 <ul>
                   <li>that the sender's identity (in <a data-lt="dtc-sender">sender</a>) is as expected</li>
                   <li>
-                    that the sender's public key certificate (in <a data-lt="dtc-sender">sender</a>) is valid and trusted
-                    <p class="note">
-                      This step SHOULD include checking whether the public key certificate is issues for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-sender">sender</a> field.
+                    that the sender's public key certificate (in <a data-lt="dtc-sender">sender</a>) is valid and trusted <p class="note">
+                      This step SHOULD include checking whether the public key certificate has been issued for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-sender">sender</a> field.
                       We further discuss this verification step in Section <a href="#considerations-iricertlink"></a>.
                     </p>
                   </li>
-                  <li>that the sender's signature (in <a data-lt="dtc-senderSig">senderSig</a>) is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>. The sender's public key contained in the public key certificate in <a data-lt="dtc-sender">sender</a> MUST be used for the verification procedure.</li>
+                  <li>that the sender's signature (in <a data-lt="dtc-senderSig">senderSig</a>) is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
+                    The sender's public key contained in the public key certificate in <a data-lt="dtc-sender">sender</a> MUST be used for the verification procedure.</li>
                   <li><i>(optional)</i> that the <a>fact</a> checksums contained in <a data-lt="dtc-facts">facts</a> are valid.
-                    This is dependent on a completed data transaction and an interface to the data within the client-side handshake implementation, and thus is not mandatory to implement.</li>
+                    This is dependent on a completed data transaction and an interface to the data within the client-side handshake implementation, and thus, is not mandatory to implement.</li>
                 </ul>
                 If any of these verifications fail, the client MUST send an <code>InvalidSenderContract</code> error message to the server according to Section <a href="#dtcgenver-generation-errors"></a>, and SHOULD consider the <code>ContractRequest</code> message, to which the <code>S1</code> message was matched, as unanswered, such that the server can retry sending a valid matching <code>S1</code> message.
                 If all of the verifications succeeded, continue with step 5.
@@ -1464,9 +1498,11 @@
               </li>
               <li>
                 The server MUST parse the partial DTC in the <code>contract</code> attribute of the JSON message.
-                Then, the server MAY verify that the client is authorized to request the DTC for the <a>facts</a> contained in the <a data-lt="dtc-facts">facts</a> field.
+                Then, the server MAY verify that the client is authorized to request the DTC for the <a>facts</a>
+                contained in the <a data-lt="dtc-facts">facts</a> field.
                 <p class="note">
-                  Such an access-control mechanism is not specified, but could be implemented on a lower-layer (e.g., using the HTTP Authorization header).
+                  Such an access-control mechanism is not specified, but could be implemented on a lower layer (e.g.,
+                  using the HTTP Authorization header).
                   Therefore, error handling for access control should also be implemented on a lower layer.
                 </p>
                 Subsequently, the server compiles the DTC.
@@ -1476,7 +1512,8 @@
                     The server adds the <a data-lt="dtc-sender">sender</a> field with its own information, such that the content complies with Section <a href="#dtc-data-structure"></a>.
                   </li>
                   <li>
-                    The server looks up or computes the checksums for the <a>facts</a> identified by the <a>IRIs</a> contained in the <a data-lt="dtc-facts-factID">factID</a> sub-fields of the entries of <a data-lt="dtc-facts">facts</a>.
+                    The server looks up or computes the checksums for the <a>facts</a> identified by the <a>IRIs</a>
+                    contained in the <a data-lt="dtc-facts-factID">factID</a> sub-fields of the entries of <a data-lt="dtc-facts">facts</a>.
                     During this process, the server MAY resolve some of the <a>IRIs</a> to concretized <a>IRIs</a> (see the documentation <a data-lt="dtc-facts-requestedID">requestedID</a> for details).
                     In this case, the server MUST copy the content of <a data-lt="dtc-facts-factID">factID</a> to <a data-lt="dtc-facts-requestedID">requestedID</a>, and subsequently overwrite the content of <a data-lt="dtc-facts-factID">factID</a> with the new <a>IRI</a> in accordance with Section <a href="#dtc-data-structure"></a>.
                     It then adds each checksum to the <a data-lt="dtc-facts-alg"><code>&lt;alg&gt;</code></a> sub-field of the respective <a data-lt="dtc-facts">facts</a> entry in accordance with Section <a href="#dtc-data-structure"></a>.
@@ -1493,7 +1530,8 @@
                   </li>
                   <li>
                     <i>(Optional)</i>
-                    The server adds content to the <a data-lt="dtc-customContent"><code>senderCustomContent</code></a> field according to <a href="#dtc-data-structure"></a>.
+                    The server adds content to the <a data-lt="dtc-customContent"><code>senderCustomContent</code></a>
+                    field according to <a href="#dtc-data-structure"></a>.
                   </li>
                 </ul>
                 <p>Continue with step 4.</p>
@@ -1511,23 +1549,22 @@
                 Then, the server MUST verify that its own public key certificate is contained in the <a data-lt="dtc-sender">sender</a> field.
                 If not, the server MUST send a <code>BogusSenderCert</code> error to the client according to Section <a href="#dtcgenver-generation-errors"></a>.
                 <p class="note">
-                  This prevents that the client simply replaces the sender public key certificate with a bogus certificate, for which it controls the private key, and can thus create a signature (and thus a valid DTC) independent of the sender.
+                  This step prevents the client from simply replacing the sender's public key certificate with a bogus certificate, for which it controls the private key, and can thus create a signature (and thus a valid DTC) independent of the sender.
                   While such an attack would not lead to a valid DTC issued by the sender, it would lead to an invaluable DTC, which is not recognized by the sender by simply verifying the DTC using the procedure specified in Section <a href="#dtcgenver-verification"></a>.
                 </p>
                 If the public key certificate is correct, continue with step 7.
               </li>
               <li>
-                The server MUST verify
-                <ul>
+                The server MUST verify <ul>
                   <li>that the receiver's identity (in <a data-lt="dtc-receiver">receiver</a>) is as expected</li>
                   <li>
-                    that the receiver's public key certificate (in <a data-lt="dtc-receiver">receiver</a>) is valid and trusted
-                    <p class="note">
-                      This step SHOULD include checking whether the public key certificate is issues for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-receiver">receiver</a> field.
+                    that the receiver's public key certificate (in <a data-lt="dtc-receiver">receiver</a>) is valid and trusted <p class="note">
+                      This step SHOULD include checking whether the public key certificate has been issued for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-receiver">receiver</a> field.
                       We further discuss this verification step in Section <a href="#considerations-iricertlink"></a>.
                     </p>
                   </li>
-                  <li>that the receiver's signature (in <a data-lt="dtc-receiverSig">receiverSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>. The receiver's public key contained in the public key certificate in <a data-lt="dtc-receiver">receiver</a> MUST be used for the verification procedure.</li>
+                  <li>that the receiver's signature (in <a data-lt="dtc-receiverSig">receiverSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
+                    The receiver's public key contained in the public key certificate in <a data-lt="dtc-receiver">receiver</a> MUST be used for the verification procedure.</li>
                   If any of these verifications fail, the server MUST send an <code>InvalidReceiverContract</code> error message to the client according to <a href="#dtcgenver-generation-errors"></a>.
                   Otherwise, the server SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
                 </ul>
@@ -1541,7 +1578,8 @@
         <h4>Abbreviated (2-way) Handshake</h4>
 
         <p>
-          The abbreviated handshake assumes that the <a>receiver</a> has full access to the underlying data of the DTC, i.e., that the data transmission is completed.
+          The abbreviated handshake assumes that the <a>receiver</a> has full access to the underlying data of the DTC,
+          i.e., that the data transmission is completed.
           Further, it assumes that the <a>receiver</a> has access to the <a>sender</a>'s identity and public certificate, i.e., the contents of the <a data-lt="dtc-sender">sender</a> field according to Section <a href="#dtc-data-structure"></a>.
         </p>
 
@@ -1566,11 +1604,11 @@
             <object data="figures/contract-generation-handshake-abbrev.svg" style="width: 80%;" type="image/svg+xml" aria-describedby="fig-dtc-generation-handshake-abbrev">
             </object>
             <p id="fig-contract-generation-handshake-abbrev-alt">
-              The transmission-dependent 2-way contract generation handshake
-            </p>
+              The transmission-dependent 2-way contract generation handshake </p>
             <figcaption>
               A message diagram of the 2-way contract generation handshake, initiated by the <a>receiver</a> (<span class="fig-agent">R</span>).
-              The <a>receiver</a> compiles the complete DTC, and the <a>sender</a> (<span class="fig-agent">S</span>) verifies and signs it aftwerwards.
+              The <a>receiver</a> compiles the complete DTC, and the <a>sender</a> (<span class="fig-agent">S</span>)
+              verifies and signs it afterward.
               Message abbreviations: R1'=<code>AbbrevContractRequest</code>, S1'=<code>AbbrevContract</code>.
             </figcaption>
           </figure>
@@ -1584,7 +1622,7 @@
 
             <p>
               The client is responsible for initiating the DTC generation handshake.
-              For this, an appropriate user interface (manual trigger) or interface to the data sharing system (automatic trigger) SHOULD be implemented.
+              For this, an appropriate user interface (manual trigger) or interface to the data-sharing system (automatic trigger) SHOULD be implemented.
             </p>
 
             <ol>
@@ -1596,9 +1634,10 @@
                     The client adds the <a data-lt="dtc-receiver">receiver</a> field with its own information, such that the content complies with Section <a href="#dtc-data-structure"></a>.
                   </li>
                   <li>
-                    The client adds the <a data-lt="dtc-sender">sender</a> field with the <a>sender</a>'s information, such that the content complies with Section <a href="#dtc-data-structure"></a>.
+                    The client adds the <a data-lt="dtc-sender">sender</a> field with the <a>sender</a>'s information,
+                    such that the content complies with Section <a href="#dtc-data-structure"></a>.
                     <p class="note">
-                      As mentioned above, the content of the <a data-lt="dtc-sender">sender</a> field needs to be pre-shared between <a>sender</a> and <a>receiver</a> for the abbrevated handshake.
+                      As mentioned above, the content of the <a data-lt="dtc-sender">sender</a> field needs to be pre-shared between <a>sender</a> and <a>receiver</a> for the abbreviated handshake.
                     </p>
                   </li>
                   <li>
@@ -1610,7 +1649,8 @@
                     The <a data-lt="dtc-facts-requestedID">requestedID</a> subfield SHOULD NOT be present for any entry of <a data-lt="dtc-facts">facts</a>.
                     <p class="note">
                       Note that in the abbreviated handshake, the <a>sender</a> cannot update the entries of <a data-lt="dtc-facts-factID">factID</a>, as the <a>receiver</a>'s signature already exists in the first message addressed to the sender.
-                      Instead, an <a>IRI</a> negotiation as discussed in Section <a href="#dtc-data-structure"></a> SHOULD be implemented together with the data transmission, as this has to be completed before the handshake if using the abbreviated handshake version.
+                      Instead, an <a>IRI</a> negotiation, as discussed in Section <a href="#dtc-data-structure"></a>
+                      SHOULD be implemented together with the data transmission, as this has to be completed before the handshake if using the abbreviated handshake version.
                     </p>
                   </li>
                   <li>
@@ -1622,7 +1662,8 @@
                   </li>
                   <li>
                     <i>(Optional)</i>
-                    The client adds content to the <a data-lt="dtc-customContent"><code>receiverCustomContent</code></a> and <a data-lt="dtc-customContent"><code>senderCustomContent</code></a> fields according to <a href="#dtc-data-structure"></a>.
+                    The client adds content to the <a data-lt="dtc-customContent"><code>receiverCustomContent</code></a>
+                    and <a data-lt="dtc-customContent"><code>senderCustomContent</code></a> fields according to <a href="#dtc-data-structure"></a>.
                     <p class="note">
                       As mentioned above, the content of the <a data-lt="dtc-customContent"><code>senderCustomContent</code></a> field has to be pre-shared before the abbreviated handshake.
                     </p>
@@ -1637,7 +1678,8 @@
               </li>
               <li>
                 <p>
-                  The client then MUST use the partial DTC to build the <code>AbbrevContractRequest</code> message by passing the partial DTC to the message builder defined in Section <a href="#dtcgenver-generation-msgbuilder"></a>, and pass it to the <a>outgoing message interface</a> (see Section <a href="#dtcgenver-generation-protocol"></a>).
+                  The client then MUST use the partial DTC to build the <code>AbbrevContractRequest</code> message by passing the partial DTC to the message builder defined in Section <a href="#dtcgenver-generation-msgbuilder"></a>, and pass it to the <a>outgoing message interface</a>
+                  (see Section <a href="#dtcgenver-generation-protocol"></a>).
                 </p>
               </li>
             </ol>
@@ -1672,23 +1714,22 @@
                 Then, the client MUST verify that its own public key certificate is contained in the <a data-lt="dtc-receiver">receiver</a> field.
                 If not, the client MUST send a <code>BogusReceiverCert</code> error to the server according to Section <a href="#dtcgenver-generation-errors"></a>.
                 <p class="note">
-                  This prevents that the server simply replaces the receiver public key certificate with a bogus certificate, for which it controls the private key, and can thus create a signature (and thus a valid DTC) independent of the receiver.
+                  This step prevents the server from simply replacing the receiver's public key certificate with a bogus certificate, for which it controls the private key, and can thus create a signature (and thus a valid DTC) independent of the receiver.
                   While such an attack would not lead to a valid DTC issued by the receiver, it would lead to an invaluable DTC, which is not recognized by the receiver by simply verifying the DTC using the procedure specified in Section <a href="#dtcgenver-verification"></a>.
                 </p>
                 If the public key certificate is correct, continue with step 4.
               </li>
               <li>
-                The client MUST verify
-                <ul>
+                The client MUST verify <ul>
                   <li>that the sender's identity (in <a data-lt="dtc-sender">sender</a>) is as expected</li>
                   <li>
-                    that the sender's public key certificate (in <a data-lt="dtc-sender">sender</a>) is valid and trusted
-                    <p class="note">
-                      This step SHOULD include checking whether the public key certificate is issues for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-sender">sender</a> field.
+                    that the sender's public key certificate (in <a data-lt="dtc-sender">sender</a>) is valid and trusted <p class="note">
+                      This step SHOULD include checking whether the public key certificate has been issued for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-sender">sender</a> field.
                       We further discuss this verification step in Section <a href="#considerations-iricertlink"></a>.
                     </p>
                   </li>
-                  <li>that the sender's signature (in <a data-lt="dtc-senderSig">senderSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>. The sender's public key contained in the public key certificate in <a data-lt="dtc-sender">sender</a> MUST be used for the verification procedure.</li>
+                  <li>that the sender's signature (in <a data-lt="dtc-senderSig">senderSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
+                    The sender's public key contained in the public key certificate in <a data-lt="dtc-sender">sender</a> MUST be used for the verification procedure.</li>
                   If any of these verifications fail, the client MUST send a <code>InvalidAbbrevContract</code> error message to the server according to <a href="#dtcgenver-generation-errors"></a>.
                   Otherwise, the client SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
                 </ul>
@@ -1721,27 +1762,28 @@
               </li>
               <li>
                 <p>
-                  The server MUST extract and parse the partial DTC contained in the <code>content</code> attribute of the JSON message, and verify
-                </p>
+                  The server MUST extract and parse the partial DTC contained in the <code>content</code> attribute of the JSON message, and verify </p>
                 <ul>
                   <li>that the receiver's identity (in <a data-lt="dtc-receiver">receiver</a>) is as expected</li>
                   <li>
-                    that the receiver's public key certificate (in <a data-lt="dtc-receiver">receiver</a>) is valid and trusted
-                    <p class="note">
+                    that the receiver's public key certificate (in <a data-lt="dtc-receiver">receiver</a>) is valid and trusted <p class="note">
                       This step SHOULD include checking whether the public key certificate is issues for the authority identified by the <a>IRI</a> contained in the <a data-lt="dtc-receiver">receiver</a> field.
                       We further discuss this verification step in Section <a href="#considerations-iricertlink"></a>.
                     </p>
                   </li>
-                  <li>that the receiver's signature (in <a data-lt="dtc-receiverSig">receiverSig</a>) is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>. The receiver's public key contained in the public key certificate in <a data-lt="dtc-receiver">receiver</a> MUST be used for the verification procedure.</li>
+                  <li>that the receiver's signature (in <a data-lt="dtc-receiverSig">receiverSig</a>) is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
+                    The receiver's public key contained in the public key certificate in <a data-lt="dtc-receiver">receiver</a> MUST be used for the verification procedure.</li>
                   <li>that the <a>fact</a> checksums contained in <a data-lt="dtc-facts">facts</a> are valid.
-                    This can be done by re-computing or looking up the fact checksums given the serialization identified by the <a data-lt="dtc-facts-serialization">serialization</a> field.
+                    This verification step can be done by re-computing or looking up the fact checksums given the serialization identified by the <a data-lt="dtc-facts-serialization">serialization</a> field.
                     <p class="note">
-                      In contrast to the 3-way handshake (see Section <a href="#dtcgenver-generation-complete"></a>), this step is not optional, as the 2-way handshake requires a previously completed data transmission.
+                      In contrast to the 3-way handshake (see Section <a href="#dtcgenver-generation-complete"></a>),
+                      this step is not optional, as the 2-way handshake requires a previously completed data transmission.
                       Thus, making this step mandatory does not constrain the application of the procedure.
                     </p>
                   </li>
                 </ul>
-                If any of these verifications fail, the server MUST send an <code>InvalidAbbrevContractRequest</code> error message to the client according to Section <a href="#dtcgenver-generation-errors"></a>.
+                If any of these verifications fail, the server MUST send an <code>InvalidAbbrevContractRequest</code>
+                error message to the client according to Section <a href="#dtcgenver-generation-errors"></a>.
                 If all of the verifications succeeded, continue with step 5.
               </li>
               <li>
@@ -1754,7 +1796,8 @@
                 If the information is correct, continue with step 6.
               </li>
               <li>
-                The server MUST create a signature according to Section <a href="#dtc-signatures-creation"></a> using the partial DTC from the <code>AbbrevContractRequest</code> message and the private key associated with the public key included in the public key certificate in the <a data-lt="dtc-sender">sender</a> field, and add it as the <a data-lt="dtc-senderSig">senderSig</a> field according to Section <a href="#dtc-data-structure"></a>.
+                The server MUST create a signature according to Section <a href="#dtc-signatures-creation"></a> using the partial DTC from the <code>AbbrevContractRequest</code> message and the private key associated with the public key included in the public key certificate in the <a data-lt="dtc-sender">sender</a> field,
+                and add it as the <a data-lt="dtc-senderSig">senderSig</a> field according to Section <a href="#dtc-data-structure"></a>.
                 The server SHOULD accept the complete DTC and SHOULD forward it so a DTC storage system.
                 Finally, the server MUST build the <code>AbbrevContract</code> message by passing the now-complete DTC to the message builder (see Section <a href="#dtcgenver-generation-msgbuilder"></a>), and use the <a>outgoing message interface</a> (see Section <a href="#dtcgenver-generation-protocol"></a>) to send it to the client.
               </li>
@@ -1773,16 +1816,18 @@
 
         <p>
           We do not further specify the implementation of the message identifiers.
-          They could for example be implemented using constant string values, or with an enum-like structure.
+          They could, for example, be implemented using constant string values, or with an enum-like structure.
         </p>
 
         <p>We define the following <dfn>non-error message identifiers</dfn>:</p>
         <ul>
           <li><code>ContractRequest</code>: Identifies the first message in the complete handshake defined in Section <a href="#dtcgenver-generation-complete"></a>.</li>
           <li><code>SenderContract</code>: Identifies the second message in the complete handshake defined in Section <a href="#dtcgenver-generation-complete"></a>.</li>
-          <li><code>ReceiverContract</code>: Identifies the third message in the complete handshake defined in Section <a href="#dtcgenver-generation-complete"></a>.</li>
+          <li><code>ReceiverContract</code>: Identifies the third message in the complete handshake defined in Section <a href="#dtcgenver-generation-complete"></a>.
+          </li>
           <li><code>AbbrevContractRequest</code>: Identifies the first message of the abbreviated handshake defined in Section <a href="#dtcgenver-generation-abbrev"></a>.</li>
-          <li><code>AbbrevContract</code>: Identifies the second message of the abbreviated handshake defined in Section <a href="#dtcgenver-generation-abbrev"></a>.</li>
+          <li><code>AbbrevContract</code>: Identifies the second message of the abbreviated handshake defined in Section <a href="#dtcgenver-generation-abbrev"></a>.
+          </li>
         </ul>
 
         <p>We define the following <dfn>error message identifiers</dfn>:</p>
@@ -1793,7 +1838,7 @@
           </li>
           <li>
             <code>UnexpectedSenderContract</code>:
-            Indicates that an <code>S1</code> message was received by the client, without expecting it (see Section <a href="#dtcgenver-generation-complete"></a>).
+            Indicates that an <code>S1</code> message was received by the client without expecting it (see Section <a href="#dtcgenver-generation-complete"></a>).
           </li>
           <li>
             <code>InvalidSenderContract</code>:
@@ -1809,15 +1854,18 @@
           </li>
           <li>
             <code>BogusReceiverCert</code>:
-            Indicates that the <a>receiver</a>'s certificate, as included in the <a data-lt="dtc-receiver">receiver</a> field of the partial dtc within the previously transmitted <code>SenderContract</code> message, was not the correct certificate of the handshake client.
+            Indicates that the <a>receiver</a>'s certificate, as included in the <a data-lt="dtc-receiver">receiver</a>
+            field of the partial DTC within the previously transmitted <code>SenderContract</code> message, was not the correct certificate of the handshake client.
           </li>
           <li>
             <code>InvalidAbbrevContract</code>:
-            Indicates that the client-side verification of the previously transmitted <code>AbbrevContract</code> message failed.
+            Indicates that the client-side verification of the previously transmitted <code>AbbrevContract</code>
+            message failed.
           </li>
           <li>
             <code>InvalidAbbrevContractRequest</code>:
-            Indicates that the server-side verification of the previously transmitted <code>AbbrevContractRequest</code> message failed.
+            Indicates that the server-side verification of the previously transmitted <code>AbbrevContractRequest</code>
+            message failed.
           </li>
         </ul>
       </section>
@@ -1839,16 +1887,17 @@
         <ul>
           <li>
             <i>Input:</i>
-            A <a>non-error message identifier</a> (see Section <a href="#dtcgenver-generation-msgids"></a>) and a (partial) DTC
-            <p class="note">Details about building error messages can be found in Section <a href="#dtcgenver-generation-errors"></a>.</p>
+            A <a>non-error message identifier</a> (see Section <a href="#dtcgenver-generation-msgids"></a>) and a (partial) DTC <p class="note">Details about building error messages can be found in Section <a href="#dtcgenver-generation-errors"></a>.</p>
           </li>
           <li>
             <i>Behavior:</i>
             The message builder MUST carry out the following steps:
             <ol>
               <li>Create an empty JSON object (<code>{}</code>), referred to as <code>res</code>.</li>
-              <li>Assign the <a>message identifier</a> to <code>res</code> as the string content of the <code>messageType</code> attribute.</li>
-              <li>Serialize the (partial) DTC as a JSON object according to Section <a href="#dtc-representations-json"></a>, and assign it to <code>res</code> as the <code>contract</code> attribute.</li>
+              <li>Assign the <a>message identifier</a> to <code>res</code> as the string content of the <code>messageType</code> attribute.
+              </li>
+              <li>Serialize the (partial) DTC as a JSON object according to Section <a href="#dtc-representations-json"></a>, and assign it to <code>res</code> as the <code>contract</code>
+                attribute.</li>
               <li>Return <code>res</code> to the caller.</li>
             </ol>
           </li>
@@ -1865,8 +1914,8 @@
           We define one message schema per <a>message identifier</a>.
         </p>
 
-        <p>For this, we build upon the same specification of <a href="https://json-schema.org/draft/2020-12/json-schema-core.html">JSON Schema</a> [[JSON-SCHEMA]][[JSON-SCHEMA-VALIDATION]] as in
-          Section <a href="#dtc-representations-json"></a>.</p>
+        <p>For this, we build upon the same specification of <a href="https://json-schema.org/draft/2020-12/json-schema-core.html">JSON Schema</a>
+          [[JSON-SCHEMA]][[JSON-SCHEMA-VALIDATION]] as in Section <a href="#dtc-representations-json"></a>.</p>
 
         <p>
           The message schemas can be obtained through the following links:
@@ -1878,7 +1927,8 @@
             <ul>
               <li>Generic message: <a href="schemas/message/message.schema.json" class="external" target="_blank">Schema</a></li>
               <li>Generic error message: <a href="schemas/message/error/error_message.schema.json" class="external" target="_blank">Schema</a></li>
-              <li>Partial DTC: <a href="schemas/partial_dtc.schema.json" class="external" target="_blank">Schema</a></li>
+              <li>Partial DTC: <a href="schemas/partial_dtc.schema.json" class="external" target="_blank">Schema</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -1925,7 +1975,8 @@
         <ul>
           <li>
             <i>Input:</i>
-            A JSON object (referred to as <code>msg</code>) and a list of tuples <code>(id_0,schema_0),...,(id_n-1,schema_n-1)</code>, where for <code>i=0,...,n-1</code>, <code>id_i</code> is a <a>message identifier</a>, and <code>schema_i</code> is the according JSON schema according to Section <a href="#dtcgenver-generation-msgschemas"></a>.
+            A JSON object (referred to as <code>msg</code>) and a list of tuples <code>(id_0,schema_0),...,(id_n-1,schema_n-1)</code>, where for <code>i=0,...,n-1</code>, <code>id_i</code>
+            is a <a>message identifier</a>, and <code>schema_i</code> is the according JSON schema according to Section <a href="#dtcgenver-generation-msgschemas"></a>.
           </li>
           <li>
             <i>Behavior:</i>
@@ -1960,7 +2011,8 @@
             The error message builder MUST carry out the following steps:
             <ol>
               <li>Create an empty JSON object (<code>{}</code>) referred to as <code>res</code>.</li>
-              <li>Assign the <a>error message identifier</a> as a string to the <code>messageType</code> attribute of <code>res</code>.</li>
+              <li>Assign the <a>error message identifier</a> as a string to the <code>messageType</code> attribute of <code>res</code>.
+              </li>
               <li>
                 Assign an implementation-dependent error message as a string to the <code>errorMessage</code> attribute of <code>res</code>.
                 <p class="note">
@@ -1977,7 +2029,7 @@
 
         <p>
           Note that we do not specify how error messages are handled.
-          We however recommend that error messages SHOULD NOT simply be ignored, as this probably leads to invalid (and thus invaluable) DTCs.
+          However, we recommend that error messages SHOULD NOT simply be ignored, as behavior MAY lead to invalid (and thus invaluable) DTCs.
           An implementation SHOULD instead decide to either repeat the handshake step which caused the error, or abort the generation handshake, such that a new handshake can be initiated.
         </p>
 
@@ -2003,21 +2055,23 @@
             Depending on the protocol stack, these components are implemented differently, as we specify in the following.
           </p>
           <p>
-            If only TCP is used (no TLS or HTTP on top), the server MUST provide an open port which can be contacted by the client.
-            Upon contract handshake initiation, the client MUST open a connection to the server, such that both the client and a server have an open bi-directional TCP socket.
+            If only TCP is used (no TLS or HTTP on top), the server MUST provide an open port that can be contacted by the client.
+            Upon contract handshake initiation, the client MUST open a connection to the server, such that both the client and the server have an open bi-directional TCP socket.
             The two abstraction components MUST be implemented as follows for client and server:
           </p>
           <ul>
             <li>
-              <a>Outgoing message interface</a>: Whenever called with a valid JSON object, the implementation MUST serialize the JSON as a string in <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a> encoding [[RFC3629]] and send it through the TCP socket with a trailing newline character.
+              <a>Outgoing message interface</a>: Whenever called with a valid JSON object, the implementation MUST serialize the JSON as a string in <a href="https://datatracker.ietf.org/doc/html/rfc3629">UTF-8</a>
+              encoding [[RFC3629]] and send it through the TCP socket with a trailing newline character.
             </li>
             <li>
               <a>Incoming message handler</a>:
-              Whenever the incoming data can be aggregated to a valid JSON object, it MUST be parsed as a JSON object, and the associated client or server implementation MUST be called with said JSON object.
+              Whenever the incoming data can be aggregated to a valid JSON object, it MUST be parsed as a JSON object,
+              and the associated client or server implementation MUST be called with said JSON object.
             </li>
           </ul>
           <p>
-            If TLS is used on top of TCP without HTTP, the server MUST provide an open TCP port which can be contacted by the client, but only accepts TLS traffic.
+            If TLS is used on top of TCP without HTTP, the server MUST provide an open TCP port that can be contacted by the client, but only accepts TLS traffic.
             Upon contract handshake initiation, the client MUST open a connection to the server and carry out a TLS handshake, such that a TLS-protected tunnel is established.
             Then, the abstraction components (i.e., the <a>outgoing message interface</a> and the <a>incoming message handler</a>) MUST be implemented as in the no-TLS case, but using the TLS tunnel instead.
           </p>
@@ -2030,16 +2084,17 @@
           <ul>
             <li>
               <a>Outgoing message interface</a>:
-              Whenever called with a valid JSON object, the implementation MUST create and send a HTTP POST request through the established tunnel, containing the serialized JSON object as its body, and MUST set the <code>Content-Type</code> header to <code>application/json</code>.
+              Whenever called with a valid JSON object, the implementation MUST create and send an HTTP POST request through the established tunnel, containing the serialized JSON object as its body, and MUST set the <code>Content-Type</code> header to <code>application/json</code>.
               It MUST then install the <a>incoming message handler</a>, such that it gets called with the response to the request.
             </li>
             <li>
               <a>Incoming message handler</a>:
-              Is called with the reponse of a previously executed POST request.
-              If the response <code>Content-Type</code> header does not indicate the <code>application/json</code> type, the implementation SHOULD initiate a retransmission of the previous message by either sending an <code>UnknownMessage</code> error message (see Sections <a href="#dtcgenver-generation-msgids"></a> and <a href="#dtcgenver-generation-errors"></a>), or by retransmitting the previous message, using the <a>outgoing message interface</a>.
+              Is called with the response of a previously executed POST request.
+              If the response <code>Content-Type</code> header does not indicate the <code>application/json</code> type,
+              the implementation SHOULD initiate a retransmission of the previous message by either sending an <code>UnknownMessage</code> error message (see Sections <a href="#dtcgenver-generation-msgids"></a> and <a href="#dtcgenver-generation-errors"></a>), or by retransmitting the previous message, using the <a>outgoing message interface</a>.
               <p class="note">
                 Because the client is not simply able to provide feedback in the form of an HTTP status code, as it only performs requests, we leave error handling to the implementation.
-                We refer to the general discussion of the approach on error handling in Section <a href="#dtcgenver-generation-errors"></a>.
+                We refer to the general discussion of ReShare's approach on error handling in Section <a href="#dtcgenver-generation-errors"></a>.
               </p>
             </li>
           </ul>
@@ -2055,13 +2110,14 @@
               The <code>Content-Type</code> header MUST be set to <code>application/json</code>.
               <p class="note">
                 A <code>200</code> status code is considered acceptable for every defined error message, as these higher-layer errors are already uniquely identified through their respective message schemas.
-                Thus, using a <code>200</code> status code does not hinder an implementations functionality, but we consider the usage of proper error status codes good practice.
+                Thus, using a <code>200</code> status code does not hinder an implementation's functionality, but we consider the usage of proper error status codes good practice.
               </p>
             </li>
             <li>
               <a>Incoming message handler</a>:
               MUST be called whenever an HTTP request is received from the client.
-              If the <code>Content-Type</code> header of the request does not indicate the <code>application/json</code> type, the incoming message handler MUST respond with an empty response with a <code>406</code> status code, without calling the server-side implementation of the handshake.
+              If the <code>Content-Type</code> header of the request does not indicate the <code>application/json</code>
+              type, the incoming message handler MUST respond with an empty response with a <code>406</code> status code, without calling the server-side implementation of the handshake.
               Else, the body of the request is parsed as a JSON object, and the server-side implementation of the handshake (defined in Sections <a href="#dtcgenver-generation-complete"></a> and <a href="#dtcgenver-generation-abbrev"></a>) is called with the parsed JSON object.
               Additionally, the incoming message handler SHOULD store the context of the request, such that it can be passed to the <a>outgoing message interface</a> once it is called by the server implementation.
             </li>
@@ -2111,7 +2167,7 @@
       <div class="tlcontent">
         <p>
           DTC verification can be executed fully locally, as the DTC itself contains all information necessary for its verification.
-          This self-containing property of DTCs allows for efficient and unambiguous verification, without the need to directly communicate with the involved parties.
+          This self-containing property of DTCs allows for efficient and unambiguous verification without the need to directly communicate with the involved parties.
         </p>
         <p>
           To verify a DTC and the resources for which it contains checksums, access to the following information is required:
@@ -2127,7 +2183,8 @@
         </p>
         <ul>
           <li>
-            Verify the public key certificates by verifying the certificate chains in <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> using a pre-installed trusted root CA's public key as the trust anchor.
+            Verify the public key certificates by verifying the certificate chains in <a data-lt="dtc-sender">sender</a>
+            and <a data-lt="dtc-receiver">receiver</a> using a pre-installed trusted root CA's public key as the trust anchor.
             <p class="note">
               This step SHOULD include checking whether the public key certificates are issued for the respective authorities identified by the <a>IRIs</a> contained in the <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> fields.
               We further discuss this verification step in Section <a href="#considerations-iricertlink"></a>.
@@ -2139,7 +2196,7 @@
           <li>
             Verify the fact checksums using the original data.
             For this, the facts need to be serialized according to the serialization format identified in the <a data-lt="dtc-facts-serialization">serialization</a> field.
-            Subsequently, the checksums need to be recomputed given the serialized facts, and compared to the checksum included in the DTC.
+            Subsequently, the checksums need to be re-computed given the serialized facts, and compared to the checksum included in the DTC.
             <p class="note">
               We do not further specify this verification step, as the process of serializing facts of different types is deemed out-of-scope for this document.
             </p>
@@ -2149,14 +2206,14 @@
           If any of the verification steps fail, the verification mechanism MUST terminate with a negative result.
         </p>
         <p>
-          Depending on the use case, it MAY be desirable to extend on these verification steps, by e.g. verifying that the owner of the certificates in the <a data-lt="dtc-receiver">receiver</a> and <a data-lt="dtc-sender">sender</a> fields are as expected.
+          Depending on the use case, it MAY be desirable to extend these verification steps, e.g., by verifying that the owner of the certificates in the <a data-lt="dtc-receiver">receiver</a> and <a data-lt="dtc-sender">sender</a> fields are as expected.
           While such extensions are not part of this verification mechanism, we advise implementors to carefully review that no unverified assumptions are made about the contents of a DTC.
         </p>
       </div>
     </section>
     <p>
       ReShare with its specification of DTCs, the ontology, and the DTC creation and verification process, enables users to achieve data trustworthiness and reliability in a scalable manner.
-      In this context, the central aspect not covered before by Web technology, but essential in the context of data-driven or industrial data sharing settings is the accountable involvement of both parties into a data transmission process, which is implemented using bilateral signatures in ReShare.
+      In this context, the central aspect not covered before by Web technology, but essential in the context of data-driven or industrial data sharing settings is the accountable involvement of both parties in the data transmission process, which is implemented using bilateral signatures in ReShare.
     </p>
   </section>
   <section id="considerations" class="informative appendix">
@@ -2169,7 +2226,8 @@
 
       <p>
         The information about the two signing parties of a DTC include a public key certificate and an <a>IRI</a> per party.
-        These are included in the <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> fields, as described in Section <a href="#dtc-data-structure"></a>.
+        These are included in the <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> fields,
+        as described in Section <a href="#dtc-data-structure"></a>.
       </p>
 
       <p>
@@ -2184,11 +2242,11 @@
 
       <p>
         As specified in Section <a href="#dtc-data-structure"></a>, we leave our system open to extensions w.r.t. other certificate technologies than X.509.
-        We therefore also decided not to further specify a mechanism of linking public key certificates to authority domains, which would be based on the employed certificate type.
+        Therefore, we also decided not to further specify a mechanism of linking public key certificates to authority domains, which would be based on the employed certificate type.
       </p>
 
       <p>
-        We however strongly recommend to verify whether the subject of the certificate coincides with the authority identified by the <a>IRI</a> whenever the DTC signatures are verified.
+        However, we strongly recommend to verify whether the subject of the certificate coincides with the authority identified by the <a>IRI</a> whenever the DTC signatures are verified.
       </p>
     </section>
 
@@ -2200,12 +2258,12 @@
         With the complete 3-way handshake, the DTC generation is completely independent of the underlying data transmission, except that the <a>receiver</a> has to know which resources are transmitted.
       </p>
       <p>
-        The sequentiality arising from a dependency on the data transmission has practical disadvantages in many cases, such as in increased management and implementation overhead by more closely integrating the data transmission process into the DTC generation mechanism.
-        Given the context system, configuration or implementation changes in the data transmission backend might be necessary in order to implement the necessary pre-sharing to allow for a short handshake.
+        The sequentiality arising from a dependency on the data transmission has practical disadvantages in many cases, such as an increased management and implementation overhead by more closely integrating the data transmission process into the DTC generation mechanism.
+        Given the context system, configuration or implementation changes in the data transmission backend might be necessary to implement the necessary pre-sharing to allow for a short handshake.
       </p>
 
       <p>
-        We therefore consider the complete 3-way handshake the default handshake, but still specify the shortened 2-way handshake for special high-latency environments.
+        Therefore, we consider the complete 3-way handshake the default handshake, but still specify the shortened 2-way handshake for special high-latency environments.
         Without a strong argument against it, we advise to use the 3-way handshake.
       </p>
     </section>
