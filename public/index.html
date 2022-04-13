@@ -569,7 +569,7 @@
             In the example of aircraft manufacturing, the parties are even required legally to securely store the contracts for several years.
           </li>
           <li>
-            <b>dataflow layer:</b> <br />
+            <b>Dataflow layer:</b> <br />
             The DTC itself is constructed in parallel to the underlying production data transmission in a generation handshake (see Section <a href="#dtcgenver-generation"></a> for details).
           </li>
         </ol>
@@ -2029,7 +2029,7 @@
 
         <p>
           Note that we do not specify how error messages are handled.
-          However, we recommend that error messages SHOULD NOT simply be ignored, as behavior MAY lead to invalid (and thus invaluable) DTCs.
+          However, we recommend that error messages SHOULD NOT simply be ignored, as this behavior MAY lead to invalid (and thus invaluable) DTCs.
           An implementation SHOULD instead decide to either repeat the handshake step which caused the error, or abort the generation handshake, such that a new handshake can be initiated.
         </p>
 
