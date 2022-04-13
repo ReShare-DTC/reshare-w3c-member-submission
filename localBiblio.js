@@ -3,8 +3,8 @@ const localBiblio = {
     title:
       "FactDAG: Formalizing Data Interoperability in an Internet of Production",
     href: "https://doi.org/10.1109/JIOT.2020.2966402",
-    publisher: "IEEE Internet of Things Journal",
-    date: "13 January 2020",
+    publisher: "IEEE Internet of Things Journal, vol. 7, no. 4, pp. 3243-3253",
+    date: "April 2020",
     status: "Research Paper",
     authors: [
       "Lars Gleim",
@@ -50,7 +50,7 @@ const localBiblio = {
     authors: ["Özalp Özer, Yanchong Zheng"],
     status: "Research Paper",
     date: "2017",
-    publisher: "Springer, Cham",
+    publisher: "Handbook of Information Exchange in Supply Chain Management. Springer Series in Supply Chain Management, vol 5. Springer, Cham",
   },
   ReShare: {
     title:
@@ -65,7 +65,7 @@ const localBiblio = {
     ],
     status: "Research Paper",
     date: "2021",
-    publisher: "Springer, Cham",
+    publisher: "The Semantic Web. ESWC 2021. Lecture Notes in Computer Science, vol 12731. Springer, Cham",
   },
   TowardsIoP: {
     title: "Towards an Infrastructure Enabling the Internet of Production",

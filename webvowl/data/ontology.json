@@ -88,7 +88,7 @@
     "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "31",
     "type" : "owl:Thing"
   }, {
     "id" : "6",
@@ -348,7 +348,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "30",
+    "id" : "31",
     "label" : {
       "undefined" : "Thing"
     }
@@ -420,10 +420,10 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "29",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "31",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "32",
     "type" : "owl:datatypeProperty"
@@ -717,34 +717,6 @@
     "attributes" : [ "object" ],
     "id" : "28"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "30",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "identifies",
-      "undefined" : "identifies"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
-    },
-    "attributes" : [ "object" ],
-    "id" : "29"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "13",
@@ -771,7 +743,35 @@
       "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
-    "id" : "31"
+    "id" : "29"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "31",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "identifies",
+      "undefined" : "identifies"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
+    },
+    "attributes" : [ "object" ],
+    "id" : "30"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
