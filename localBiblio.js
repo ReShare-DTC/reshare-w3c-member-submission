@@ -50,7 +50,8 @@ const localBiblio = {
     authors: ["Özalp Özer, Yanchong Zheng"],
     status: "Research Paper",
     date: "2017",
-    publisher: "Handbook of Information Exchange in Supply Chain Management. Springer Series in Supply Chain Management, vol 5. Springer, Cham",
+    publisher:
+      "Handbook of Information Exchange in Supply Chain Management. Springer Series in Supply Chain Management, vol 5. Springer, Cham",
   },
   ReShare: {
     title:
@@ -65,7 +66,8 @@ const localBiblio = {
     ],
     status: "Research Paper",
     date: "2021",
-    publisher: "The Semantic Web. ESWC 2021. Lecture Notes in Computer Science, vol 12731. Springer, Cham",
+    publisher:
+      "The Semantic Web. ESWC 2021. Lecture Notes in Computer Science, vol 12731. Springer, Cham",
   },
   TowardsIoP: {
     title: "Towards an Infrastructure Enabling the Internet of Production",
@@ -105,5 +107,12 @@ const localBiblio = {
     repository: "https://github.com/json-schema-org/json-schema-spec",
     id: "json-schema-validation",
     date: "11 June 2021",
+  },
+  "DATA-INTEGRITY": {
+    title: "Data Integrity",
+    href: "https://w3c-ccg.github.io/data-integrity-spec/",
+    authors: ["Manu Sporny", "Dave Longley"],
+    status: "CG-DRAFT",
+    publisher: "Credentials Community Group",
   },
 };

@@ -2221,33 +2221,217 @@
 
     In the following section, we briefly elaborate on some of the design decisions and considerations w.r.t. ReShare.
 
+    <section id="considerations-otherw3ctechs" class="informative">
+      <h2>Relation to Other W3C Documents</h2>
+
+      <p>
+        In recent years, both W3C itself and W3C Community Groups have been quite active in the field of expressing cryptographically-backed claims or statements about data.
+        Therefore, the question arises of how ReShare relates to such approaches.
+      </p>
+
+      <p>
+        In general, one should note that ReShare itself was developed throughout years 2020 until early 2021, and the major parts of this document were created mostly from April to the end of 2021.
+        Therefore, many other recent approaches show a temporal overlap with ReShare in their time of publication, and could be considered for use in the design of ReShare, if one would start over from scratch nowadays.
+      </p>
+
+      <p>
+        To the best of our knowledge, the following three documents are especially noteworthy:
+      </p>
+      <ul>
+        <li>Verifiable Credentials [[VC-DATA-MODEL]],</li>
+        <li>Data Integrity [[DATA-INTEGRITY]], and</li>
+        <li>Decentralized Identifiers [[DID-CORE]].</li>
+      </ul>
+
+      <p>
+        A potential role of Decentralized Identifiers in ReShare is discussed in Section <a href="#considerations-iricertlink"></a>.
+        In the following, we focus on Verifiable Credentials and the Data Integrity specification.
+      </p>
+
+      <section class="notoc">
+        <h2>
+          Verifiable Credentials
+        </h2>
+
+        <p>
+          Verifiable Credentials (VC) [[VC-DATA-MODEL]] provide a cryptographically-secure and machine-readable approach to expressing credentials.
+          An overview of conceivable use cases can be found in [[VC-USE-CASES]], and include a variety of claims in the areas of education, finance, healthcare and more.
+        </p>
+
+        <p>
+          The data model of a VC is defined independently from its representation.
+          However, the specification defines both a JSON, and a JSON-LD representation, thus taking a very similar approach to ReShare.
+        </p>
+
+        <p>
+          As VCs represent very general means of expressing, presenting, and proving a set of claims in the form of credentials, it is conceivable that VCs could be used as a framework for an implementation of DTCs, together with a DTC generation mechanism similar to the one we currently specify.
+        </p>
+
+        <p>
+          However, the following two considerations have lead us to the decision of refraining from the use of VCs in ReShare as of now:
+        </p>
+        <ol>
+          <li>
+            <p>
+              While a credential is defined as essentially consisting of metadata, one ore more claims, and one or more proofs, which is applicable to the model of a DTC, the use cases in [[VC-USE-CASES]] are very much centered around use cases of a single individual in everyday life.
+            </p>
+            <p>
+              This makes us wonder whether applicability in typical use-cases of inter-organizational data sharing of ReShare is given, as such scenarios might not have been considered in the design of the VC specification.
+            </p>
+          </li>
+          <li>
+            <p>
+              Probably the most essential design choice defining the paradigm of DTCs lies in the idea of bilateral on-demand signatures, as we describe in-detail in Section <a href="#dtc-signature-paradigm"></a>.
+            </p>
+            <p>
+              In the VC specification, while multiple proofs within a single VC are supported, a VC always has one issuer by design (see <a href="https://www.w3.org/TR/vc-data-model/#issuer">4.5 Issuer</a>), which is incompatible with the paradigm of a DTC having two equally-involved parties, the <a>sender</a> and the <a>receiver</a>, whose signatures are both required for a DTC to be considered valid.
+            </p>
+          </li>
+        </ol>
+        <p>
+          Of course, depending on future developments, the suitability of VC as a framework for DTCs should be re-assessed if a new version of ReShare is to be designed in future.
+        </p>
+
+        <p>
+          For example, as we discuss below, signature sets, as used in contracts, are included in the Data Integrity [[DATA-INTEGRITY]] specification, and could find their way into a future version of the VC specification, possibly expanding the set of use cases to those of DTCs.
+        </p>
+
+      </section>
+
+      <section class="notoc">
+        <h2>Data Integrity</h2>
+
+        <p>
+          The Data Integrity specification [[DATA-INTEGRITY]] strives to provide data models and representations of cryptographic proofs, such as signatures and integrity checksums, within the context of Linked Data.
+        </p>
+
+        <p>
+          Such mechanisms clearly find a promising use case in DTCs, as DTCs include integrity checksums of the data subject to the underlying data transmission (see <a data-lt="dtc-facts">facts</a>), as well as digital signatures of both DTC parties (see <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a>).
+          Even proof sets are already included in the Data Integrity specification (see <a href="https://w3c-ccg.github.io/data-integrity-spec/#proof-sets">3.1 Proof Sets</a>), for which we deem DTCs a very interesting use case.
+        </p>
+
+        <p>
+          Naturally, ReShare would greatly profit from employing a standardized mechanism of including and structuring these cryptographic proofs in DTCs.
+          Therefore, we consider the Data Integrity specification as a promising mechanism to be used in a future version of ReShare.
+        </p>
+
+        <p>
+          As of now, ReShare uses a custom implementation of embedding signatures and checksums in DTCs, which has to be attributed to the temporal overlap of ReShare and the Data Integrity specification, as the Data Integrity specification is in a relatively early stage of standardization.
+        </p>
+      </section>
+    </section>
+
     <section id="considerations-iricertlink" class="informative">
-      <h2>Linking Authority IRIs to Public Key Certificates</h2>
+      <h2>Identity Management</h2>
+      <!--Linking Authority IRIs to Public Key Certificates-->
 
       <p>
-        The information about the two signing parties of a DTC include a public key certificate and an <a>IRI</a> per party.
-        These are included in the <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> fields,
-        as described in Section <a href="#dtc-data-structure"></a>.
+        Tackling the challenge of integrating a consistent and well-designed identity management approach, which also seamlessly interoperates within the ecosystem of common application contexts, clearly is a non-trivial task.
+        We elaborate on our considerations w.r.t. an identity management system within ReShare in the following.
       </p>
 
-      <p>
-        If the public key certificate does not identify the authority identified by the provided <a>IRI</a>, one could use the <a>IRI</a> of a different authority, and thereby spoof said authority.
-        Therefore, the public key certificate has to be strongly linked to the authority <a>IRI</a> included in the DTC.
-      </p>
+      <section class="notoc">
+        <h2>Current Approach</h2>
 
-      <p>
-        For this link to be verifiable, the <a>IRI</a> has to be referenced within a verifiable part of the public key certificate.
-        For example, the <a>IRI</a> could be included in a signed field of an X.509 certificate.
-      </p>
+        <p>
+          ReShare employs X.509 certificates for identity management.
+          Parties of a contract are reliably linked to their signatures through their public key, which is contained directly contained in the DTC itself.
+          Through this approach, we achieve a robust link between the party identified through an X.509 certificate to the signature that party creates.
+        </p>
 
-      <p>
-        As specified in Section <a href="#dtc-data-structure"></a>, we leave our system open to extensions w.r.t. other certificate technologies than X.509.
-        Therefore, we also decided not to further specify a mechanism of linking public key certificates to authority domains, which would be based on the employed certificate type.
-      </p>
+        <p>
+          However, the linking of an X.509 certificate to the party itself (e.g., a physical person or company) is also a major task in defining an identity management system.
+          Here, we give recommendations on what such an approach should fulfill, but in general consider this task out of scope for ReShare.
+        </p>
 
-      <p>
-        However, we strongly recommend to verify whether the subject of the certificate coincides with the authority identified by the <a>IRI</a> whenever the DTC signatures are verified.
-      </p>
+
+        <p>
+          The information about the two signing parties of a DTC include a public key certificate and an <a>IRI</a> - separated from the certificate - per party.
+          These <a>IRI</a> and public key certificate of a party are included in the <a data-lt="dtc-sender">sender</a> and <a data-lt="dtc-receiver">receiver</a> fields of a DTC,
+          as described in Section <a href="#dtc-data-structure"></a>.
+        </p>
+
+        <p>
+          However, the <a>IRI</a> of a party should additionally be included in the subject part of a party's public key certificate.
+          Thereby, the party identified through the <a>IRI</a> can be held accountable for the uses of the private key matching the public key provided in the X.509 certificate, as long as the certificate validity is trusted.
+        </p>
+
+        <p>
+          For this link of <a>IRI</a> to X.509 certificate to be trustworthy, self-signed X.509 certificates are only conceivable for testing purposes.
+          In productive use, for the DTC to be valuable, certificates should always be valid within a certificate chain starting at a root certificate, which is commonly trusted by all conceivable verifiers of the DTC to be created.
+        </p>
+
+        <p>
+          As specified in Section <a href="#dtc-data-structure"></a>, we leave our system open to extensions w.r.t. other certificate technologies than X.509.
+          Therefore, we also decided not to further specify a mechanism of mapping <a>IRIs</a> to parties such as phyisical persons or organizations, but consider it out of scope.
+        </p>
+
+        <p>
+          However, in the following, we discuss how new technologies and standardization approaches of W3C could be used in future to extend or improve identity management in ReShare.
+        </p>
+      </section>
+
+      <section class="notoc">
+        <h2>Possible Future Adaptions</h2>
+
+        <p>
+          We opted to use X.509 as our Public Key Infrastructure (PKI), as it is a commonly trusted system, and therefore does not hinder acceptability of ReShare.
+        </p>
+
+        <p>
+          However, X.509 is quite inflexible with the employed trust infrastructure, as it enforces a hierarchical trust structure by design.
+          Furthermore, while it is a common use case of X.509 to verifiably link certificates to domain names, to the best of our knowledge, a mechanism to verifiably link certificates to parties such as persons or organizations can hardly be found.
+        </p>
+
+        <p>
+          For these reasons, deviating from pure use of X.509 certificates in ReShare may prove to be best in future.
+          One technology is especially noteworthy with these regards, which is the Decentralized Identifiers specification [[DID-CORE]].
+        </p>
+
+        <p>
+          A Decentralized Identifier (DID) allows to identify an arbitrary entity, such as an individual or organization.
+          Because DIDs themselves are <a href="https://www.w3.org/TR/did-core/#dfn-uri">URIs</a> (Uniform Resource Identifiers), which in turn is a subset of <a>IRIs</a>, DIDs could be used within ReShare with ease.
+        </p>
+
+        <p>
+          However, the DIDs themselves only define a mechanism to access the DID document related to the DID, which contains the statements the DID makes, including the link to a physical identity, or the public key material.
+          For the accountability and verifiability guarantees we deem crucial in ReShare, such information should be self-contained within a DTC itself.
+          Now, while it is conceivable to directly include DID documents in a DTC, this conflicts with an essential design choice of [[DID-CORE]], that is, that the DID controller is in charge of altering, or more generally, controlling the DID document.
+          When this DID document is included within the DTC, this makes the DID document immutable without the DTC losing its validity, and thus takes away the control from the DID controller.
+          It is hard to say whether this deviation from the design of [[DID-CORE]] would be reasonable.
+        </p>
+
+        <p>
+          If one decides to employ DIDs in DTCs, and directly includes the attached DID documents in some representations, the DID document could completely replace the public key certificate of a party within ReShare.
+          A public key can optionally be directly included within the DID document (see <a href="https://www.w3.org/TR/did-core/#verification-material">5.2.1 Verification Material</a>), making an external public key certificate unnecessary, as long as the trustworthiness of this public key can be guaranteed.
+        </p>
+        <p>
+          In our current approach, we have established verifiability independent of certificate availability by including the public key certificates directly within a DTC.
+          For the use of DIDs to provide the same verifiability guarantees, the following points would have to be fulfilled:
+        </p>
+        <ul>
+          <li>The DID document has to be included in the DTC itself (see above),</li>
+          <li>
+            the DID document has to contain a public key (as a JSON Web Key, JWK [[RFC7517]]), and
+          </li>
+          <li>
+            the JWK has to contain the X.509 certificate chain (see the <a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.7"><code>x5c</code> property</a>).
+          </li>
+        </ul>
+        <p>
+          Note that both the use of <code>publicKeyJwk</code> in [[DID-CORE]] and the use of <code>x5c</code> in [[RFC7517]] are optional, and thus would have to be enforced in a future version of ReShare.
+        </p>
+
+        <p>
+          Furthermore, as the use of JWKs is currently the only specified stable mechanism for including public keys in DID documents (see <a href="https://www.w3.org/TR/did-core/#verification-material">5.2.1 Verification Material</a>), and JWKs rely on X.509 certificates, we still find ourselves with the disadvantages of using an X.509 PKI when using DIDs as of now.
+        </p>
+
+        <p>
+          Because of the stated disadvantages of X.509 certificates, we see the need for a novel mechanism to prove possession of a public key, which clearly relates said key to an entity.
+          Such a mechanism should integrate well within the modern ecosystem of Linked Data, while building upon a secure and trusted PKI with well-defined methods to register or create your own certificate, which is linked to you as a person, organization, or different entity.
+        </p>
+      </section>
+
     </section>
 
     <section id="considerations-2or3wayhs" class="informative">
