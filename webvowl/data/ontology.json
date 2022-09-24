@@ -717,34 +717,6 @@
     "attributes" : [ "object" ],
     "id" : "28"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "13",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "sha256Sum",
-      "undefined" : "fact checksum (sha256)"
-    },
-    "domain" : "11",
-    "comment" : {
-      "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "29"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "18",
@@ -769,6 +741,34 @@
     "domain" : "1",
     "comment" : {
       "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "13",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "sha256Sum",
+      "undefined" : "fact checksum (sha256)"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
     "id" : "30"
@@ -801,34 +801,6 @@
     "attributes" : [ "object" ],
     "id" : "31"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#senderCustomContent",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "8",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "senderCustomContent",
-      "undefined" : "sender custom content"
-    },
-    "domain" : "20",
-    "comment" : {
-      "undefined" : "The sender's custom content."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "33"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#serialization",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "9",
@@ -853,6 +825,34 @@
     "domain" : "11",
     "comment" : {
       "undefined" : "The serialization method used to create a verifiable fact checksum. Some string identifiers are defined in the specification of ReShare (see TODO: ref to ReShare)"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#senderCustomContent",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "8",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "senderCustomContent",
+      "undefined" : "sender custom content"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The sender's custom content."
     },
     "attributes" : [ "datatype" ],
     "id" : "34"
@@ -885,34 +885,6 @@
     "attributes" : [ "datatype" ],
     "id" : "35"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverSig",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "5",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "receiverSig",
-      "undefined" : "receiver signature"
-    },
-    "domain" : "20",
-    "comment" : {
-      "undefined" : "The contract signature created by the receiver of the DTC."
-    },
-    "attributes" : [ "object" ],
-    "id" : "36"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#sender",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "24",
@@ -937,6 +909,34 @@
     "domain" : "20",
     "comment" : {
       "undefined" : "The data source (sender) of the underlying transmission of a DTC."
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverSig",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "5",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "receiverSig",
+      "undefined" : "receiver signature"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The contract signature created by the receiver of the DTC."
     },
     "attributes" : [ "object" ],
     "id" : "37"
