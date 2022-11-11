@@ -1,0 +1,43 @@
+p.todo::before {
+  content: "TODO: ";
+  font-weight: 700;
+}
+
+.mono {
+  font-style: normal;
+  font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+}
+
+span.fig-agent {
+  font-weight: bold;
+}
+
+table.customtable {
+  border-collapse: collapse;
+}
+
+table.customtable > tbody > tr {
+  border-top: 1px solid black;
+}
+
+table.customtable > tbody > tr > td:not(:last-child) {
+  padding-right: 1em;
+}
+
+table.customtable > thead > tr > th:not(:last-child) {
+  padding-right: 1em;
+}
+
+table.customtable > thead > tr {
+  border-bottom: 3px solid black;
+  border-top: none;
+}
+
+a.external::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
+
+code {
+  color: #c63501;
+}
