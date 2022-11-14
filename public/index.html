@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- CONFIG & TITLE -->
@@ -61,7 +61,6 @@
   <link rel="stylesheet" href="resources/rec.css" media="screen" />
   <link rel="stylesheet" href="resources/extra.css" media="screen" />
   <link rel="stylesheet" href="resources/owl.css" media="screen" />
-  <title>ReShare Ontology v0.3</title>
 
 
   <!-- WIDOCO content loading -->
@@ -942,7 +941,7 @@
                 <tr>
                   <td>Each entry of <a data-lt="dtc-facts">facts</a></td>
                   <td>
-                    <code>contract:fact-&lt;i&gt;</code>, where <code>&lt;i&gt</code> is the index of the entry within <a data-lt="dtc-facts">facts</a> when sorted lexicographically by <a data-lt="dtc-facts-factID">factID</a> (starting with <code>contract:fact-0</code>)
+                    <code>contract:fact-&lt;i&gt;</code>, where <code>&lt;i&gt;</code> is the index of the entry within <a data-lt="dtc-facts">facts</a> when sorted lexicographically by <a data-lt="dtc-facts-factID">factID</a> (starting with <code>contract:fact-0</code>)
                   </td>
                 </tr>
                 <tr>
@@ -1256,6 +1255,8 @@
         The <a href="#dtcgenver-generation">generation mechanism</a>, which is specified in Section <a href="#dtcgenver-generation"></a>, follows a client-server-paradigm.
         To allow for application-dependent lightweight implementations, the client and server parts of the <a href="#dtcgenver-generation">generation mechanism</a> MAY not be implemented.
         The following combinations are possible:
+      </p>
+
       <table class="customtable">
         <thead>
           <tr>
@@ -1287,7 +1288,6 @@
           </tr>
         </tbody>
       </table>
-      </p>
 
     </div>
 
@@ -1565,9 +1565,9 @@
                   </li>
                   <li>that the receiver's signature (in <a data-lt="dtc-receiverSig">receiverSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
                     The receiver's public key contained in the public key certificate in <a data-lt="dtc-receiver">receiver</a> MUST be used for the verification procedure.</li>
-                  If any of these verifications fail, the server MUST send an <code>InvalidReceiverContract</code> error message to the client according to <a href="#dtcgenver-generation-errors"></a>.
-                  Otherwise, the server SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
                 </ul>
+                If any of these verifications fail, the server MUST send an <code>InvalidReceiverContract</code> error message to the client according to <a href="#dtcgenver-generation-errors"></a>.
+                Otherwise, the server SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
               </li>
             </ol>
           </section>
@@ -1730,9 +1730,9 @@
                   </li>
                   <li>that the sender's signature (in <a data-lt="dtc-senderSig">senderSig</a> is valid by verifying the signature according to Section <a href="#dtc-signatures-verification"></a>.
                     The sender's public key contained in the public key certificate in <a data-lt="dtc-sender">sender</a> MUST be used for the verification procedure.</li>
-                  If any of these verifications fail, the client MUST send a <code>InvalidAbbrevContract</code> error message to the server according to <a href="#dtcgenver-generation-errors"></a>.
-                  Otherwise, the client SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
                 </ul>
+                If any of these verifications fail, the client MUST send a <code>InvalidAbbrevContract</code> error message to the server according to <a href="#dtcgenver-generation-errors"></a>.
+                Otherwise, the client SHOULD accept the DTC and SHOULD forward it to a DTC storage system.
               </li>
             </ol>
           </section>
