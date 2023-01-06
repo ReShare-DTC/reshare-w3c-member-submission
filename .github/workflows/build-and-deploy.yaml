@@ -21,6 +21,9 @@ jobs:
       #  run: |
       #    make respec-snapshot
       #    mv public/index-snapshot.html public/index.html
+      # Instead, now we simply remove the source page
+      - name: Remove source HTML
+        run: rm public/index-src.html
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
