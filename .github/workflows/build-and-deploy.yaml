@@ -8,23 +8,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Change apt mirror
-        run: |
-          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/' /etc/apt/sources.list
-          sudo apt-get update
-
       - name: Install tools
         run: |
           sudo npm i -g less respec
 
-      
       - name: Make Widoco documentation
         run: make
 
-      - name: Make ReSpec snapshot
-        run: |
-          make respec-snapshot
-          mv public/index-snapshot.html public/index.html
+      # This does not work at the moment, TODO possibly fix in future
+      # For now, we should run 'make respec-snapshot' locally before committing.
+      #- name: Make ReSpec snapshot
+      #  run: |
+      #    make respec-snapshot
+      #    mv public/index-snapshot.html public/index.html
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5

@@ -25,4 +25,4 @@ clean:
 	rm -rf public/webvowl
 
 respec-snapshot:
-	npx -y respec --src public/index.html --out public/index-snapshot.html --localhost
+	npx -y respec --src public/index-src.html --out public/index.html --localhost
