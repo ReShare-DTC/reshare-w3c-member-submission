@@ -13,9 +13,8 @@ jobs:
           sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/' /etc/apt/sources.list
           sudo apt-get update
 
-      - name: Install software
+      - name: Install tools
         run: |
-          sudo apt-get -y install default-jdk python3
           sudo npm i -g less respec
 
       
@@ -24,6 +23,7 @@ jobs:
 
       - name: Make ReSpec snapshot
         run: |
+          npm i
           make respec-snapshot
           mv public/index-snapshot.html public/index.html
 
