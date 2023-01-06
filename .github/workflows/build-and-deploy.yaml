@@ -19,6 +19,9 @@ jobs:
           sudo npm i -g less
           echo "Creating Widoco documentation..."
           make
+          echo "Creating ReSpec snapshot..."
+          make respec-snapshot
+          mv public/index-snapshot.html public/index.html
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5

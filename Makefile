@@ -2,7 +2,7 @@ ontologyVer=0.3
 widoco_url=https://github.com/dgarijo/Widoco/releases/download/v1.4.15/widoco-1.4.15-jar-with-dependencies.jar
 scope_css_py=./scope-widoco-css.py
 
-.PHONY: widoco
+.PHONY: widoco snapshot
 
 widoco: widoco.jar
 	mkdir -p widoco
@@ -23,3 +23,6 @@ clean:
 	rm -rf public/sections
 	rm -rf public/resources
 	rm -rf public/webvowl
+
+respec-snapshot:
+	npx -y respec --src public/index.html --out public/index-snapshot.html --localhost
