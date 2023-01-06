@@ -8,15 +8,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Update system (Ubuntu)
-        if: matrix.os == 'ubuntu-20.04' || matrix.os == 'ubuntu-18.04'
-        run: sudo apt update && sudo apt upgrade -y
+      - name: Change apt mirror
+        run: |
+          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/' /etc/apt/sources.list
+          sudo apt-get update
 
       - name: Install software
         run: |
-          sudo apt-get update
           sudo apt-get -y install default-jdk python3
-          sudo apt-get -y install python3
           sudo npm i -g less respec
 
       
