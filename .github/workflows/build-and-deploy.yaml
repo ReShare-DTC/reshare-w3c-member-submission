@@ -8,18 +8,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Update system (Ubuntu)
+        if: matrix.os == 'ubuntu-20.04' || matrix.os == 'ubuntu-18.04'
+        run: sudo apt update && sudo apt upgrade -y
+
+      - name: Install software
         run: |
-          echo "Installing Java..."
           sudo apt-get update
-          sudo apt-get -y install default-jdk
-          echo "Installing python..."
+          sudo apt-get -y install default-jdk python3
           sudo apt-get -y install python3
-          echo "Installing less npm library..."
           sudo npm i -g less
-          echo "Creating Widoco documentation..."
-          make
-          echo "Creating ReSpec snapshot..."
+      
+      - name: Make Widoco documentation
+        run: make
+
+      - name: Make ReSpec snapshot
+        run: |
           make respec-snapshot
           mv public/index-snapshot.html public/index.html
 
