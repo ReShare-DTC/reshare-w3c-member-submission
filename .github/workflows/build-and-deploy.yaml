@@ -23,7 +23,7 @@ jobs:
 
       - name: Make ReSpec snapshot
         run: |
-          npm i
+          sudo npm i -g
           make respec-snapshot
           mv public/index-snapshot.html public/index.html
 
