@@ -1,5 +1,5 @@
 ontologyVer=0.3
-widoco_url=https://github.com/dgarijo/Widoco/releases/download/v1.4.15/widoco-1.4.15-jar-with-dependencies.jar
+widoco_url=https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-11-widoco-1.4.17-jar-with-dependencies.jar
 scope_css_py=./scope-widoco-css.py
 
 .PHONY: widoco snapshot
