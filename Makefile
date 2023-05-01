@@ -21,7 +21,8 @@ widoco.jar:
 clean:
 	rm -rf widoco
 	rm -rf public/sections
-	rm -rf public/resources
+	rm -rf public/resources/*.css
+	rm -rf public/resources/*.js
 	rm -rf public/webvowl
 
 respec-snapshot:
