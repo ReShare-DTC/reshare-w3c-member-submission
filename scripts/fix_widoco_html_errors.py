@@ -27,6 +27,10 @@ with open(os.path.join('public','index.html'), 'r+') as html_file:
     del elt['align'] # Align just does nothing if we have width=100%
     elt['height']=elt['height'].replace('px','')
 
+  # ReSpec fix: The link for text "W3C Member Submission" should pointing to W3C profile "https://www.w3.org/standards/types#SUBM", but the link found in the document is "https://www.w3.org/standards/types#Member-SUBM".
+  w3c_state_a_elt = parsed_html.find(attrs={"id": "w3c-state"}).find("a")
+  w3c_state_a_elt['href'] = 'https://www.w3.org/standards/types#SUBM'
+
   html_out = str(parsed_html)
   html_file.truncate(0)
   html_file.seek(0)
