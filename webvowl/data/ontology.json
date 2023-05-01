@@ -88,7 +88,7 @@
     "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "32",
+    "id" : "31",
     "type" : "owl:Thing"
   }, {
     "id" : "6",
@@ -348,7 +348,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "32",
+    "id" : "31",
     "label" : {
       "undefined" : "Thing"
     }
@@ -423,10 +423,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "30",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "31",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "33",
     "type" : "owl:datatypeProperty"
@@ -717,34 +717,6 @@
     "attributes" : [ "object" ],
     "id" : "28"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "13",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "sha256Sum",
-      "undefined" : "fact checksum (sha256)"
-    },
-    "domain" : "11",
-    "comment" : {
-      "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "29"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "18",
@@ -771,11 +743,11 @@
       "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
     },
     "attributes" : [ "datatype" ],
-    "id" : "30"
+    "id" : "29"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "32",
+    "range" : "31",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -799,7 +771,35 @@
       "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
     },
     "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "30"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "13",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "sha256Sum",
+      "undefined" : "fact checksum (sha256)"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "32"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#serialization",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
@@ -999,7 +999,7 @@
   }, {
     "range" : "1",
     "domain" : "25",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverCustomContent",
@@ -1032,7 +1032,7 @@
   }, {
     "range" : "1",
     "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "42"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#requestedFactOrigin",
