@@ -25,5 +25,5 @@ clean:
 	rm -rf public/webvowl
 
 respec-snapshot:
-	npx -y respec --src public/index-src.html --out public/index.html --localhost
+	npx -y respec -t 120 --src public/index-src.html --out public/index.html --localhost
 	python scripts/fix_widoco_html_errors.py
