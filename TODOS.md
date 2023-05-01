@@ -13,43 +13,43 @@
       - i.e., a company/division should have one such IRI only and use that, don't randomly generate them
 - [x] Refactor DTC verification section to be normative
 
-- [ ] Update ontology
+- [x] Update ontology
 
   - See the [README.md](https://git.rwth-aachen.de/i5/factdag/reshare-ontology/-/blob/master/README.md) of the ontology repo
-  - Missing: Substitute IRIs by w3id IRIs, (quality control)
 
-- [ ] After finished ontology update
+- [x] After finished ontology update
 - Update ontology IRIs and JSON-LD throughout document!
 
-- [ ] Rework considerations section
+- [x] Rework considerations section
 
   - Considerations aggregates extension points and some discussion points too verbose for the main part of the specification
   - As of now, only an ad-hoc collection of some text already written before, probably out of context
   - Needs to be reworked
 
-- [ ] Create w3id IRIs for JSON Schemas, the ontology, the JSON-LD context
+- [x] Create w3id IRIs for JSON Schemas, the ontology, the JSON-LD context
 
   - Open [fork](https://github.com/MangelWare/w3id.org), should be submitted as PR after review
 
-- [ ] Resolve issues throughout document
+- [x] Resolve issues throughout document
 
-  - [ ] Primer: Heading changes, glue, missing references
-  - [ ] DTCs: Missing component overview, wall of text in signature paradigms, missing refs, summarizing statement
-  - [ ] Ontology: Bump to v0.3
-  - [ ] Before appendix: Summary of abstract
+  - [x] Primer: Heading changes, glue, missing references
+  - [x] DTCs: Missing component overview, wall of text in signature paradigms, missing refs, summarizing statement
+  - [x] Ontology: Bump to v0.3
+  - [x] Before appendix: Summary of abstract
 
-- [ ] Possibly reword the primer and introduction towards accountability, not reliability
+- [x] Possibly reword the primer and introduction towards accountability, not reliability
+  - Won't do
 
-- [ ] Write abstract
+- [x] Write abstract
 
 ### Minor
 
-- [ ] Name the venues of cited papers
+- [x] Name the venues of cited papers
 
   - Really? Other submissions (like [this one](https://www.w3.org/Submission/2015/SUBM-wot-model-20150824/)) also don't do this
   - In general, there don't really seem to be best practices for how to do this
 
-- [ ] Review the DTC examples w.r.t. the latest changes
+- [x] Review the DTC examples w.r.t. the latest changes
 
 - [x] Verify that the ReSpec configuration fits a member submission (other than specStatus="Member-SUBM")
 
@@ -57,7 +57,7 @@
     - The used version of respec is deprecated, see [here](https://github.com/w3c/respec/wiki/respec-w3c-common-migration-guide)
   - What is Prof. Decker's/the FIT's W3CID?
     - "For W3C documents, an identifier of the persons’ W3C account. This id can be found in [my profile](https://www.w3.org/users/myprofile) URL that will be redirected to the user’s page; the id appears in the address bar (e.g., https://www.w3.org/users/12345)."
-    - [ ] Ask Carlos what to use here
+    - [x] Ask Carlos what to use here
   - I added a modified copyright notice, which is also present in the other member submissions
     - Thereby, the FIT retains its copyright
     - I did this by adding a `<p class="copyright">...</p>` at the start of the body
