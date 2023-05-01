@@ -88,7 +88,7 @@
     "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "32",
+    "id" : "30",
     "type" : "owl:Thing"
   }, {
     "id" : "6",
@@ -348,7 +348,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "32",
+    "id" : "30",
     "label" : {
       "undefined" : "Thing"
     }
@@ -408,10 +408,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "22",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "23",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "26",
     "type" : "owl:datatypeProperty"
@@ -420,13 +420,13 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "29",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "30",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "31",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "33",
     "type" : "owl:datatypeProperty"
@@ -605,34 +605,6 @@
     "attributes" : [ "datatype" ],
     "id" : "19"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#customContent",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "3",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "customContent",
-      "undefined" : "custom content"
-    },
-    "domain" : "20",
-    "comment" : {
-      "undefined" : "The property linking a DTC to the custom content included by one of the parties. The object should be a literal with the JSON type (http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON). Abstract property, use the sub-properties instead."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "22"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#fact",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "11",
@@ -659,6 +631,34 @@
       "undefined" : "A fact included in a DTC."
     },
     "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#customContent",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "3",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "customContent",
+      "undefined" : "custom content"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The property linking a DTC to the custom content included by one of the parties. The object should be a literal with the JSON type (http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON). Abstract property, use the sub-properties instead."
+    },
+    "attributes" : [ "datatype" ],
     "id" : "23"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#x509Cert",
@@ -717,6 +717,34 @@
     "attributes" : [ "object" ],
     "id" : "28"
   }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "30",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "identifies",
+      "undefined" : "identifies"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "18",
@@ -743,7 +771,7 @@
       "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
     },
     "attributes" : [ "datatype" ],
-    "id" : "29"
+    "id" : "31"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
@@ -771,35 +799,7 @@
       "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
-    "id" : "30"
-  }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "32",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "identifies",
-      "undefined" : "identifies"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
-    },
-    "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "32"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#serialization",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
@@ -885,34 +885,6 @@
     "attributes" : [ "datatype" ],
     "id" : "35"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverSig",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "5",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "receiverSig",
-      "undefined" : "receiver signature"
-    },
-    "domain" : "20",
-    "comment" : {
-      "undefined" : "The contract signature created by the receiver of the DTC."
-    },
-    "attributes" : [ "object" ],
-    "id" : "36"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#sender",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "24",
@@ -937,6 +909,34 @@
     "domain" : "20",
     "comment" : {
       "undefined" : "The data source (sender) of the underlying transmission of a DTC."
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverSig",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "5",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "receiverSig",
+      "undefined" : "receiver signature"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The contract signature created by the receiver of the DTC."
     },
     "attributes" : [ "object" ],
     "id" : "37"
@@ -999,7 +999,7 @@
   }, {
     "range" : "1",
     "domain" : "25",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverCustomContent",
@@ -1032,7 +1032,7 @@
   }, {
     "range" : "1",
     "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "42"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#requestedFactOrigin",
