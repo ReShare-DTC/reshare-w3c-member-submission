@@ -26,3 +26,4 @@ clean:
 
 respec-snapshot:
 	npx -y respec --src public/index-src.html --out public/index.html --localhost
+	python scripts/fix_widoco_html_errors.py
