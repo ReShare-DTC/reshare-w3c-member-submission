@@ -88,7 +88,7 @@
     "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "31",
+    "id" : "32",
     "type" : "owl:Thing"
   }, {
     "id" : "6",
@@ -348,7 +348,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "31",
+    "id" : "32",
     "label" : {
       "undefined" : "Thing"
     }
@@ -408,10 +408,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "22",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "23",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "26",
     "type" : "owl:datatypeProperty"
@@ -423,10 +423,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "30",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "32",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "33",
     "type" : "owl:datatypeProperty"
@@ -605,34 +605,6 @@
     "attributes" : [ "datatype" ],
     "id" : "19"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#fact",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "11",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "fact",
-      "undefined" : "has fact"
-    },
-    "domain" : "20",
-    "comment" : {
-      "undefined" : "A fact included in a DTC."
-    },
-    "attributes" : [ "object" ],
-    "id" : "22"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#customContent",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "3",
@@ -659,6 +631,34 @@
       "undefined" : "The property linking a DTC to the custom content included by one of the parties. The object should be a literal with the JSON type (http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON). Abstract property, use the sub-properties instead."
     },
     "attributes" : [ "datatype" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#fact",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "11",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "fact",
+      "undefined" : "has fact"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "A fact included in a DTC."
+    },
+    "attributes" : [ "object" ],
     "id" : "23"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#x509Cert",
@@ -717,62 +717,6 @@
     "attributes" : [ "object" ],
     "id" : "28"
   }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "18",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "certEncoding",
-      "undefined" : "certificate encoding"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "29"
-  }, {
-    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
-    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
-    "range" : "31",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://w3id.org/reshare/ontology/0.3/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "identifies",
-      "undefined" : "identifies"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
-    },
-    "attributes" : [ "object" ],
-    "id" : "30"
-  }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#sha256Sum",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
     "range" : "13",
@@ -799,7 +743,63 @@
       "undefined" : "A SHA-256 checksum of a fact. Should be encoded as a hex stream using the xsd:hexBinary literal type."
     },
     "attributes" : [ "datatype" ],
-    "id" : "32"
+    "id" : "29"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#certEncoding",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "18",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "certEncoding",
+      "undefined" : "certificate encoding"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Encoding of the (binary) certificate data object to the x509Cert property. 'base64' is considered the default value, expressing that the (binary) certificate data which is object to the x509Cert property is encoded using Base64."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://w3id.org/reshare/ontology/0.3/#identifies",
+    "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
+    "range" : "32",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://w3id.org/reshare/ontology/0.3/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "identifies",
+      "undefined" : "identifies"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Links an identity of a receiver or sender as part of a contract to that entity. It is best practice to use an instance of foaf:Agent as the object to this property."
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#serialization",
     "baseIri" : "http://w3id.org/reshare/ontology/0.3/",
@@ -999,7 +999,7 @@
   }, {
     "range" : "1",
     "domain" : "25",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "40"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#receiverCustomContent",
@@ -1032,7 +1032,7 @@
   }, {
     "range" : "1",
     "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "42"
   }, {
     "iri" : "http://w3id.org/reshare/ontology/0.3/#requestedFactOrigin",
